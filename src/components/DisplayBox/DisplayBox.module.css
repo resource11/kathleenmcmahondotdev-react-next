@@ -1,0 +1,29 @@
+@import "../../styles/lib/variables.css";
+
+.displayBox {
+  position: relative;
+  padding: 1.25rem;
+  min-height: 4rem;
+  background-color: var(--grey-100);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--grey-300);
+  border-bottom: 0;
+
+  /* temporary fix to get displaybox pre margin to zero out, size and style font correctly */
+  & ~ pre {
+    margin: 0;
+    font-size: 1.25rem;
+    font-family: monospace;
+    padding: 0.75rem;
+  }
+}
+
+.block {
+  display: block;
+}
+
+.flexBox {
+  display: flex;
+  align-items: center;
+}

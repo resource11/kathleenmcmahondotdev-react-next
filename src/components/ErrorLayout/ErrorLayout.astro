@@ -1,0 +1,13 @@
+---
+import { Header } from "../Header";
+import { Footer } from "../Footer";
+import "./ErrorLayout.module.css";
+---
+
+<div class="contentWrapper">
+  <Header />
+  <main id="main" class="mainClasses">
+    <slot />
+    <Footer />
+  </main>
+</div>

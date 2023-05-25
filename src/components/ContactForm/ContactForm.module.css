@@ -1,0 +1,18 @@
+@import "../../styles/lib/variables.css";
+@import "../../styles/lib/mixins.css";
+
+form {
+  display: block;
+  position: relative;
+  margin-top: var(--s1);
+  max-width: 50ch;
+}
+
+.stackForm > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stackForm > * + * {
+  margin-top: var(--s-3);
+}

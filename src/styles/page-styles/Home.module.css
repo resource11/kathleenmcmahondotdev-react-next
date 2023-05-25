@@ -1,0 +1,391 @@
+@import "../lib/variables.css";
+@import "../lib/mixins.css";
+
+/* 
+------ WRAPPERS AND SECTIONING ------ 
+*/
+
+.bodyWrapper {
+  margin-top: calc(14.5rem + 96 * ((100vw - 2rem) / 214));
+  margin-left: 1.75rem;
+  margin-right: 1.75rem;
+  margin-bottom: 3rem;
+  @media screen and (--small) {
+    margin: 10rem 3rem 3rem;
+  }
+
+  @media screen and (--medium) {
+    margin-top: 9rem;
+    margin: 9rem 5.625rem 5.625rem;
+    max-width: 50em;
+  }
+}
+
+.contentWrapper {
+  /* max-width: var(--measure); */
+}
+
+.purpleRedHR {
+  margin-top: 3rem;
+  border-top: 0.063em solid;
+  border-image-source: var(--grad-lin-purple-red);
+  border-image-slice: 1;
+}
+
+/* 
+------ HEROS AND IMAGES ------
+*/
+
+.heroImageMasked {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  top: 6.5em;
+  width: 268vw;
+
+  @media screen and (--small) {
+    width: 111rem;
+    width: 81rem;
+    width: 65rem;
+  }
+}
+
+.recentTalksBgMasked {
+  position: absolute;
+  top: calc(37.5rem + 59 * ((100vw - 2rem) / 154));
+  left: calc(-21.5rem + 16 * ((100vw - 2rem) / 214));
+  width: 56.25rem;
+  z-index: -1;
+
+  @media screen and (--small) {
+    top: 27rem;
+    left: -11.375rem;
+  }
+
+  @media screen and (--medium) {
+    top: 25.563rem;
+    left: -3.75rem;
+  }
+}
+
+.lineDotRoot {
+  position: relative;
+  top: 0;
+  left: 3.25rem;
+  margin-top: 0.25rem;
+  mix-blend-mode: hard-light;
+
+  @media screen and (--medium) {
+    left: 11.5rem;
+  }
+}
+
+.lineDotLine {
+  background-color: #64015e;
+  @media screen and (--small) {
+    height: 7.25rem;
+  }
+
+  @media screen and (--medium) {
+    height: 4.55rem;
+  }
+}
+
+.lineDotDot {
+  background-color: #64015e;
+}
+
+.svgLineDot {
+  position: absolute;
+  border: 1px solid green;
+  width: 3rem;
+  top: 20px;
+}
+
+/* 
+------ HEADINGS and CONTENT ------
+*/
+
+.homeHeader {
+  position: relative;
+
+  @media screen and (--small) {
+    left: 21rem;
+  }
+  @media screen and (--medium) {
+    margin-top: 0;
+    left: 20rem;
+  }
+}
+
+.recentTalks {
+  margin-top: 0.5rem;
+
+  @media screen and (--small) {
+    margin-top: -3.25rem;
+  }
+
+  @media screen and (--medium) {
+    /* margin-top: 10rem; */
+    margin-top: -4.85rem;
+    left: 28rem;
+  }
+}
+
+.featuredPosts {
+  /* max-width: var(--measure); */
+}
+
+.homeH1 {
+  margin-top: 0;
+  max-width: 11ch;
+  color: var(--text-reverse);
+  font-size: calc(1.5rem + 6 * ((100vw - 2rem) / 145));
+
+  @media screen and (--medium) {
+    font-size: var(--s4);
+  }
+}
+
+.homeIntroPara {
+  position: relative;
+  max-width: 20ch;
+  font-size: 1.125rem;
+  color: var(--text-reverse);
+
+  @media screen and (--small) {
+    font-size: 1.25rem;
+    margin-top: 0.25rem;
+  }
+
+  @media screen and (--medium) {
+    position: relative;
+    left: 11rem;
+    margin-top: 0;
+  }
+}
+
+.recentTalksH2 {
+  position: relative;
+  margin-top: 0;
+  font-size: calc(1rem + 4 * ((100vw - 2rem) / 125));
+
+  @media screen and (--small) {
+    left: 5rem;
+    font-size: var(--s2);
+  }
+
+  @media screen and (--medium) {
+    left: 10.125rem;
+  }
+}
+
+/* 
+------ LISTS ------
+*/
+
+.cardUl {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin-inline-start: 0;
+  margin-top: 1.5rem;
+  max-width: 100%;
+  padding-left: 0;
+
+  @media screen and (--small) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  @media screen and (--medium) {
+    max-width: 50em;
+  }
+}
+
+.cardUl > * {
+  flex: 1 1 30ch;
+}
+
+.stackCardList > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stackCardList > * + * {
+  margin-top: var(--s0);
+
+  @media screen and (--small) {
+    margin-left: var(--s0);
+  }
+
+  @media screen and (--medium) {
+    margin-top: var(--s0);
+  }
+}
+
+@supports (width: min(250px, 100%)) {
+  .grid {
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+
+    @media screen and (--small) {
+      grid-gap: var(--s0);
+    }
+
+    @media screen and (--medium) {
+      grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr));
+    }
+  }
+
+  .stackCardList > * + * {
+    margin-top: 0;
+    margin-left: 0;
+  }
+}
+
+.cardListItem {
+  padding-left: 0;
+}
+
+.cardListItem:nth-child(odd) {
+  margin-left: 0;
+}
+
+.cardContentWrapper {
+  margin: 0;
+}
+
+.cardFooterWrapper {
+  padding: 0;
+  justify-content: flex-end;
+}
+
+.cardFooterLink {
+  width: 100%;
+  height: 2.5rem;
+  margin: 0;
+  padding: 0.5rem var(--s0);
+  text-align: right;
+  font-size: 1.25rem;
+  line-height: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+}
+
+.cardFooterLinkIcon {
+  margin-left: 0.375rem;
+}
+
+/* 
+------ POSTS ------
+*/
+
+.postUl {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin-inline-start: 0;
+  max-width: 100%;
+  padding-left: 0;
+}
+
+.stackPostList > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stackPostList > * + * {
+  margin-top: 2.75rem;
+  margin-top: var(--s0);
+  @media screen and (--small) {
+    margin-top: 1.25rem;
+  }
+
+  @media screen and (--medium) {
+  }
+}
+
+.postListItem {
+  padding-left: 0;
+  display: block;
+}
+
+.postListLink {
+  @add-mixin font-weight-medium;
+  display: block;
+  font-size: 1.375rem;
+  line-height: 1.2;
+
+  @media screen and (--small) {
+    font-size: 1.75rem;
+  }
+
+  @media screen and (--medium) {
+  }
+}
+
+.postListPublishedDate {
+  display: inline-block;
+  margin-top: var(--s-2);
+  font-size: 0.875rem;
+  color: var(--grey-500);
+
+  @media screen and (--small) {
+    font-size: var(--s0);
+  }
+}
+
+.postListPublished {
+  @add-mixin font-weight-bold;
+  font-size: 90%;
+}
+
+/* 
+------ INTERACTIVE CONTROLS ------
+*/
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0;
+  margin-top: 1.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: var(--s0);
+  color: var(--caribbean-blue-muted-300);
+  border-left: 0.25em solid;
+  border-image-slice: 0 0 0 1;
+  background-clip: border-box; /* !importanté */
+  border-image-source: var(--grad-lin-vert-purple-red);
+  height: 2.5rem;
+
+  @media screen and (--medium) {
+    font-size: 1.25rem;
+  }
+
+  &:hover {
+    border-image-source: var(--grad-rad-blue-violet-darken);
+  }
+
+  &:active {
+    border-image-source: var(--grad-lin-blue-violet);
+  }
+}
+
+.ctaLinkIcon {
+  color: var(--purple-red-200);
+
+  &:hover {
+    color: var(--text-reverse);
+  }
+}

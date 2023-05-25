@@ -1,0 +1,33 @@
+---
+import data from "../../data";
+import KMLogo from "../KMLogo/KMLogo.jsx";
+import "./SiteHeader.module.css";
+
+const { primaryNav } = data;
+---
+
+<header class="header" id="#top">
+  <div class="headerLinks">
+    <a href="#main" class="skipLink">
+      Skip to main <span role="presentation">content</span>
+    </a>
+    <a href="`/`" class="logo">
+      <KMLogo />
+      <span class="visuallyHidden">KathleenMcMahon.me</span>
+    </a>
+  </div>
+
+  <nav class="primaryNav">
+    <ul class="primaryNavUl">
+      {
+        primaryNav.map((nav) => (
+          <li class="primaryNavLi">
+            <a href={nav.link} class="link activeLink">
+              {nav.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>

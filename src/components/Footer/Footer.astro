@@ -1,0 +1,40 @@
+---
+import data from "../../data";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./SiteFooter.module.css";
+
+const { footerNav } = data;
+---
+
+<footer class="footer" role="contentinfo">
+  <ul class="footerNavUl">
+    {
+      footerNav.map((nav) => (
+        <li class="footerNavLi">
+          <a
+            href={nav.link}
+            aria-label={nav.ariaLabel ? nav.ariaLabel : null}
+            class="link"
+          >
+            {nav.icon && (
+              <FontAwesomeIcon
+                icon={[nav.libraryAlias, nav.icon]}
+                class="footerIcon"
+              />
+            )}
+            {nav.name}
+          </a>
+        </li>
+      ))
+    }
+    <li class="footerNavLi">
+      Built with
+      <a href="https://gatsbyjs.org" class="link"> Gatsby</a>
+    </li>
+    <li class="footerNavLi">
+      Hosted by
+      <a href="https://netlify.com" class="link"> Netlify</a>
+    </li>
+  </ul>
+  <small>copyright 2020 - present Kathleen McMahon</small>
+</footer>
