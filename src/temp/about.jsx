@@ -10,7 +10,7 @@ import { Card } from "../components/Card"
 import { Link } from "../components/Link"
 import HeadingAccentImage from "../svgs/angled-orange-xs.svg"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
-import styles from "../styles/pageStyles/About.module.css"
+import styles from "../styles/page-styles/About.module.css"
 
 const About = ({
   data: {

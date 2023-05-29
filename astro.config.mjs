@@ -1,16 +1,24 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, sharpImageService } from "astro/config";
+// import image from "@astrojs/image";
+// import image from "@astrojs/image/sharp";
 import react from "@astrojs/react";
-import image from "@astrojs/image";
-
+import solid from "@astrojs/solid-js";
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
+    // image({
+    //   serviceEntryPoint: "@astrojs/image/sharp",
+    // }),
     mdx(),
     react(),
+    solid(),
   ],
+  experimental: {
+    assets: true,
+  },
+  image: {
+    service: sharpImageService(),
+  },
 });

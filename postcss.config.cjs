@@ -9,12 +9,12 @@ module.exports = {
         "focus-within-pseudo-class": false,
       },
     },
-    "postcss-css-variables": {
-      preserve: true,
-    },
-    "postcss-color-function": {
-      preserveCustomProps: false,
-    },
+    // "postcss-css-variables": {
+    //   preserve: true,
+    // },
+    // "postcss-color-function": {
+    //   preserveCustomProps: false,
+    // },
     "postcss-mixins": {},
     "postcss-nested": {},
   },

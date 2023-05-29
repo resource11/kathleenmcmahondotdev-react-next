@@ -1,1 +1,1 @@
-export * from "./Icon"
+export * from "./Not-Yet-Icon"

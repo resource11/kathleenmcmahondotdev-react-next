@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets";
+const KMLogo = await import("/assets/images/KMLogo.svg");
+const KMtxt = await import("/assets/images/KMtxt.svg");
+const redOrangeSq = await import("/assets/images/redOrangeSq.svg");
+const redPurpleSq = await import("/assets/images/redPurpleSq.svg");
+console.log(redPurpleSq);
+import "./KMlogo.module.css";
+---
+
+<Image src={KMtxt} format="svg" alt="" class="KMtxt" />
+<div class="logoTmpGroup">
+  <Image src={KMLogo} format="svg" alt="KathleenMcMahon.dev" class="logoImg" />
+</div>
+<a class="logoImgLink" href="#">
+  <div class="logoSqGroup">
+    <Image src={redOrangeSq} format="svg" alt="" class="redOrangeSq" />
+    <Image src={redPurpleSq} format="svg" alt="" class="redPurpleSq" />
+  </div>
+</a>

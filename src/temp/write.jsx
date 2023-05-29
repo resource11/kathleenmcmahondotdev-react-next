@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import Layout from "../components/layout"
 import { Link } from "../components/Link"
 import HeadingAccentImage from "../svgs/angled-purp-violet-xs.svg"
-import styles from "../styles/pageStyles/Write.module.css"
+import styles from "../styles/page-styles/Write.module.css"
 
 const Write = ({ data: { allMdx } }, extraClasses) => {
   const css = useExtraClasses(styles, extraClasses)

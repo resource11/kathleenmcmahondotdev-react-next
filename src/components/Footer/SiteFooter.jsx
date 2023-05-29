@@ -1,11 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
-import data from "../../data"
+import siteData from "../../utils/data/siteData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import css from "./SiteFooter.module.css"
 
 export const SiteFooter = () => {
-  const { footerNav } = data
+  const { footerNav } = siteData
   return (
     <footer className={css.footer} role="contentinfo">
       <ul className={css.footerNavUl}>

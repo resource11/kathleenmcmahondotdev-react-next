@@ -1,13 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
-import data from "../../data"
-import KMLogo from "../../images/svgs/KMLogo.svg"
+import siteData from "../../utils/data/siteData";
+// import KMLogo from "../../images/svgs/KMLogo.svg"
 import css from "./SiteHeader.module.css"
 
 
 
 export const SiteHeader = () => {
-  const { primaryNav } = data
+  const { primaryNav } = siteData
   return (
     <header className={css.header} id="#top">
       <div className={css.headerLinks}>
@@ -15,12 +15,12 @@ export const SiteHeader = () => {
           Skip to main <span role="presentation">content</span>
         </a>
         <Link to={`/`} className={css.logo}>
-          <img
+          {/* <img
             src={KMLogo}
             alt="KathleenMcMahon.dev"
             className={css.logoImg}
             role="img"
-          />
+          /> */}
           <span className={css.visuallyHidden}>KathleenMcMahon.me</span>
         </Link>
       </div>

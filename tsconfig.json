@@ -1,12 +1,16 @@
 {
-    "extends": "astro/tsconfigs/strict",
-    "compilerOptions": {
-      "allowJs": true,
-      "baseUrl": ".",
-      "paths": {
-        "~/*": ["src/*"]
-      },
-      "jsx": "react-jsx",
-      "jsxImportSource": "preact"
-    }
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "src/*"
+      ]
+    },
+    // For Solid
+    // /** @jsxImportSource solid-js */
+    "jsx": "preserve",
+    // "jsxImportSource": "react",
   }
+}

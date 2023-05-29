@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import Layout from "../components/layout"
 import { Link } from "../components/Link"
 import HeadingAccentImage from "../svgs/angled-red-purp-xs.svg"
-import styles from "../styles/pageStyles/Speak.module.css"
+import styles from "../styles/page-styles/Speak.module.css"
 
 const Speak = ({ extraClasses }) => {
   const css = useExtraClasses(styles, extraClasses)

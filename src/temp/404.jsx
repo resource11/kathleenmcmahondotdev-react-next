@@ -1,7 +1,7 @@
 import React from "react"
 import { useExtraClasses } from "../utils/useExtraClasses"
 import ErrorLayout from "../components/ErrorLayout"
-import styles from "../styles/pageStyles/Error.module.css"
+import styles from "../styles/page-styles/Error.module.css"
 
 export const FourOhFourPage = ({ extraClasses }) => {
   const css = useExtraClasses(styles, extraClasses)
