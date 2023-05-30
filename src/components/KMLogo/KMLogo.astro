@@ -1,20 +1,20 @@
 ---
-import { Image } from "astro:assets";
-const KMLogo = await import("/assets/images/KMLogo.svg");
-const KMtxt = await import("/assets/images/KMtxt.svg");
-const redOrangeSq = await import("/assets/images/redOrangeSq.svg");
-const redPurpleSq = await import("/assets/images/redPurpleSq.svg");
-console.log(redPurpleSq);
-import "./KMlogo.module.css";
+import KMLogo from "../../assets/images/KMLogo.svg";
+import KMtxt from "../../assets/images/KMtxt.svg";
+import redOrangeSq from "../../assets/images/redOrangeSq.svg";
+import redPurpleSq from "../../assets/images/redPurpleSq.svg";
+import "./KMLogo.css";
 ---
 
-<Image src={KMtxt} format="svg" alt="" class="KMtxt" />
-<div class="logoTmpGroup">
-  <Image src={KMLogo} format="svg" alt="KathleenMcMahon.dev" class="logoImg" />
-</div>
-<a class="logoImgLink" href="#">
-  <div class="logoSqGroup">
-    <Image src={redOrangeSq} format="svg" alt="" class="redOrangeSq" />
-    <Image src={redPurpleSq} format="svg" alt="" class="redPurpleSq" />
+<>
+  <img src={KMtxt.src} alt="" class="KMtxt" />
+  <div class="logoTmpGroup">
+    <img src={KMLogo.src} alt="KathleenMcMahon.dev" class="logoImg" />
   </div>
-</a>
+  <a class="logoImgLink" href="#">
+    <div class="logoSqGroup">
+      <img src={redOrangeSq.src} alt="" class="redOrangeSq" />
+      <img src={redPurpleSq.src} alt="" class="redPurpleSq" />
+    </div>
+  </a>
+</>

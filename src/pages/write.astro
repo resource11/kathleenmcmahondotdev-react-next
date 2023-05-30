@@ -1,9 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import HeadingAccentImage from "../assets/images/angled-purp-violet-xs.svg";
 const pageTitle = "Write";
 import "../styles/page-styles/Write.css";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+  pageTitle={pageTitle}
+  pageH1Class="writeH1"
+  pageBgImage={HeadingAccentImage.src}
+  pageBgImageClass="headingAccentImage"
+>
   <h2>My awesome blog subtitle</h2>
 </BaseLayout>

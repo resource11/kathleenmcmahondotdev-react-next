@@ -1,8 +1,9 @@
 ---
-import SiteHeader from "../components/Header/SiteHeader.jsx";
-import SiteFooter from "../components/Footer/SiteFooter.jsx";
-import "../styles/base.css";
-const { pageTitle } = Astro.props;
+import Header from "../components/Header/Header.astro";
+import Footer from "../components/Footer/Footer.astro";
+// import KMLogo from "../components/KMLogo/KMLogo.astro";
+import "../styles/page-styles/BaseLayout.css";
+const { pageTitle, pageH1Class, pageBgImage, pageBgImageClass } = Astro.props;
 ---
 
 <html lang="en">
@@ -14,9 +15,17 @@ const { pageTitle } = Astro.props;
     <title>{pageTitle}</title>
   </head>
   <body>
-    <SiteHeader />
-    <h1>{pageTitle}</h1>
-    <slot />
-    <SiteFooter />
+    <!-- <KMLogo /> -->
+    <Header />
+    <article class="bodyWrapper">
+      <img src={pageBgImage} alt="" class={pageBgImageClass} />
+      <header>
+        <h1 class={pageH1Class}>{pageTitle}</h1>
+      </header>
+      <article class="contentWrapper">
+        <slot />
+      </article>
+    </article>
+    <Footer />
   </body>
 </html>

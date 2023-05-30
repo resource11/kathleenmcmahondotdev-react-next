@@ -1,3 +1,3 @@
 // export * from "./SiteHeader";
 
-export { Header } from "./Header";
+// export { Header } from "./Header.astro";

@@ -1,0 +1,20 @@
+@import "../base.css";
+
+.bodyWrapper {
+  margin: 0 1.75rem 3rem;
+  @media screen and (--small) {
+    margin: 0 3rem 3rem;
+  }
+
+  @media screen and (--medium) {
+    margin: 0 5.625rem 5.625rem;
+    max-width: 50em;
+  }
+}
+
+.contentWrapper {
+  @media screen and (--small) {
+    max-width: var(--measure);
+    max-width: 65ch;
+  }
+}

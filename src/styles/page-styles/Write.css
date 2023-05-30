@@ -5,7 +5,7 @@
 ------ WRAPPERS AND SECTIONING ------ 
 */
 
-.bodyWrapper {
+/* .bodyWrapper {
   margin: 0 1.75rem 3rem;
   @media screen and (--small) {
     margin: 0 3rem 3rem;
@@ -18,8 +18,8 @@
 }
 
 .contentWrapper {
-  max-width: 65ch;
-}
+  max-width: var(--measure);
+} */
 
 .blueVioletHR {
   border-top: 0.063em solid;

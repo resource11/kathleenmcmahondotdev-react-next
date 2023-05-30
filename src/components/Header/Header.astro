@@ -1,8 +1,7 @@
 ---
 import siteData from "../../utils/data/siteData";
-import KMLogo from "../KMLogo/KMLogo.astro";
-import "./SiteHeader.module.css";
-
+import KMLogo from "../../assets/images/KMLogo.svg";
+import "./SiteHeader.css";
 const { primaryNav } = siteData;
 ---
 
@@ -11,8 +10,8 @@ const { primaryNav } = siteData;
     <a href="#main" class="skipLink">
       Skip to main <span role="presentation">content</span>
     </a>
-    <a href="`/`" class="logo">
-      <KMLogo />
+    <a href="/" class="logo">
+      <img src={KMLogo.src} alt="KathleenMcMahon.dev" class="logoImg" />
       <span class="visuallyHidden">KathleenMcMahon.me</span>
     </a>
   </div>

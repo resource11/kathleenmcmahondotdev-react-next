@@ -1,3 +1,3 @@
-export * from "./SiteFooter";
+// export * from "./SiteFooter";
 
-export { Footer } from "./Footer";
+// export { Footer } from "./Footer";
