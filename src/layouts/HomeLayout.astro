@@ -1,8 +1,16 @@
 ---
-import SiteHeader from "../components/Header/SiteHeader.jsx";
-import SiteFooter from "../components/Footer/SiteFooter.jsx";
-import "../styles/base.css";
-const { pageTitle } = Astro.props;
+import Header from "../components/Header/Header.astro";
+import Footer from "../components/Footer/Footer.astro";
+import LineDot from "../components/LineDot/LineDot.astro";
+import "../styles/page-styles/HomeLayout.css";
+const {
+  pageTitle,
+  pageHeader,
+  pageH1Class,
+  pageIntroPara,
+  pageBgImage,
+  pageBgImageClass,
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -14,9 +22,21 @@ const { pageTitle } = Astro.props;
     <title>{pageTitle}</title>
   </head>
   <body>
-    <SiteHeader />
-    <h1>{pageTitle}</h1>
-    <slot />
-    <SiteFooter />
+    <Header />
+    <article class="bodyWrapper">
+      <img src={pageBgImage} alt="" class={pageBgImageClass} />
+      <header class={pageHeader}>
+        <h1 class={pageH1Class}>{pageTitle}</h1>
+        <p class={pageIntroPara}>
+          Hello! I'm Kathleen, an engineer, designer, speaker, and occasional
+          writer. This is the space where I cultivate my interests.
+        </p>
+        <LineDot />
+      </header>
+      <article class="contentWrapper">
+        <slot />
+      </article>
+    </article>
+    <Footer />
   </body>
 </html>

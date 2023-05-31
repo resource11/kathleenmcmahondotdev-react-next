@@ -1,9 +1,107 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "Home Page";
+import HomeLayout from "../layouts/HomeLayout.astro";
+import HeadingAccentImage from "../assets/images/hero-masked.svg";
+import RecentBgMasked from "../assets/images/sm-bot-white-diamond.svg";
+const pageTitle = "Kathleen McMahon";
 import "../styles/page-styles/Home.css";
+
+// import React from "react";
+// import { graphql } from "gatsby";
+// import classnames from "classnames";
+// import { useExtraClasses } from "../utils/useExtraClasses";
+// import SEO from "../components/seo";
+// import Layout from "../components/layout";
+// import { Card } from "../components/Card";
+// import { CTALink } from "../components/CTALink";
+// import { Link } from "../components/Link";
+// import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+// import styles from "../common/styles/pageStyles/Home.module.css";
 ---
 
-<BaseLayout pageTitle={pageTitle} pageH1Class="homeH1">
-  <h2>My awesome blog subtitle</h2>
-</BaseLayout>
+<HomeLayout
+  pageTitle={pageTitle}
+  pageHeader="homeHeader"
+  pageH1Class="homeH1"
+  pageBgImage={HeadingAccentImage.src}
+  pageBgImageClass="heroImageMasked"
+  pageIntroPara="homeIntroPara"
+>
+  <img src={RecentBgMasked.src} alt="" class="recentTalksBgMasked" />
+  <article class="css.recentTalks">
+    <h2 class="recentTalksH2">
+      Recent talks, <br />
+      podcasts, streams
+    </h2>
+    <ul class="cardListClasses">
+      <!-- {
+        recentSpeaking.map((speak) => (
+          <li className={css.cardListItem}>
+            <Card
+              extraClasses={{
+                cardContentWrapper: css.cardContentWrapper,
+                cardFooterWrapper: css.cardFooterWrapper,
+              }}
+              footerContent={
+                <Link
+                  aria-label={speak.ctaAria}
+                  extraClasses={{
+                    root: css.cardFooterLink,
+                    iconSpan: css.cardFooterLinkIcon,
+                  }}
+                  icon={faArrowRight}
+                  iconAfter={true}
+                  size="small"
+                  to={speak.link}
+                >
+                  {speak.cta}
+                </Link>
+              }
+              image={speak.relativePath}
+              imageAlt={speak.name}
+            />
+          </li>
+        ))
+      } -->
+    </ul>
+    <!-- <CTALink
+      size="small"
+      to="/speak/"
+      variant="link"
+      extraClasses={{ root: css.ctaLink, iconSpan: css.ctaLinkIcon }}
+    >
+      Browse all media
+    </CTALink> -->
+  </article>
+  <hr class="purpleRedHR" />
+  <article class="featuredPosts">
+    <h2>Featured posts</h2>
+    <ul class="postListClasses">
+      <!-- {
+        allMdx.edges.map(({ node }) => (
+          <li className={css.postListItem}>
+            <Link
+              to={`write/${node.frontmatter.slug}`}
+              variant="link"
+              extraClasses={{ root: css.postListLink }}
+            >
+              {node.frontmatter.title}
+            </Link>
+            <span className={css.postListPublishedDate}>
+              <span className={css.postListPublished}>Published:</span>{" "}
+              {node.frontmatter.date}
+            </span>
+            <p className={css.postListExcerpt}>{node.excerpt}</p>
+          </li>
+        ))
+      } -->
+    </ul>
+    <!-- <CTALink
+      size="small"
+      to="/write/"
+      variant="link"
+      extraClasses={{ root: css.ctaLink, iconSpan: css.ctaLinkIcon }}
+    >
+      Browse all writing
+    </CTALink> -->
+  </article>
+</HomeLayout>

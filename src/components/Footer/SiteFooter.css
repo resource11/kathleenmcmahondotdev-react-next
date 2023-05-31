@@ -1,0 +1,76 @@
+@import "../../styles/lib/variables.css";
+@import "../../styles/lib/mixins.css";
+
+.footer {
+  margin-top: auto;
+  min-height: 8rem;
+  padding: 1.5rem 1.75rem;
+  text-align: center;
+  color: var(--grey-500);
+  border-top: 0.25em solid;
+  border-image-source: var(--grad-lin-purple-red);
+  border-image-slice: 1;
+
+  @media screen and (--small) {
+    text-align: right;
+  }
+
+  & small {
+    display: block;
+    margin-top: 0.5rem;
+  }
+}
+
+.footerNavUl {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-inline-start: 0;
+  max-width: 100%;
+  line-height: 1.2;
+
+  & .footerNavLi {
+    position: relative;
+    display: inline-block;
+    padding-left: 0;
+
+    &:not(:last-of-type) {
+      margin-right: 0.625rem;
+      padding-right: 0.625rem;
+    }
+
+    &:not(:last-of-type)::after {
+      background: var(--grey-300);
+      content: "";
+      bottom: 0;
+      position: absolute;
+      right: 0;
+      top: 0.25rem;
+      width: 0.063em;
+    }
+
+    /* &::before {
+      content: "";
+      width: 0;
+      margin: 0;
+    } */
+  }
+
+  & .link {
+    color: var(--grey-500);
+    font-size: 1rem;
+
+    &:hover {
+      color: var(--text-light, #ffffff);
+    }
+  }
+}
+
+.footerIcon {
+  width: 0.75em;
+  width: 1cap;
+  height: 0.75em;
+  height: 1cap;
+  color: currrentColor;
+  margin-right: 0.125em;
+}
