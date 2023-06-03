@@ -438,6 +438,6 @@ const siteData = {
       link: "#",
     },
   ],
-}
+};
 
-export default siteData
+export default siteData;

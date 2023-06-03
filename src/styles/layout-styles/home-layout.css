@@ -18,7 +18,6 @@
 
 .contentWrapper {
   @media screen and (--small) {
-    max-width: var(--measure);
-    max-width: 65ch;
+    /* max-width: var(--measure); */
   }
 }

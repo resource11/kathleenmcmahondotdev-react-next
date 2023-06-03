@@ -1,8 +1,8 @@
 /** @jsxImportSource: react */
 import PropTypes from "prop-types"
 import "../../utils/fontawesome"
-import React from "react"
-import { useExtraClasses } from "../../utils/useExtraClasses"
+// import React from "react"
+import { useExtraClasses } from "../../../utils/useExtraClasses"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styles from "./Icon.module.css"
 

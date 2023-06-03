@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./SiteFooter.css";
 
 const { footerNav } = siteData;
+console.log(JSON.stringify(footerNav, null, 2));
 ---
 
 <footer class="footer" role="contentinfo">
@@ -19,9 +20,10 @@ const { footerNav } = siteData;
             {nav.icon && (
               <FontAwesomeIcon
                 icon={[nav.libraryAlias, nav.icon]}
-                class="footerIcon"
+                className="footerIcon"
               />
             )}
+            {nav.icon}
             {nav.name}
           </a>
         </li>

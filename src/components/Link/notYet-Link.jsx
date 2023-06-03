@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Link as GatsbyLink } from "gatsby"
 import classnames from "classnames"
 import { useExtraClasses } from "../../utils/useExtraClasses"
-import { Icon } from "../Icon"
+import { Icon } from "../Icon/NotAn-index"
 import styles from "./Link.module.css"
 
 export const LinkSizes = {

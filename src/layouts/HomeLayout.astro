@@ -1,8 +1,7 @@
 ---
-import Header from "../components/Header/Header.astro";
-import Footer from "../components/Footer/Footer.astro";
+import Layout from "../layouts/Layout.astro";
 import LineDot from "../components/LineDot/LineDot.astro";
-import "../styles/page-styles/HomeLayout.css";
+import "../styles/layout-styles/home-layout.css";
 const {
   pageTitle,
   pageHeader,
@@ -13,30 +12,19 @@ const {
 } = Astro.props;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <Header />
-    <article class="bodyWrapper">
-      <img src={pageBgImage} alt="" class={pageBgImageClass} />
-      <header class={pageHeader}>
-        <h1 class={pageH1Class}>{pageTitle}</h1>
-        <p class={pageIntroPara}>
-          Hello! I'm Kathleen, an engineer, designer, speaker, and occasional
-          writer. This is the space where I cultivate my interests.
-        </p>
-        <LineDot />
-      </header>
-      <article class="contentWrapper">
-        <slot />
-      </article>
+<Layout pageTitle={pageTitle}>
+  <article class="bodyWrapper">
+    <img src={pageBgImage} alt="" class={pageBgImageClass} />
+    <header class={pageHeader}>
+      <h1 class={pageH1Class}>{pageTitle}</h1>
+      <p class={pageIntroPara}>
+        Hello! I'm Kathleen, an engineer, designer, speaker, and occasional
+        writer. This is the space where I cultivate my interests.
+      </p>
+      <LineDot />
+    </header>
+    <article class="contentWrapper">
+      <slot />
     </article>
-    <Footer />
-  </body>
-</html>
+  </article>
+</Layout>

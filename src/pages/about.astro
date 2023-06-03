@@ -2,7 +2,21 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeadingAccentImage from "../assets/images/angled-orange-xs.svg";
 const pageTitle = "About";
-import "../styles/page-styles/About.css";
+import "../styles/page-styles/about.css";
+
+import React from "react";
+import { graphql } from "gatsby";
+import siteData from "../utils/data/siteData";
+import classnames from "classnames";
+import { useExtraClasses } from "../utils/useExtraClasses";
+import SEO from "../components/seo";
+import Layout from "../components/layout";
+import { ContactForm } from "../components/ContactForm";
+import { Card } from "../components/Card";
+import { Link } from "../components/Link";
+// import HeadingAccentImage from "../svgs/angled-orange-xs.svg"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import styles from "../styles/page-styles/About.module.css";
 ---
 
 <BaseLayout
@@ -11,5 +25,85 @@ import "../styles/page-styles/About.css";
   pageBgImage={HeadingAccentImage.src}
   pageBgImageClass="headingAccentImage"
 >
-  <h2>My awesome blog subtitle</h2>
+  <article class="contentWrapper">
+    <p class="aboutIntroPara">
+      So... you want to know more about me? OK. Well, I'm a software engineer
+      with a design background. In other words, I really enjoy the
+      <a
+        href="https://bradfrost.com/blog/post/frontend-design-react-and-a-bridge-over-the-great-divide/"
+      >
+        front of the frontend
+      </a>, digging into new technologies, and talking about accessibility,
+      React component libraries, design systems, and inclusive documentation.
+    </p>
+    <p class="aboutPara">
+      I’m also a Color Module Specification Editor for the
+      <a href="https://www.w3.org/community/design-tokens">
+        W3C Design Tokens Community Group
+      </a>.
+    </p>
+    <p class="aboutPara">
+      When I’m not coding, designing, or speaking about things, I’m the best
+      <a href="https://facebook.com/cxsisters"> Lanterne Rouge cyclocrosser</a>
+      you’ll ever meet.
+    </p>
+    <hr class="redOrangeHR" />
+    <h2>My portfolios</h2>
+    <p>
+      Here are some of the portfolio sites I've done in the past for my
+      consulting business:
+    </p>
+    <!-- // <ul class={cardListClasses}>
+      //   {portfolioList.map((port) => (
+      //     <li class={cardListItemClasses}>
+      //       <Card
+      //         extraClasses={{
+      //           cardContentWrapper: css.cardContentWrapper,
+      //           cardFooterWrapper: css.cardFooterWrapper,
+      //         }}
+      //         footerContent={
+      //           <Link
+      //             aria-label={port.ctaAria}
+      //             extraClasses={{ root: css.cardFooterLink }}
+      //             icon={faArrowRight}
+      //             iconAfter={true}
+      //             size="small"
+      //             to={port.link}
+      //           >
+      //             {port.cta}
+      //           </Link>
+      //         }
+      //         image={port.relativePath}
+      //         imageAlt={port.name}
+      //       />
+      //     </li>
+      //   ))}
+      // </ul> -->
+    <hr class="redOrangeHR" />
+    <h2>Social links</h2>
+    <p>Here are some of the ways you can get in touch with me:</p>
+    <!-- <ul class="socialListClasses">
+      {
+        socialLinks.map((social) => (
+          <li class={socialListItemClasses}>
+            <Link
+              extraClasses={{
+                root: css.socialListLink,
+                icon: css.socialListLinkIcon,
+              }}
+              icon={[social.libraryAlias, social.icon]}
+              size="large"
+              to={social.link}
+            >
+              <span>{social.name}</span>
+            </Link>
+          </li>
+        ))
+      }
+    </ul> -->
+    <hr class="redOrangeHR" />
+    <h2 id="contact-me">Contact Me</h2>
+    <p>You may also reach me by email</p>
+    <ContactForm />
+  </article>
 </BaseLayout>
