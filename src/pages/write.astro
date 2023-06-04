@@ -1,4 +1,6 @@
 ---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("posts");
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeadingAccentImage from "../assets/images/angled-purp-violet-xs.svg";
 const pageTitle = "What I do";
@@ -11,5 +13,42 @@ import "../styles/page-styles/write.css";
   pageBgImage={HeadingAccentImage.src}
   pageBgImageClass="headingAccentImage"
 >
-  <h2>My awesome blog subtitle</h2>
+  <!-- <article class="bodyWrapper">
+    <img src={HeadingAccentImage.src} alt="" class="headingAccentImage" />
+
+    <header>
+      <h1 class="writeH1">
+        Cultivated
+        <br />
+        thoughts <small>{allPosts.collection.size} Posts</small>
+      </h1>
+    </header> -->
+  <article class="contentWrapper">
+    <p class="writeIntroPara">
+      This is a gathering of all my thoughts, "digital garden" style. If you
+      haven't heard the term before, check out the this
+      <a href="https://joelhooks.com/digital-garden">
+        fantastic post on digital gardens by Joel Hooks
+      </a>
+      to learn more about the philosophy behind the phase.
+    </p>
+    <hr class="blueVioletHR" />
+    <ul class="postUl stackPostList">
+      {
+        allPosts.map(({ data }) => (
+          <li class="postListItem">
+            <a href={data.slug} class="postListLink">
+              {data.title}
+            </a>
+            <span class="postListPublishedDate">
+              <span class="postListPublished">Published:</span>
+              {data.date.toDateString()}
+            </span>
+            <p class="postListExcerpt">{data.excerpt}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </article>
+  <!-- </article> -->
 </BaseLayout>
