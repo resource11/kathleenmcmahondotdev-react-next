@@ -1,9 +1,22 @@
 ---
 import { getCollection } from "astro:content";
-const allPosts = await getCollection("posts");
+const allPosts = await getCollection("blog");
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeadingAccentImage from "../assets/images/angled-purp-violet-xs.svg";
-const pageTitle = "What I do";
+// const pageTitle = "What I do";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+  return blogEntries.map((data) => ({
+    params: { slug: data.slug },
+    props: { data },
+  }));
+}
+
+const pageTitle = `Cultivated
+    <br />
+    thoughts<small>{14} Posts</small>
+  `;
 import "../styles/page-styles/write.css";
 ---
 
@@ -35,16 +48,16 @@ import "../styles/page-styles/write.css";
     <hr class="blueVioletHR" />
     <ul class="postUl stackPostList">
       {
-        allPosts.map(({ data }) => (
+        allPosts.map((post) => (
           <li class="postListItem">
-            <a href={data.slug} class="postListLink">
-              {data.title}
+            <a href={post.slug} class="postListLink">
+              {post.data.title}
             </a>
             <span class="postListPublishedDate">
               <span class="postListPublished">Published:</span>
-              {data.date.toDateString()}
+              {post.data.date.toDateString()}
             </span>
-            <p class="postListExcerpt">{data.excerpt}</p>
+            <p class="postListExcerpt">{post.data.excerpt}</p>
           </li>
         ))
       }

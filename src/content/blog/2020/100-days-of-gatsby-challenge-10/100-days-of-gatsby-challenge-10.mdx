@@ -9,6 +9,7 @@ tags:
   - GatsbyJS
 isPublished: true
 isHidden: false
+isFeatured: false
 ---
 
 The 10th Challenge in the 100 Days of Gatsby series. This one provided four ways steps to [improve your site's performance](https://www.gatsbyjs.org/blog/100days/performance/).
@@ -77,13 +78,13 @@ The `gatsby-config` environment setup docs for `gatsby-transform-cloudinary` ind
 ```js
 /* Load the environment variables. */
 
-require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` })
+require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 ```
 
 The `gatsby-source-cloudinary` docs indicated a different setup:
 
 ```js
-require("dotenv").config()
+require("dotenv").config();
 ```
 
 Using the former config with the path set would throw an error in the CLI when trying to run the site in develop mode, yet using the setting without assigning the path seemed to work when using both plugins in the site. Once I removed the path from the dotenv config, everything worked as expected.

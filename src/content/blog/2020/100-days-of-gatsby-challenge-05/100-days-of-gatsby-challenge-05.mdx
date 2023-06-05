@@ -9,6 +9,7 @@ tags:
   - GatsbyJS
 isPublished: true
 isHidden: false
+isFeatured: false
 ---
 
 Phew! I'm glad to be done with the [100 Days of Gatsby](https://twitter.com/gatsbyjs/status/1208068118335119364) forms challenge. Mostly because... **hooray!** I'm excited to work with [MDX](https://mdxjs.com/) in Gatsby again, one of my favorite parts of the [JAMstack](https://jamstack.org/). We used MDX heavily in O'Reilly Media's Design System documentation site, so I'm familiar with the syntax. It's been a year since I started using MDX with GatsbyJS, and I've been curious to learn what's changed by following the prompts of this [latest challenge](https://www.gatsbyjs.org/blog/100days/mdx/).
@@ -99,7 +100,7 @@ This default export overrides the default layout ensuring
 that the FAQ component isn't wrapped by other elements
 */
 
-export default ({ children }) => <>{children}</>
+export default ({ children }) => <>{children}</>;
 ```
 
 In other words, here's a good explanation from the [defining an (MDX) layout](https://www.gatsbyjs.org/docs/mdx/writing-pages/#defining-a-layout) section:
