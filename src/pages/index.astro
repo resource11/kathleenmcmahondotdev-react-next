@@ -1,8 +1,6 @@
 ---
-// import { getCollection, getEntry } from "astro:content";
-// const allContentData = await getCollection("data");
-// const contentList = await getEntry("data", "content-list");
-// const data = await Astro.glob("../utils/data/content-list.yml");
+import { getEntry } from "astro:content";
+const contentList = await getEntry("dataYaml", "content-list");
 
 import HomeLayout from "../layouts/HomeLayout.astro";
 import HeadingAccentImage from "../assets/images/hero-masked.svg";
@@ -12,17 +10,16 @@ import "../styles/page-styles/home.css";
 
 // import React from "react";
 // import { graphql } from "gatsby";
-// import classnames from "classnames";
-// import { useExtraClasses } from "../utils/useExtraClasses";
+import classnames from "classnames";
+import { useExtraClasses } from "../utils/useExtraClasses";
 // import SEO from "../components/seo";
 // import Layout from "../components/layout";
-// import { Card } from "../components/Card";
+import { Card } from "../components/Card";
 // import { CTALink } from "../components/CTALink";
 // import { Link } from "../components/Link";
 // import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-// import styles from "../common/styles/pageStyles/Home.module.css";
-const { recentSpeaking } = data;
-console.log(JSON.stringify(data, null, 2));
+console.log(JSON.stringify(contentList, null, 2));
+// console.log(JSON.stringify(recentSpeaking, null, 2));
 ---
 
 <HomeLayout

@@ -13,6 +13,7 @@
     "@astrojs/mdx": "^0.19.2",
     "@astrojs/react": "^2.2.0",
     "@astrojs/solid-js": "^2.2.0",
+    "@cloudinary/url-gen": "^1.10.1",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
@@ -35,6 +36,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-live": "^4.1.2",
     "sharp": "^0.32.1",
     "solid-js": "^1.4.3",
     "yup": "^1.2.0"

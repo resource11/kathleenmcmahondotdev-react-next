@@ -50,7 +50,7 @@ import "../styles/page-styles/write.css";
       {
         allPosts.map((post) => (
           <li class="postListItem">
-            <a href={post.slug} class="postListLink">
+            <a href={`/posts/${post.slug}/`} class="postListLink">
               {post.data.title}
             </a>
             <span class="postListPublishedDate">

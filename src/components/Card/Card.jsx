@@ -22,7 +22,8 @@ export const Card = ({
     <article className={cardCSS}>
       {image && (
         <header className={css.cardHeader}>
-          <Img fluid={image} alt={imageAlt} loading="eager" />
+          {/* <Img fluid={image} alt={imageAlt} loading="eager" /> */}
+          <img src={{image}.src} alt={imageAlt} loading="eager" />
         </header>
       )}
       <div className={css.cardContentWrapper}>

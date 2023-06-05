@@ -1,2 +1,37 @@
 ---
+import classnames from "classnames";
+import { useExtraClasses } from "../../utils/useExtraClasses";
+import { Icon } from "../Icon/Icon.jsx";
+const { ariaCurrentValue, ariaLabel, linkClasses, to, ...props } = Astro.props;
+import "./Link.css";
+
+export const LinkSizes = {
+  small: "small",
+  large: "large",
+};
+
+const linkIcon = icon && (
+  <Icon
+    icon={icon}
+    extraClasses={{ icon: iconClasses, iconSpan: css.iconSpan }}
+    size={size !== LinkSizes.small ? "1x" : "sm"}
+  />
+);
+const content = (
+  <>
+    {!iconAfter && linkIcon}
+    {children}
+    {iconAfter && linkIcon}
+  </>
+);
 ---
+
+<a
+  href={to}
+  aria-current={ariaCurrentValue}
+  aria-label={ariaLabel}
+  class={linkClasses}
+  {...props}
+>
+  <slot />
+</a>
