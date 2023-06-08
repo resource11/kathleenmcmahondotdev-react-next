@@ -49,5 +49,3 @@ export const collections = {
   'dataYML': dataYMLCollection,
 };
 
-// // 2. Define a `type` and `schema` for each collection
-

@@ -1,0 +1,179 @@
+@import "../lib/variables.css";
+@import "../lib/mixins.css";
+
+/* 
+------ WRAPPERS AND SECTIONING ------ 
+*/
+
+.bodyWrapper {
+  margin: 0 1.75rem 3rem;
+  @media screen and (--small) {
+    margin: 0 3rem 3rem;
+  }
+
+  @media screen and (--medium) {
+    margin: 0 5.625rem 5.625rem;
+    max-width: 50em;
+  }
+}
+
+.postHeader {
+}
+
+.contentWrapper {
+  /* max-width: var(--measure); */
+
+  & p:first-child {
+    font-size: 1.25rem;
+
+    @media screen and (--small) {
+      font-size: var(--s1);
+      margin-top: var(--s1);
+    }
+
+    @media screen and (--medium) {
+      font-size: 1.75rem;
+      margin-top: var(--s2);
+    }
+  }
+
+  & blockquote > p:first-child,
+  & blockquote > p {
+    font-size: 1.125rem;
+
+    @media screen and (--small) {
+      font-size: 1.25rem;
+      margin-top: 0;
+    }
+
+    @media screen and (--medium) {
+      font-size: var(--s1);
+      margin-top: 0;
+    }
+  }
+}
+
+/* 
+------ HEROS AND IMAGES ------
+*/
+
+.blogHeroAccent {
+  position: absolute;
+  top: 0.5rem;
+  right: -3.13rem;
+  width: 14.2rem;
+  z-index: -1;
+
+  @media screen and (--small) {
+    right: -1.13rem;
+    width: 15.2rem;
+  }
+
+  @media screen and (--medium) {
+    right: -1.5rem;
+    width: 19.25rem;
+    /* top: 0.72rem;
+    right: -3.13rem;
+    width: 76%; */
+  }
+}
+
+/* 
+------ HEADINGS and CONTENT ------
+*/
+
+.postH1 {
+  margin-top: 5.5rem;
+
+  @media screen and (--small) {
+    /* margin-top: 4.5rem; */
+  }
+
+  @media screen and (--medium) {
+    margin-top: 8rem;
+  }
+}
+
+.publishedDateReadTime {
+  display: inline-block;
+  margin-top: var(--s-2);
+  font-size: 0.875rem;
+  color: var(--grey-500);
+
+  @media screen and (--small) {
+    font-size: var(--s0);
+  }
+}
+
+.published {
+  @add-mixin font-weight-bold;
+  font-size: 90%;
+}
+
+/*
+----- UL OL TWEAKS ------
+*/
+
+ol {
+  counter-reset: orderedlist;
+  padding-left: var(--s-2);
+  font-size: inherit;
+  margin-inline-start: 1rem;
+  max-width: 80%;
+
+  @media screen and (--small) {
+    margin-inline-start: 1.25rem;
+  }
+
+  @media screen and (--medium) {
+    font-size: 1.125rem;
+    margin-inline-start: 2.25rem;
+    max-width: 75%;
+  }
+
+  & ol,
+  & ul {
+    counter-reset: orderedlist;
+    padding-left: var(--s-2);
+  }
+  & li {
+    counter-increment: orderedlist;
+    list-style-type: none;
+    padding-left: 1.25rem;
+
+    &::before {
+      @add-mixin font-weight-bold;
+      @add-mixin font-body-small;
+
+      content: counter(orderedlist);
+      color: var(--text);
+      display: inline-block;
+      width: 1.25rem;
+      margin-left: -1.25rem;
+    }
+  }
+}
+
+ul {
+  padding-left: var(--s-2);
+  font-size: inherit;
+  margin-inline-start: 1rem;
+  max-width: 80%;
+
+  @media screen and (--small) {
+    margin-inline-start: 1.25rem;
+  }
+
+  @media screen and (--medium) {
+    margin-inline-start: 2.25rem;
+    max-width: 75%;
+  }
+
+  & ol,
+  & ul {
+    padding-left: var(--s-2);
+  }
+  & li {
+    padding-left: 1.25rem;
+  }
+}

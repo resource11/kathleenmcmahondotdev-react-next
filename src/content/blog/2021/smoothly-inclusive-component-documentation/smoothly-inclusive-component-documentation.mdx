@@ -15,6 +15,9 @@ isHidden: false
 isFeatured: false
 ---
 
+import { Image } from "astro:assets";
+import dayLilies from "./daylilies-in-july.jpg";
+
 import {
   Button,
   Card,
@@ -22,11 +25,17 @@ import {
   DisplayBox,
   Icon,
   Link,
-} from "../../../../src/components";
+} from "../../../../../src/components";
 
 ## Button
 
 Buttons allow users to perform single-click actions such as adding, deleting, or submitting an event.
+
+<Image
+  src={dayLilies}
+  alt="A very cool penguin!"
+  style="height: 100%; width: 100%; object-fit: cover;"
+/>
 
 ---
 

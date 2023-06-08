@@ -1,11 +1,15 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
+import BlogHeroAccent from "../assets/images/blog-hero-accent.svg";
+import "../styles/layout-styles/post-mdx-layout.css";
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
-  <p>Published on: {frontmatter.date.toString().slice(0, 10)}</p>
+<BaseLayout
+  pageTitle={frontmatter.title}
+  pageBgImage={BlogHeroAccent.src}
+  pageBgImageClass={"blogHeroAccent"}
+>
   <p>Written by {frontmatter.author}</p>
-  <!-- <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} /> -->
   <slot />
 </BaseLayout>
