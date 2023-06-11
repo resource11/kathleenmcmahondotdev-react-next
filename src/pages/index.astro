@@ -6,6 +6,9 @@ import HomeLayout from "../layouts/HomeLayout.astro";
 import HeadingAccentImage from "../assets/images/hero-masked.svg";
 import RecentBgMasked from "../assets/images/sm-bot-white-diamond.svg";
 const pageTitle = "Kathleen McMahon";
+
+import { Image } from "astro:assets";
+import recipeImg from "../assets/images/home/accessibility-favored-react-components.jpg";
 import "../styles/page-styles/home.css";
 
 // import React from "react";
@@ -66,6 +69,12 @@ console.log(JSON.stringify(contentList, null, 2));
           </li>
         ))
       } -->
+
+      <Image
+        src={recipeImg}
+        alt="recipe"
+        style="height: 100%; width: 100%; object-fit: cover;"
+      />
     </ul>
     <!-- <CTALink
       size="small"

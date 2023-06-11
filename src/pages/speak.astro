@@ -20,6 +20,9 @@ const talks2021 = pastTalks
 const talks2022 = pastTalks
   .filter((talk) => talk.eventYear === "2022")
   .reverse();
+const talks2023 = pastTalks
+  .filter((talk) => talk.eventYear === "2023")
+  .reverse();
 const upcomingTalks2023 = upcomingTalks.filter(
   (talk) => talk.eventYear === "2023"
 );
@@ -68,6 +71,24 @@ const pastTalkLinkClasses = `cardLinkRoot pastCardLinkRoot`;
   </ul>
   <hr class="purpleRedHR" />
   <h2>Past talks</h2>
+  <h3 class="speakingH3">2023</h3>
+  <ul class={talkListClasses} role="list">
+    {
+      talks2023.map((talk) => (
+        <li class={pastTalkListClasses}>
+          <a class={`${pastTalkLinkClasses} small`} href={talk.eventURL}>
+            {talk.event}
+          </a>
+          <a class="pastCardSublinkRoot small" href={talk.talkURL}>
+            {talk.talkName}
+          </a>
+          <p class="cardDateLocation">
+            {talk.eventDate} | {talk.eventLocation}
+          </p>
+        </li>
+      ))
+    }
+  </ul>
   <h3 class="speakingH3">2022</h3>
   <ul class={talkListClasses} role="list">
     {

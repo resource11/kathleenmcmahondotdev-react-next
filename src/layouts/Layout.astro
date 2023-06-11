@@ -21,7 +21,10 @@ const { pageTitle } = Astro.props;
       <main id="main" class="main stack">
         <slot />
         <a href="#top" class="small backToTop">
-          <FontAwesomeIcon icon={faArrowUp} /> Back to top</a
+          <span class="iconSpan"
+            ><FontAwesomeIcon icon={faArrowUp} size={"1x"} className="icon" /> Back
+            to top
+          </span></a
         >
       </main>
       <Footer />

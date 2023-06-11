@@ -22,3 +22,15 @@
     font-size: 1.25rem;
   }
 }
+
+.icon {
+  width: 0.75em;
+  width: 1cap;
+  height: 0.75em;
+  height: 1cap;
+}
+
+.iconSpan {
+  display: inline-block;
+  vertical-align: text-top;
+}

@@ -1,24 +1,26 @@
-/** @jsxImportSource: react */
-import React, { Fragment } from "react"
-// import { useMDXScope } from "gatsby-plugin-mdx/context"
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live"
+// /** @jsxImportSource: react */
+// import React, { Fragment } from "react"
+// import { useMDXComponents } from "@mdx/React"
+// // import { useMDXScope } from "gatsby-plugin-mdx/context"
+// import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live"
 // import Highlight, { defaultProps } from "prism-react-renderer"
 // import theme from "prism-react-renderer/themes/nightOwl"
-import { DisplayBox } from "../DisplayBox"
+// import { DisplayBox } from "../DisplayBox"
+// // import MDXProvider from "../MDXProvider"
 
-// inspired by Twitch Livestream with Jason Lengstorf
-// and Chris Biscardi's blog post:
-// https://www.christopherbiscardi.com/post/using-mdx-scope-in-react-live-scope/
+// // inspired by Twitch Livestream with Jason Lengstorf
+// // and Chris Biscardi's blog post:
+// // https://www.christopherbiscardi.com/post/using-mdx-scope-in-react-live-scope/
 
 // export const CodeBlock = ({ codeString, language, ...props }) => {
-//   const components = useMDXScope()
+//   const components = useMDXComponents()
 //   // render component and editable code block. TODO: figure out how to adjust pre font-size to 1rem
 //   if (props["react-live"]) {
 //     return (
 //       <LiveProvider code={codeString} scope={components} theme={theme}>
-//         {/* <DisplayBox>
+//         <DisplayBox>
 //           <LivePreview  />
-//         </DisplayBox> */}
+//         </DisplayBox>
 //         <LiveEditor style={{ margin: 0, fontSize: '1.25rem' }} />
 //         <LiveError />
 //       </LiveProvider>
@@ -28,17 +30,17 @@ import { DisplayBox } from "../DisplayBox"
 //     return (
 //       <Fragment>
 //         <LiveProvider code={codeString} scope={components} theme={theme}>
-//           {/* <DisplayBox>
+//           <DisplayBox>
 //             <LivePreview />
-//           </DisplayBox> */}
+//           </DisplayBox>
 //         </LiveProvider>
-//         {/* <Highlight
+//         <Highlight
 //           {...defaultProps}
 //           code={codeString}
 //           language={language}
 //           theme={theme}
 //           style={{ fontSize: '1.25rem' }}
-//         > */}
+//         >
 //           {({ className, style, tokens, getLineProps, getTokenProps }) => (
 //             <pre className={className} style={style}>
 //               {tokens.map((line, i) => (
@@ -50,7 +52,7 @@ import { DisplayBox } from "../DisplayBox"
 //               ))}
 //             </pre>
 //           )}
-//         {/* </Highlight> */}
+//         </Highlight>
 //       </Fragment>
 //     )
 //   } else {
