@@ -10,14 +10,14 @@ export const LinkSizes = {
   large: "large",
 };
 
-const linkIcon = icon && (
+const LinkIcon = icon && (
   <Icon
     icon={icon}
     extraClasses={{ icon: iconClasses, iconSpan: css.iconSpan }}
     size={size !== LinkSizes.small ? "1x" : "sm"}
   />
 );
-const content = (
+const Content = (
   <>
     {!iconAfter && linkIcon}
     {children}

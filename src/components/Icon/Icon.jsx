@@ -1,9 +1,10 @@
 /** @jsxImportSource: react */
-import PropTypes from "prop-types"
-import "../../utils/fontawesome"
 // import React from "react"
-import { useExtraClasses } from "../../../utils/useExtraClasses"
+import PropTypes from "prop-types"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import "../../utils/fontawesome"
+import { useExtraClasses } from "../../../utils/useExtraClasses"
+
 import styles from "./Icon.module.css"
 
 export const Icon = ({ icon, extraClasses, size, title }) => {
@@ -33,7 +34,7 @@ Icon.propTypes = {
    */
   extraClasses: PropTypes.object,
   /**
-   * A map of CSS classes used to override specific CSS in the component
+   * The name of the icon and FA library from which the icon is sourced
    */
   icon: PropTypes.object,
   /**

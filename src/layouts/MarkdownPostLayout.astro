@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
+const { minutesRead } = Astro.props.frontmatter;
 import BlogHeroAccent from "../assets/images/blog-hero-accent.svg";
 import "../styles/layout-styles/post-mdx-layout.css";
 ---
@@ -11,5 +12,6 @@ import "../styles/layout-styles/post-mdx-layout.css";
   pageBgImageClass={"blogHeroAccent"}
 >
   <p>Written by {frontmatter.author}</p>
+  <p>{minutesRead}</p>
   <slot />
 </BaseLayout>
