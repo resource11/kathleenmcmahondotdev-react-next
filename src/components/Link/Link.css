@@ -13,8 +13,11 @@
   }
 }
 
-[aria-current="true"] {
+[aria-current="true"],
+[aria-current="page"] {
   @add-mixin font-weight-bold;
+  padding: 0.438rem 0.5rem;
+  font-size: 1.063rem;
 }
 
 .icon {
