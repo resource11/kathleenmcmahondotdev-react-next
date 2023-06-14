@@ -3,6 +3,7 @@ import Header from "../components/Header/Header.astro";
 import Footer from "../components/Footer/Footer.astro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import Link from "../components/Link/Link.astro";
 import "../styles/layout-styles/layout.css";
 const { pageTitle } = Astro.props;
 ---
@@ -27,6 +28,14 @@ const { pageTitle } = Astro.props;
             to top
           </span></a
         >
+        <Link
+          size="small"
+          to={"#top"}
+          icon={faArrowUp}
+          extraClasses={{ root: "backToTop" }}
+        >
+          Back to top again
+        </Link>
       </main>
       <Footer />
     </div>

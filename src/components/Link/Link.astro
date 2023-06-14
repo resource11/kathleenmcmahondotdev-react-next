@@ -1,39 +1,39 @@
 ---
-// import { Icon } from "../Icon/Icon.jsx";
-
+import { Icon } from "../Icon/Icon.jsx";
 const url = new URL(Astro.props.href, Astro.url);
-const { ariaLabel, linkClasses } = Astro.props;
+const { ariaLabel, icon, iconAfter, size } = Astro.props;
 const isExternal = url.host !== Astro.url.host;
 const isCurrent = url.href === Astro.url.href;
 import "./Link.css";
 
-// export const LinkSizes = {
-//   small: "small",
-//   large: "large",
-// };
+const LinkSizes = {
+  small: "small",
+  large: "large",
+};
 
-// const LinkIcon = icon && (
-//   <Icon
-//     icon={icon}
-//     extraClasses={{ icon: iconClasses, iconSpan: css.iconSpan }}
-//     size={size !== LinkSizes.small ? "1x" : "sm"}
-//   />
-// );
-// const Content = (
-//   <>
-//     {!iconAfter && linkIcon}
-//     {children}
-//     {iconAfter && linkIcon}
-//   </>
-// );
+const linkSizeClass = size !== LinkSizes.small ? "large" : "small";
+const linkIconClass = icon ? `icon` : null;
+const linkClasses = `root ${linkSizeClass} ${linkIconClass}`;
+const iconClasses = iconAfter && icon ? `iconAfter icon` : `icon`;
+
+const linkIcon = (
+  <Icon
+    icon={icon}
+    iconClass={iconClasses}
+    iconSpanClass={"iconSpan"}
+    size={size !== LinkSizes.small ? "1x" : "sm"}
+  />
+);
 ---
 
 <a
   aria-current={isCurrent ? "page" : null}
-  aria-label={ariaLabel}
+  aria-label={ariaLabel ? ariaLabel : null}
   class={linkClasses}
   rel={isExternal ? "noopener" : null}
   {...Astro.props}
 >
+  {!iconAfter && linkIcon}
   <slot />
+  {iconAfter && linkIcon}
 </a>

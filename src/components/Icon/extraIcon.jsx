@@ -1,21 +1,16 @@
 /** @jsxImportSource: react */
 import PropTypes from "prop-types"
-import classnames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "../../utils/fontawesome"
 import { useExtraClasses } from "../../../utils/useExtraClasses"
 
 import styles from "./Iconcss"
-export const Icon = ({ icon, iconClass, iconSpanClass, size, title }) => {
-
-  const iconClasses = classnames("icon", iconClass);
-  const iconSpanClasses = classnames("iconSpan", iconSpanClass);
-
+export const Icon = ({ icon, extraClasses, size, title }) => {
   const css = useExtraClasses(styles, extraClasses)
   return (
-    <span className={iconClasses}>
+    <span className={css.iconSpan}>
       <FontAwesomeIcon
-        className={iconSpanClasses}
+        className={css.icon}
         icon={icon}
         size={size}
         title={title}
