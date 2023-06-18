@@ -1,5 +1,5 @@
 ---
-import { Icon } from "../Icon/Icon.jsx";
+// import { Icon } from "../Icon/Icon.jsx";
 const url = new URL(Astro.props.href, Astro.url);
 const { ariaLabel, icon, iconAfter, size } = Astro.props;
 const isExternal = url.host !== Astro.url.host;
@@ -11,29 +11,29 @@ const LinkSizes = {
   large: "large",
 };
 
-const linkSizeClass = size !== LinkSizes.small ? "large" : "small";
-const linkIconClass = icon ? `icon` : null;
-const linkClasses = `root ${linkSizeClass} ${linkIconClass}`;
+// const linkSizeClass = size !== LinkSizes.small ? "large" : "small";
+// const linkIconClass = icon ? `icon` : null;
+// const linkClasses = `root ${linkSizeClass} ${linkIconClass}`;
 const iconClasses = iconAfter && icon ? `iconAfter icon` : `icon`;
 
-const linkIcon = (
-  <Icon
-    icon={icon}
-    iconClass={iconClasses}
-    iconSpanClass={"iconSpan"}
-    size={size !== LinkSizes.small ? "1x" : "sm"}
-  />
-);
+// const linkIcon = (
+//   <Icon
+//     icon={icon}
+//     iconClass={iconClasses}
+//     iconSpanClass={"iconSpan"}
+//     size={size !== LinkSizes.small ? "1x" : "sm"}
+//   />
+// );
 ---
 
 <a
   aria-current={isCurrent ? "page" : null}
   aria-label={ariaLabel ? ariaLabel : null}
-  class={linkClasses}
+  class={"linkClasses"}
   rel={isExternal ? "noopener" : null}
   {...Astro.props}
 >
-  {!iconAfter && linkIcon}
+  <!-- {!iconAfter && linkIcon} -->
   <slot />
-  {iconAfter && linkIcon}
+  <!-- {iconAfter && linkIcon} -->
 </a>
