@@ -1,9 +1,9 @@
 import React from "react"
 import { Formik, Form } from "formik"
 import * as Yup from "yup"
-import { Button } from "../Button"
-import { Input } from "../Input"
-import { TextArea } from "../TextArea"
+import Button from "../Button/Button"
+import Input from "../Input/Input"
+import TextArea from "../TextArea/TextArea"
 import css from "./ContactForm.module.css"
 
 const encode = (data) => {

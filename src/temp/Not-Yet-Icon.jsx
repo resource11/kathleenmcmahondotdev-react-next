@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
-import "../../utils/fontawesome"
-import { useExtraClasses } from "../../utils/useExtraClasses"
+import "../utils/fontawesome"
+import { useExtraClasses } from "../utils/useExtraClasses"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styles from "./Icon.module.css"
 

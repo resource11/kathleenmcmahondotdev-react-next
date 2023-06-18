@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import siteData from "../../utils/data/siteData";
+import siteData from "../utils/data/siteData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import css from "./SiteFooter.module.css"
 

@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useExtraClasses } from "../../utils/useExtraClasses"
-import { Icon } from "../Icon/NotAn-index"
+import Icon from "../Icon/Icon"
 import styles from "./Button.module.css"
 
 export const ButtonSizes = {

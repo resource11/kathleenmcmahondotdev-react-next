@@ -2,6 +2,12 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeadingAccentImage from "../assets/images/angled-purp-violet-xs.svg";
+import "../styles/page-styles/write.css";
+
+const pageTitle = `Cultivated
+    <br />
+    thoughts<small>{14} Posts</small>
+  `;
 
 const allPosts = await getCollection("blog");
 
@@ -13,11 +19,7 @@ export async function getStaticPaths() {
   }));
 }
 
-const pageTitle = `Cultivated
-    <br />
-    thoughts<small>{14} Posts</small>
-  `;
-import "../styles/page-styles/write.css";
+const orderedPosts = allPosts.reverse();
 ---
 
 <BaseLayout
@@ -48,7 +50,7 @@ import "../styles/page-styles/write.css";
     <hr class="blueVioletHR" />
     <ul class="postUl stackPostList">
       {
-        allPosts.map((post) => (
+        orderedPosts.map((post) => (
           <li class="postListItem">
             <a href={`/posts/${post.slug}/`} class="postListLink">
               {post.data.title}

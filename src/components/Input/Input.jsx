@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { useField } from "formik"
 import classnames from "classnames"
 import { useExtraClasses } from "../../utils/helpers"
-import { Icon } from "../Icon/NotAn-index"
+import { Icon } from "../Icon/Icon"
 import styles from "./Input.module.css"
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons"
 

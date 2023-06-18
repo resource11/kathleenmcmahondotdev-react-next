@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import siteData from "../../utils/data/siteData";
+import siteData from "../utils/data/siteData";
 // import KMLogo from "../../images/svgs/KMLogo.svg"
 import css from "./SiteHeader.module.css"
 
