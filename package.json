@@ -34,6 +34,7 @@
     "grommet-icons": "^4.10.0",
     "mdast-util-to-string": "^3.2.0",
     "mdx-embed": "^1.1.2",
+    "mdx-utils": "^0.2.0",
     "postcss": "^8.4.23",
     "postcss-color-function": "^4.1.0",
     "postcss-css-variables": "^0.19.0",
