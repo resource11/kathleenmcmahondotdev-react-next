@@ -8,7 +8,7 @@ const blogCollection = defineCollection({
     date: z.date(),
     title: z.string(),
     author: z.string(),
-    description: z.string().max(200),
+    excerpt: z.string().max(143),
     tags: z.array(z.string()),
     featuredImage: z.object({
       url: z.string(),

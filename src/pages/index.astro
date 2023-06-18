@@ -23,16 +23,11 @@ const featuredPosts = await getCollection("blog", ({ data }) => {
 
 const pageTitle = "Kathleen McMahon";
 
-// import React from "react";
-
-// import { useExtraClasses } from "../utils/useExtraClasses";
 // import SEO from "../components/seo";
 
 // import { Card } from "../components/Card";
 import CTALink from "../components/CTALink/CTALink.astro";
 import Link from "../components/Link/Link.astro";
-
-console.log(JSON.stringify(featuredPosts, null, 2));
 ---
 
 <HomeLayout
@@ -86,14 +81,14 @@ console.log(JSON.stringify(featuredPosts, null, 2));
         style="height: 100%; width: 100%; object-fit: cover;"
       />
     </ul>
-    <!-- <CTALink
+    <CTALink
       size="small"
-      to="/speak/"
-      variant="link"
-      extraClasses={{ root: css.ctaLink, iconSpan: css.ctaLinkIcon }}
+      href="/speak/"
+      CTALinkClasses="ctaLink"
+      CTAIconSpanClasses="ctaLinkIcon"
     >
       Browse all media
-    </CTALink> -->
+    </CTALink>
   </article>
   <hr class="purpleRedHR" />
   <article class="featuredPosts">
@@ -102,13 +97,13 @@ console.log(JSON.stringify(featuredPosts, null, 2));
       {
         featuredPosts.map((post) => (
           <li class="postListItem">
-            <Link href={`write/${post.slug}`} linkClasses="postListLink">
+            <Link href={`posts/${post.slug}`} linkClasses="postListLink">
               {post.data.title}
             </Link>
             <span class="postListPublishedDate">
-              <span class="postListPublished">Published:</span> {post.data.date}
+              <span class="postListPublished">Published:</span>{" "}
+              {post.data.date.toDateString()}
             </span>
-            <p class="postListExcerpt">{post.data.excerpt}</p>
           </li>
         ))
       }
