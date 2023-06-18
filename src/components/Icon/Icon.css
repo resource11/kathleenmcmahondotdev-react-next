@@ -1,0 +1,12 @@
+.icon {
+  width: 0.75em;
+  width: 1cap;
+  height: 0.75em;
+  height: 1cap;
+  vertical-align: -0.125em;
+}
+
+.iconSpan {
+  display: inline-block;
+  vertical-align: text-top;
+}

@@ -1,39 +1,41 @@
 ---
-// import { Icon } from "../Icon/Icon.jsx";
-const url = new URL(Astro.props.href, Astro.url);
-const { ariaLabel, icon, iconAfter, size } = Astro.props;
-const isExternal = url.host !== Astro.url.host;
-const isCurrent = url.href === Astro.url.href;
+import { Icon } from "astro-iconify";
+const { ariaLabel, icon, iconAfter, iconBefore, iconClasses, size, href, linkClasses } = Astro.props;
+const url = new URL(Astro.url);
 import "./Link.css";
+import "../Icon/Icon.css";
 
 const LinkSizes = {
   small: "small",
   large: "large",
 };
 
-// const linkSizeClass = size !== LinkSizes.small ? "large" : "small";
-// const linkIconClass = icon ? `icon` : null;
-// const linkClasses = `root ${linkSizeClass} ${linkIconClass}`;
-const iconClasses = iconAfter && icon ? `iconAfter icon` : `icon`;
+const linkSizeClass = size !== LinkSizes.small ? "large" : "small";
+const linkIconClass = icon ? `icon` : null;
+const linkExtraClasses = `root ${linkSizeClass} ${linkClasses}`;
+const iconExtraClasses = iconAfter && icon ? `iconAfter icon ${iconClasses}` : `icon ${iconClasses}`;
 
-// const linkIcon = (
-//   <Icon
-//     icon={icon}
-//     iconClass={iconClasses}
-//     iconSpanClass={"iconSpan"}
-//     size={size !== LinkSizes.small ? "1x" : "sm"}
-//   />
-// );
+interface Props {
+  href: string;
+  icon?: string | null;
+  iconAfter?: boolean;
+  iconBefore?: boolean;
+  iconClasses?: string;
+  linkClasses?: string;
+  size?: string;
+}
+
+const isCurrent = Astro.url.pathname.replace(/\/$/, '') === url.href.replace(/\/$/, '');
 ---
 
 <a
+  href={href}
   aria-current={isCurrent ? "page" : null}
   aria-label={ariaLabel ? ariaLabel : null}
-  class={"linkClasses"}
-  rel={isExternal ? "noopener" : null}
+  class={linkExtraClasses}
   {...Astro.props}
 >
-  <!-- {!iconAfter && linkIcon} -->
+  {iconBefore && <span class="iconSpan"><Icon name={icon} class={iconExtraClasses}></span>}
   <slot />
-  <!-- {iconAfter && linkIcon} -->
+  {iconAfter && <span class="iconSpan"><Icon name={icon} class={iconExtraClasses}></span>}
 </a>

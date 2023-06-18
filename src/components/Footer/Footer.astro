@@ -1,6 +1,7 @@
 ---
 import siteData from "../../utils/data/siteData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "../Link/Link.astro";
 import "./SiteFooter.css";
 
 const { footerNav } = siteData;
@@ -11,20 +12,17 @@ const { footerNav } = siteData;
     {
       footerNav.map((nav) => (
         <li class="footerNavLi">
-          <a
+          <Link
             href={nav.link}
             aria-label={nav.ariaLabel ? nav.ariaLabel : null}
-            class="link"
+            linkClasses="link"
+            icon={nav.icon ? nav.icon : null}
+            iconBefore
+            iconClasses="footerIcon"
           >
-            {nav.icon && (
-              <FontAwesomeIcon
-                icon={[nav.libraryAlias, nav.icon]}
-                className="footerIcon"
-              />
-            )}
             {nav.icon}
             {nav.name}
-          </a>
+          </Link>
         </li>
       ))
     }
