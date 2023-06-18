@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-iconify";
 const { ariaLabel, icon, iconAfter, iconBefore, iconClasses, size, href, linkClasses } = Astro.props;
-const url = new URL(Astro.url);
+const url = new URL(Astro.props.href, Astro.url);
 import "./Link.css";
 import "../Icon/Icon.css";
 
@@ -25,7 +25,8 @@ interface Props {
   size?: string;
 }
 
-const isCurrent = Astro.url.pathname.replace(/\/$/, '') === url.href.replace(/\/$/, '');
+// const isCurrent = Astro.url.pathname.replace(/\/$/, '') === url.href.replace(/\/$/, '');
+const isCurrent = Astro.url.href.replace(/\/$/, '') === url.href.replace(/\/$/, '');
 ---
 
 <a

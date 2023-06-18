@@ -1,6 +1,5 @@
 ---
 import siteData from "../../utils/data/siteData";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "../Link/Link.astro";
 import "./SiteFooter.css";
 
@@ -20,7 +19,6 @@ const { footerNav } = siteData;
             iconBefore
             iconClasses="footerIcon"
           >
-            {nav.icon}
             {nav.name}
           </Link>
         </li>
