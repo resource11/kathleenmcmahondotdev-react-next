@@ -1,15 +1,27 @@
 ---
-import { getEntry } from "astro:content";
-const contentList = await getEntry("dataYaml", "content-list");
+import { getCollection, getEntry, getEntries } from "astro:content";
 
 import HomeLayout from "../layouts/HomeLayout.astro";
 import HeadingAccentImage from "../assets/images/hero-masked.svg";
 import RecentBgMasked from "../assets/images/sm-bot-white-diamond.svg";
-const pageTitle = "Kathleen McMahon";
-
 import { Image } from "astro:assets";
 import recipeImg from "../assets/images/home/accessibility-favored-react-components.jpg";
 import "../styles/page-styles/home.css";
+
+const contentList = await getEntry("dataYaml", "content-list");
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+  return blogEntries.map((data) => ({
+    params: { slug: data.slug },
+    props: { data },
+  }));
+}
+const featuredPosts = await getCollection("blog", ({ data }) => {
+  return data.isFeatured === true;
+});
+
+const pageTitle = "Kathleen McMahon";
 
 // import React from "react";
 
@@ -19,6 +31,8 @@ import "../styles/page-styles/home.css";
 // import { Card } from "../components/Card";
 import CTALink from "../components/CTALink/CTALink.astro";
 import Link from "../components/Link/Link.astro";
+
+console.log(JSON.stringify(featuredPosts, null, 2));
 ---
 
 <HomeLayout
@@ -85,24 +99,19 @@ import Link from "../components/Link/Link.astro";
   <article class="featuredPosts">
     <h2>Featured posts</h2>
     <ul class="postListClasses">
-      <!-- {
-        allMdx.edges.map(({ node }) => (
-          <li className={css.postListItem}>
-            <Link
-              to={`write/${node.frontmatter.slug}`}
-              variant="link"
-              extraClasses={{ root: css.postListLink }}
-            >
-              {node.frontmatter.title}
+      {
+        featuredPosts.map((post) => (
+          <li class="postListItem">
+            <Link href={`write/${post.slug}`} linkClasses="postListLink">
+              {post.data.title}
             </Link>
-            <span className={css.postListPublishedDate}>
-              <span className={css.postListPublished}>Published:</span>{" "}
-              {node.frontmatter.date}
+            <span class="postListPublishedDate">
+              <span class="postListPublished">Published:</span> {post.data.date}
             </span>
-            <p className={css.postListExcerpt}>{node.excerpt}</p>
+            <p class="postListExcerpt">{post.data.excerpt}</p>
           </li>
         ))
-      } -->
+      }
     </ul>
     <CTALink
       size="small"

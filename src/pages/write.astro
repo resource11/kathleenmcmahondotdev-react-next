@@ -1,9 +1,9 @@
 ---
 import { getCollection } from "astro:content";
-const allPosts = await getCollection("blog");
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeadingAccentImage from "../assets/images/angled-purp-violet-xs.svg";
-// const pageTitle = "What I do";
+
+const allPosts = await getCollection("blog");
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
