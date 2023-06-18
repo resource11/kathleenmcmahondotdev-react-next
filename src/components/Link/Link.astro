@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-iconify";
-const { ariaLabel, icon, iconAfter, iconBefore, iconClasses, size, href, linkClasses } = Astro.props;
+const { ariaLabel, icon, iconAfter, iconBefore, iconClasses,iconSpanClasses, size, href, linkClasses } = Astro.props;
 const url = new URL(Astro.props.href, Astro.url);
 import "./Link.css";
 import "../Icon/Icon.css";
@@ -11,9 +11,10 @@ const LinkSizes = {
 };
 
 const linkSizeClass = size !== LinkSizes.small ? "large" : "small";
-const linkIconClass = icon ? `icon` : null;
 const linkExtraClasses = `root ${linkSizeClass} ${linkClasses}`;
 const iconExtraClasses = iconAfter && icon ? `iconAfter icon ${iconClasses}` : `icon ${iconClasses}`;
+
+const iconSpanExtraClasses = iconSpanClasses ? `iconSpan ${iconSpanClasses}` : `iconSpan`;
 
 interface Props {
   href: string;
@@ -21,6 +22,7 @@ interface Props {
   iconAfter?: boolean;
   iconBefore?: boolean;
   iconClasses?: string;
+  iconSpanClasses?: string;
   linkClasses?: string;
   size?: string;
 }
@@ -36,7 +38,7 @@ const isCurrent = Astro.url.href.replace(/\/$/, '') === url.href.replace(/\/$/, 
   class={linkExtraClasses}
   {...Astro.props}
 >
-  {iconBefore && <span class="iconSpan"><Icon name={icon} class={iconExtraClasses}></span>}
+  {iconBefore && <span class={iconSpanExtraClasses}><Icon name={icon} class={iconExtraClasses}></span>}
   <slot />
-  {iconAfter && <span class="iconSpan"><Icon name={icon} class={iconExtraClasses}></span>}
+  {iconAfter && <span class={iconSpanExtraClasses}><Icon name={icon} class={iconExtraClasses}></span>}
 </a>

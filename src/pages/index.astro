@@ -12,17 +12,13 @@ import recipeImg from "../assets/images/home/accessibility-favored-react-compone
 import "../styles/page-styles/home.css";
 
 // import React from "react";
-// import { graphql } from "gatsby";
-// import classnames from "classnames";
+
 // import { useExtraClasses } from "../utils/useExtraClasses";
 // import SEO from "../components/seo";
-// import Layout from "../components/layout";
+
 // import { Card } from "../components/Card";
-// import { CTALink } from "../components/CTALink";
-// import { Link } from "../components/Link";
-// import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-// console.log(JSON.stringify(contentList, null, 2));
-// console.log(JSON.stringify(recentSpeaking, null, 2));
+import CTALink from "../components/CTALink/CTALink.astro";
+import Link from "../components/Link/Link.astro";
 ---
 
 <HomeLayout
@@ -108,13 +104,13 @@ import "../styles/page-styles/home.css";
         ))
       } -->
     </ul>
-    <!-- <CTALink
+    <CTALink
       size="small"
-      to="/write/"
-      variant="link"
-      extraClasses={{ root: css.ctaLink, iconSpan: css.ctaLinkIcon }}
+      href="/write/"
+      CTALinkClasses="ctaLink"
+      CTAIconSpanClasses="ctaLinkIcon"
     >
       Browse all writing
-    </CTALink> -->
+    </CTALink>
   </article>
 </HomeLayout>

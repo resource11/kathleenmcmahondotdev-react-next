@@ -1,0 +1,37 @@
+---
+import Link from "../Link/Link.astro";
+const { ariaLabel, CTAIconSpanClasses, size, href, CTALinkClasses } =
+    Astro.props;
+
+import "./CTALink.css";
+
+const CTALinkSizes = {
+    small: "small",
+    large: "large",
+};
+
+const linkSizeClass = size !== CTALinkSizes.small ? "large" : "small";
+const linkExtraClasses = `CTAroot ${linkSizeClass} ${CTALinkClasses}`;
+const iconSpanExtraClasses = `CTAIconSpan ${CTAIconSpanClasses}`;
+
+interface Props {
+    ariaLabel?: string;
+    href: string;
+    CTAIconSpanClasses?: string;
+    CTALinkClasses?: string;
+    size?: string;
+}
+---
+
+<Link
+    aria-label={ariaLabel ? ariaLabel : null}
+    href={href}
+    icon="arrow-right"
+    iconAfter
+    iconClasses="socialListLinkIcon"
+    iconSpanClasses={iconSpanExtraClasses}
+    linkClasses={linkExtraClasses}
+    size={size}
+>
+    <slot />
+</Link>
