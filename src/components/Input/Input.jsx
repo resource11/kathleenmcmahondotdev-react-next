@@ -3,9 +3,9 @@ import PropTypes from "prop-types"
 import { useField } from "formik"
 import classnames from "classnames"
 import { useExtraClasses } from "../../utils/helpers"
-import { Icon } from "../Icon/Icon"
+import { Icon } from "../Icon/Icon.jsx"
 import styles from "./Input.module.css"
-import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons"
+import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons"
 
 export const InputSizes = {
   small: "small",
@@ -38,7 +38,7 @@ export const Input = ({ extraClasses, isHidden, label, ...props }) => {
           {meta.touched && meta.error ? (
             <div className={css.errorText}>
               <Icon
-                icon={faExclamationCircle}
+                icon={faCircleExclamation}
                 extraClasses={{ icon: css.errorIcon }}
               />
               {meta.error}

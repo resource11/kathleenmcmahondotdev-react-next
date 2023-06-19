@@ -10,6 +10,9 @@ dependencies:
   '@astrojs/react':
     specifier: ^2.2.0
     version: 2.2.0(@types/react-dom@18.2.4)(@types/react@18.2.6)(react-dom@18.2.0)(react@18.2.0)
+  '@astrojs/rss':
+    specifier: ^2.4.3
+    version: 2.4.3
   '@astrojs/solid-js':
     specifier: ^2.2.0
     version: 2.2.0(@babel/core@7.21.8)(solid-js@1.7.5)
@@ -254,6 +257,13 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /@astrojs/rss@2.4.3:
+    resolution: {integrity: sha512-Dc8lxsXiDlnxONVIUuc3ohO1+vV1Hp9fRFdUianOola0S9/xv/6FzIHhkQ62MkaFSlcZm5uIOllRWNKVvuFuoA==}
+    dependencies:
+      fast-xml-parser: 4.2.4
+      kleur: 4.1.5
     dev: false
 
   /@astrojs/solid-js@2.2.0(@babel/core@7.21.8)(solid-js@1.7.5):
@@ -7735,6 +7745,13 @@ packages:
 
   /fast-levenshtein@2.0.6:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
+    dev: false
+
+  /fast-xml-parser@4.2.4:
+    resolution: {integrity: sha512-fbfMDvgBNIdDJLdLOwacjFAPYt67tr31H9ZhWSm45CDAxvd0I6WTlSOUo7K2P/K5sA5JgMKG64PI3DMcaFdWpQ==}
+    hasBin: true
+    dependencies:
+      strnum: 1.0.5
     dev: false
 
   /fastest-levenshtein@1.0.16:
@@ -16357,6 +16374,10 @@ packages:
   /strip-json-comments@3.1.1:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
+    dev: false
+
+  /strnum@1.0.5:
+    resolution: {integrity: sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA==}
     dev: false
 
   /strtok3@6.3.0:

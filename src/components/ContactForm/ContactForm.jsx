@@ -1,4 +1,4 @@
-import React from "react"
+/** @jsxImportSource react */
 import { Formik, Form } from "formik"
 import * as Yup from "yup"
 import Button from "../Button/Button"
@@ -27,7 +27,7 @@ export const ContactForm = () => {
         validationSchema={Yup.object({
           name: Yup.string().required("Name is required"),
           email: Yup.string()
-            .email("Invalid email addresss`")
+            .email("Invalid email addresss")
             .required("Email is required"),
           message: Yup.string().required("Message is required"),
         })}

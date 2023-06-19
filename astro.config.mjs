@@ -1,5 +1,4 @@
 import { defineConfig, sharpImageService } from "astro/config";
-import { remarkReadingTime } from "./remark-reading-time.mjs";
 // import image from "@astrojs/image";
 // import image from "@astrojs/image/sharp";
 import react from "@astrojs/react";
@@ -19,7 +18,6 @@ export default defineConfig({
 
     mdx({
       drafts: true,
-      remarkPlugins: [remarkReadingTime],
     }),
     react(),
     solid(),
