@@ -1,7 +1,8 @@
 ---
-import { getCollection, getEntry, getEntries } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 
-import HomeLayout from "../layouts/HomeLayout.astro";
+import Layout from "../layouts/Layout.astro";
+import LineDot from "../components/LineDot/LineDot.astro";
 import HeadingAccentImage from "../assets/images/hero-masked.svg";
 import RecentBgMasked from "../assets/images/sm-bot-white-diamond.svg";
 import { Image } from "astro:assets";
@@ -21,100 +22,104 @@ const featuredPosts = await getCollection("blog", ({ data }) => {
   return data.isFeatured === true;
 });
 
-const pageTitle = "Kathleen McMahon";
-
-// import SEO from "../components/seo";
+const pageTitle = "Kathleen McMahon | Engineer - Designer - Speaker";
 
 // import { Card } from "../components/Card";
 import CTALink from "../components/CTALink/CTALink.astro";
 import Link from "../components/Link/Link.astro";
 ---
 
-<HomeLayout
-  pageTitle={pageTitle}
-  pageHeader="homeHeader"
-  pageH1Class="homeH1"
-  pageBgImage={HeadingAccentImage.src}
-  pageBgImageClass="heroImageMasked"
-  pageIntroPara="homeIntroPara"
->
-  <img src={RecentBgMasked.src} alt="" class="recentTalksBgMasked" />
-  <article class="css.recentTalks">
-    <h2 class="recentTalksH2">
-      Recent talks, <br />
-      podcasts, streams
-    </h2>
-    <ul class="cardListClasses">
-      <!-- {
-        recentSpeaking.map((speak) => (
-          <li className={css.cardListItem}>
-            <Card
-              extraClasses={{
-                cardContentWrapper: css.cardContentWrapper,
-                cardFooterWrapper: css.cardFooterWrapper,
-              }}
-              footerContent={
-                <Link
-                  aria-label={speak.ctaAria}
+<Layout pageTitle={pageTitle}>
+  <article class="bodyWrapper">
+    <img src={HeadingAccentImage.src} alt="" class="heroImageMasked" />
+    <header class="homeHeader">
+      <h1 class="homeH1">Kathleen McMahon</h1>
+      <p class="homeIntroPara">
+        Hello! I'm Kathleen, an engineer, designer, speaker, and occasional
+        writer. This is the space where I cultivate my interests.
+      </p>
+      <LineDot />
+    </header>
+    <article class="contentWrapper">
+      <img src={RecentBgMasked.src} alt="" class="recentTalksBgMasked" />
+      <article class="css.recentTalks">
+        <h2 class="recentTalksH2">
+          Recent talks, <br />
+          podcasts, streams
+        </h2>
+        <ul class="cardListClasses">
+          <!-- {
+            recentSpeaking.map((speak) => (
+              <li className={css.cardListItem}>
+                <Card
                   extraClasses={{
-                    root: css.cardFooterLink,
-                    iconSpan: css.cardFooterLinkIcon,
+                    cardContentWrapper: css.cardContentWrapper,
+                    cardFooterWrapper: css.cardFooterWrapper,
                   }}
-                  icon={faArrowRight}
-                  iconAfter={true}
-                  size="small"
-                  to={speak.link}
-                >
-                  {speak.cta}
-                </Link>
-              }
-              image={speak.relativePath}
-              imageAlt={speak.name}
-            />
-          </li>
-        ))
-      } -->
+                  footerContent={
+                    <Link
+                      aria-label={speak.ctaAria}
+                      extraClasses={{
+                        root: css.cardFooterLink,
+                        iconSpan: css.cardFooterLinkIcon,
+                      }}
+                      icon={faArrowRight}
+                      iconAfter={true}
+                      size="small"
+                      to={speak.link}
+                    >
+                      {speak.cta}
+                    </Link>
+                  }
+                  image={speak.relativePath}
+                  imageAlt={speak.name}
+                />
+              </li>
+            ))
+          } -->
 
-      <Image
-        src={recipeImg}
-        alt="recipe"
-        style="height: 100%; width: 100%; object-fit: cover;"
-      />
-    </ul>
-    <CTALink
-      size="small"
-      href="/speak/"
-      CTALinkClasses="ctaLink"
-      CTAIconSpanClasses="ctaLinkIcon"
-    >
-      Browse all media
-    </CTALink>
+          <Image
+            src={recipeImg}
+            alt="recipe"
+            style="height: 100%; width: 100%; object-fit: cover;"
+          />
+        </ul>
+        <CTALink
+          size="small"
+          href="/speak/"
+          CTALinkClasses="ctaLink"
+          CTAIconSpanClasses="ctaLinkIcon"
+        >
+          Browse all media
+        </CTALink>
+      </article>
+      <hr class="purpleRedHR" />
+      <article class="featuredPosts">
+        <h2>Featured posts</h2>
+        <ul class="postListClasses">
+          {
+            featuredPosts.map((post) => (
+              <li class="postListItem">
+                <Link href={`posts/${post.slug}`} linkClasses="postListLink">
+                  {post.data.title}
+                </Link>
+                <span class="postListPublishedDate">
+                  <span class="postListPublished">Published:</span>{" "}
+                  {post.data.date.toDateString()}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+        <CTALink
+          size="small"
+          href="/write/"
+          CTALinkClasses="ctaLink"
+          CTAIconSpanClasses="ctaLinkIcon"
+        >
+          Browse all writing
+        </CTALink>
+      </article>
+    </article>
   </article>
-  <hr class="purpleRedHR" />
-  <article class="featuredPosts">
-    <h2>Featured posts</h2>
-    <ul class="postListClasses">
-      {
-        featuredPosts.map((post) => (
-          <li class="postListItem">
-            <Link href={`posts/${post.slug}`} linkClasses="postListLink">
-              {post.data.title}
-            </Link>
-            <span class="postListPublishedDate">
-              <span class="postListPublished">Published:</span>{" "}
-              {post.data.date.toDateString()}
-            </span>
-          </li>
-        ))
-      }
-    </ul>
-    <CTALink
-      size="small"
-      href="/write/"
-      CTALinkClasses="ctaLink"
-      CTAIconSpanClasses="ctaLinkIcon"
-    >
-      Browse all writing
-    </CTALink>
-  </article>
-</HomeLayout>
+</Layout>

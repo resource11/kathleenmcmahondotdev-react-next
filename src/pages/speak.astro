@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeadingAccentImage from "../assets/images/angled-red-purp-xs.svg";
 const pageTitle = "Speaking";
+const h1Title = "Speaking";
 import siteData from "../utils/data/siteData";
 import "../styles/page-styles/speak.css";
 
@@ -36,154 +37,156 @@ const pastTalkLinkClasses = `cardLinkRoot pastCardLinkRoot`;
 
 <BaseLayout
   pageTitle={pageTitle}
+  h1Title={h1Title}
   pageH1Class="speakH1"
   pageBgImage={HeadingAccentImage.src}
   pageBgImageClass="headingAccentImage"
 >
   <!-- <SEO title={`Kathleen McMahon | Speaking`} /> -->
-  <!-- <article class="bodyWrapper">
+  <article class="bodyWrapper">
+    <img src={HeadingAccentImage.src} alt="" class="headingAccentImage" />
     <header>
       <h1 class="speakH1">Speaking</h1>
     </header>
-    <article class="contentWrapper"> -->
-  <p class="speakIntroPara">
-    I speak about things, using metaphors, and gifs. Lots, and lots of gifs.
-  </p>
-  <hr class="purpleRedHR" />
-  <h2>Upcoming talks</h2>
-  <h3 class="speakingH3">2023</h3>
-  <ul class={talkListClasses} role="list">
-    {
-      upcomingTalks2023.map((upcoming) => (
-        <li class={upcomingTalkListClasses}>
-          <a
-            class={`${upcomingTalkLinkClasses} small`}
-            href={upcoming.eventURL}
-          >
-            {upcoming.event}
-          </a>
-          <p class="cardDateLocation">
-            {upcoming.eventDate} | {upcoming.eventLocation}
-          </p>
-        </li>
-      ))
-    }
-  </ul>
-  <hr class="purpleRedHR" />
-  <h2>Past talks</h2>
-  <h3 class="speakingH3">2023</h3>
-  <ul class={talkListClasses} role="list">
-    {
-      talks2023.map((talk) => (
-        <li class={pastTalkListClasses}>
-          <a class={`${pastTalkLinkClasses} small`} href={talk.eventURL}>
-            {talk.event}
-          </a>
-          <a class="pastCardSublinkRoot small" href={talk.talkURL}>
-            {talk.talkName}
-          </a>
-          <p class="cardDateLocation">
-            {talk.eventDate} | {talk.eventLocation}
-          </p>
-        </li>
-      ))
-    }
-  </ul>
-  <h3 class="speakingH3">2022</h3>
-  <ul class={talkListClasses} role="list">
-    {
-      talks2022.map((talk) => (
-        <li class={pastTalkListClasses}>
-          <a class={`${pastTalkLinkClasses} small`} href={talk.eventURL}>
-            {talk.event}
-          </a>
-          <a class="pastCardSublinkRoot small" href={talk.talkURL}>
-            {talk.talkName}
-          </a>
-          <p class="cardDateLocation">
-            {talk.eventDate} | {talk.eventLocation}
-          </p>
-        </li>
-      ))
-    }
-  </ul>
-  <h3 class="speakingH3">2021</h3>
-  <ul class={talkListClasses} role="list">
-    {
-      talks2021.map((talk) => (
-        <li class={pastTalkListClasses}>
-          <a class={`${pastTalkLinkClasses} small`} href={talk.eventURL}>
-            {talk.event}
-          </a>
-          <a class="pastCardSublinkRoot small" href={talk.talkURL}>
-            {talk.talkName}
-          </a>
-          <p class="cardDateLocation">
-            {talk.eventDate} | {talk.eventLocation}
-          </p>
-        </li>
-      ))
-    }
-  </ul>
-  <h3 class="speakingH3">2020</h3>
-  <ul class={talkListClasses} role="list">
-    {
-      talks2020.map((talk) => (
-        <li class={pastTalkListClasses}>
-          <a class={`${pastTalkLinkClasses} small`} href={talk.eventURL}>
-            {talk.event}
-          </a>
-          <a class="pastCardSublinkRoot small" href={talk.talkURL}>
-            {talk.talkName}
-          </a>
-          <p class="cardDateLocation">
-            {talk.eventDate} | {talk.eventLocation}
-          </p>
-        </li>
-      ))
-    }
-  </ul>
-  <h3 class="speakingH3">2019</h3>
-  <ul class={talkListClasses} role="list">
-    {
-      talks2019.map((talk) => (
-        <li class={pastTalkListClasses}>
-          <a class={`${pastTalkLinkClasses} small`} href={talk.eventURL}>
-            {talk.event}
-          </a>
-          <a class="pastCardSublinkRoot small" href={talk.talkURL}>
-            {talk.talkName}
-          </a>
-          <p class="cardDateLocation">
-            {talk.eventDate} | {talk.eventLocation}
-          </p>
-        </li>
-      ))
-    }
-  </ul>
-  <h3 class="speakingH3">2018</h3>
-  <ul class={talkListClasses} role="list">
-    {
-      talks2018.map((talk) => (
-        <li class={pastTalkListClasses}>
-          <a class={`${pastTalkLinkClasses} small`} href={talk.eventURL}>
-            {talk.event}
-          </a>
-          <a class="pastCardSublinkRoot small" href={talk.talkURL}>
-            {talk.talkName}
-          </a>
-          <p class="cardDateLocation">
-            {talk.eventDate} | {talk.eventLocation}
-          </p>
-        </li>
-      ))
-    }
-  </ul>
-  <!-- </article> -->
-  <!-- </article> -->
-</BaseLayout>
+    <article class="contentWrapper">
+      <p class="speakIntroPara">
+        I speak about things, using metaphors, and gifs. Lots, and lots of gifs.
+      </p>
+      <hr class="purpleRedHR" />
+      <h2>Upcoming talks</h2>
+      <h3 class="speakingH3">2023</h3>
+      <ul class={talkListClasses} role="list">
+        {
+          upcomingTalks2023.map((upcoming) => (
+            <li class={upcomingTalkListClasses}>
+              <a
+                class={`${upcomingTalkLinkClasses} small`}
+                href={upcoming.eventURL}
+              >
+                {upcoming.event}
+              </a>
+              <p class="cardDateLocation">
+                {upcoming.eventDate} | {upcoming.eventLocation}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+      <hr class="purpleRedHR" />
+      <h2>Past talks</h2>
+      <h3 class="speakingH3">2023</h3>
+      <ul class={talkListClasses} role="list">
+        {
+          talks2023.map((talk) => (
+            <li class={pastTalkListClasses}>
+              <a class={`${pastTalkLinkClasses} small`} href={talk.eventURL}>
+                {talk.event}
+              </a>
+              <a class="pastCardSublinkRoot small" href={talk.talkURL}>
+                {talk.talkName}
+              </a>
+              <p class="cardDateLocation">
+                {talk.eventDate} | {talk.eventLocation}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+      <h3 class="speakingH3">2022</h3>
+      <ul class={talkListClasses} role="list">
+        {
+          talks2022.map((talk) => (
+            <li class={pastTalkListClasses}>
+              <a class={`${pastTalkLinkClasses} small`} href={talk.eventURL}>
+                {talk.event}
+              </a>
+              <a class="pastCardSublinkRoot small" href={talk.talkURL}>
+                {talk.talkName}
+              </a>
+              <p class="cardDateLocation">
+                {talk.eventDate} | {talk.eventLocation}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+      <h3 class="speakingH3">2021</h3>
+      <ul class={talkListClasses} role="list">
+        {
+          talks2021.map((talk) => (
+            <li class={pastTalkListClasses}>
+              <a class={`${pastTalkLinkClasses} small`} href={talk.eventURL}>
+                {talk.event}
+              </a>
+              <a class="pastCardSublinkRoot small" href={talk.talkURL}>
+                {talk.talkName}
+              </a>
+              <p class="cardDateLocation">
+                {talk.eventDate} | {talk.eventLocation}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+      <h3 class="speakingH3">2020</h3>
+      <ul class={talkListClasses} role="list">
+        {
+          talks2020.map((talk) => (
+            <li class={pastTalkListClasses}>
+              <a class={`${pastTalkLinkClasses} small`} href={talk.eventURL}>
+                {talk.event}
+              </a>
+              <a class="pastCardSublinkRoot small" href={talk.talkURL}>
+                {talk.talkName}
+              </a>
+              <p class="cardDateLocation">
+                {talk.eventDate} | {talk.eventLocation}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+      <h3 class="speakingH3">2019</h3>
+      <ul class={talkListClasses} role="list">
+        {
+          talks2019.map((talk) => (
+            <li class={pastTalkListClasses}>
+              <a class={`${pastTalkLinkClasses} small`} href={talk.eventURL}>
+                {talk.event}
+              </a>
+              <a class="pastCardSublinkRoot small" href={talk.talkURL}>
+                {talk.talkName}
+              </a>
+              <p class="cardDateLocation">
+                {talk.eventDate} | {talk.eventLocation}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+      <h3 class="speakingH3">2018</h3>
+      <ul class={talkListClasses} role="list">
+        {
+          talks2018.map((talk) => (
+            <li class={pastTalkListClasses}>
+              <a class={`${pastTalkLinkClasses} small`} href={talk.eventURL}>
+                {talk.event}
+              </a>
+              <a class="pastCardSublinkRoot small" href={talk.talkURL}>
+                {talk.talkName}
+              </a>
+              <p class="cardDateLocation">
+                {talk.eventDate} | {talk.eventLocation}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+      <!-- </article> -->
+      <!-- </article> -->
+    </article>
 
-<!-- <style>
+    <!-- <style>
   img {
     position: absolute;
     top: 3.5rem;
@@ -202,3 +205,5 @@ const pastTalkLinkClasses = `cardLinkRoot pastCardLinkRoot`;
     }
   }
 </style> -->
+  </article>
+</BaseLayout>

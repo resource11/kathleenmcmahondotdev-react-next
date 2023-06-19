@@ -49,6 +49,9 @@ dependencies:
   astro-iconify:
     specifier: ^1.2.0
     version: 1.2.0
+  astro-seo:
+    specifier: ^0.7.4
+    version: 0.7.4
   autoprefixer:
     specifier: ^10.4.14
     version: 10.4.14(postcss@8.4.23)
@@ -73,6 +76,9 @@ dependencies:
   grommet-icons:
     specifier: ^4.10.0
     version: 4.10.0(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.11)
+  install:
+    specifier: ^0.13.0
+    version: 0.13.0
   mdast-util-to-string:
     specifier: ^3.2.0
     version: 3.2.0
@@ -3946,6 +3952,10 @@ packages:
       svgo: 3.0.2
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /astro-seo@0.7.4:
+    resolution: {integrity: sha512-E+wJmxOnvBRjgzVctdGk/VdwoEqeQ6Q/KgVW2wRBXZWJVDgOweB32Da/UiH0/FpGncPzo2daOrc08DNn5wTanw==}
     dev: false
 
   /astro@2.5.1(sharp@0.32.1):
@@ -9850,6 +9860,11 @@ packages:
       string-width: 4.2.3
       strip-ansi: 6.0.1
       through: 2.3.8
+    dev: false
+
+  /install@0.13.0:
+    resolution: {integrity: sha512-zDml/jzr2PKU9I8J/xyZBQn8rPCAY//UOYNmR01XwNwyfhEWObo2SWfSl1+0tm1u6PhxLwDnfsT/6jB7OUxqFA==}
+    engines: {node: '>= 0.10'}
     dev: false
 
   /internal-ip@4.3.0:

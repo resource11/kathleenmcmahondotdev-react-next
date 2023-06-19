@@ -1,17 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../styles/layout-styles/base-layout.css";
-const { pageTitle, pageH1Class, pageBgImage, pageBgImageClass } = Astro.props;
+const { pageTitle } = Astro.props;
 ---
 
 <Layout title={pageTitle}>
-  <article class="bodyWrapper">
+  <!-- <article class="bodyWrapper">
     <img src={pageBgImage} alt="" class={pageBgImageClass} />
     <header>
-      <h1 class={pageH1Class}>{pageTitle}</h1>
+      <h1 class={pageH1Class}>{h1Title}</h1>
     </header>
-    <article class="contentWrapper">
-      <slot />
-    </article>
-  </article>
+    <article class="contentWrapper"> -->
+  <slot />
+  <!-- </article>
+  </article> -->
 </Layout>

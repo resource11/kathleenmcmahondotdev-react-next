@@ -109,7 +109,7 @@
     margin-right: 0.25rem;
   }
 
-  & .link {
+  & .primaryNavLiLink {
     @add-mixin font-weight-medium;
     min-width: 6.25rem;
     padding: 0.375rem 0.5rem;
@@ -139,12 +139,12 @@
       border-image-source: var(--grad-lin-red-orange-muted);
       background: var(--grad-lin-red-orange-muted);
     }
-  }
 
-  & [aria-current="page"] {
-    @add-mixin font-weight-bold;
-    padding: 0.438rem 0.5rem;
-    font-size: 1.063rem;
+    & [aria-current="page"] {
+      @add-mixin font-weight-bold;
+      padding: 0.438rem 0.5rem;
+      font-size: 1.063rem;
+    }
   }
 }
 

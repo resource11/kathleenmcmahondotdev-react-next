@@ -1,4 +1,5 @@
 ---
+import { SEO } from "astro-seo";
 import Header from "../components/Header/Header.astro";
 import Footer from "../components/Footer/Footer.astro";
 import Link from "../components/Link/Link.astro";
@@ -8,8 +9,41 @@ const { pageTitle } = Astro.props;
 
 <html lang="en">
   <head>
+    <SEO
+      title="Engineer - Designer - Speaker"
+      titleTemplate="Kathleen McMahon | %s"
+      titleDefault="Kathleen McMahon | Digital Garden"
+      description="A digital garden about engineering, design, and speaking."
+      charset="UTF-8"
+      openGraph={{
+        basic: {
+          title:
+            "A software engineer, product designer, and internationally-known conference speaker with a passion for making inclusive and accessible experiences.",
+          type: "website",
+          image:
+            "https://res.cloudinary.com/kathleenmcmahon/image/upload/w_auto,q_auto/v1590693720/kathleenmcmahon-dot-dev/social-sharing-card.png",
+        },
+      }}
+      twitter={{
+        creator: "@resource11",
+      }}
+      extend={{
+        link: [{ rel: "icon", href: "/favicon.png" }],
+        meta: [
+          {
+            name: "twitter:image",
+            content:
+              "https://res.cloudinary.com/kathleenmcmahon/image/upload/w_auto,q_auto/v1590693720/kathleenmcmahon-dot-dev/social-sharing-card.png",
+          },
+          {
+            name: "twitter:title",
+            content: "Kathleen McMahon | Engineer - Designer - Speaker",
+          },
+        ],
+      }}
+    />
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.png" />
     <link rel="stylesheet" href="/prism-night-owl.css" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />

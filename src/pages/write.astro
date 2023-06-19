@@ -4,7 +4,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import HeadingAccentImage from "../assets/images/angled-purp-violet-xs.svg";
 import "../styles/page-styles/write.css";
 
-const pageTitle = `Cultivated
+const pageTitle = "Write";
+
+const h1Title = `Cultivated
     <br />
     thoughts<small>{14} Posts</small>
   `;
@@ -22,48 +24,42 @@ export async function getStaticPaths() {
 const orderedPosts = allPosts.reverse();
 ---
 
-<BaseLayout
-  pageTitle={pageTitle}
-  pageH1Class="writeH1"
-  pageBgImage={HeadingAccentImage.src}
-  pageBgImageClass="headingAccentImage"
->
-  <!-- <article class="bodyWrapper">
+<BaseLayout pageTitle={pageTitle}>
+  <article class="bodyWrapper">
     <img src={HeadingAccentImage.src} alt="" class="headingAccentImage" />
-
     <header>
       <h1 class="writeH1">
         Cultivated
         <br />
-        thoughts <small>{allPosts.collection.size} Posts</small>
+        thoughts <small>{orderedPosts.length} Posts</small>
       </h1>
-    </header> -->
-  <article class="contentWrapper">
-    <p class="writeIntroPara">
-      This is a gathering of all my thoughts, "digital garden" style. If you
-      haven't heard the term before, check out the this
-      <a href="https://joelhooks.com/digital-garden">
-        fantastic post on digital gardens by Joel Hooks
-      </a>
-      to learn more about the philosophy behind the phase.
-    </p>
-    <hr class="blueVioletHR" />
-    <ul class="postUl stackPostList">
-      {
-        orderedPosts.map((post) => (
-          <li class="postListItem">
-            <a href={`/posts/${post.slug}/`} class="postListLink">
-              {post.data.title}
-            </a>
-            <span class="postListPublishedDate">
-              <span class="postListPublished">Published:</span>
-              {post.data.date.toDateString()}
-            </span>
-            <p class="postListExcerpt">{post.data.excerpt}</p>
-          </li>
-        ))
-      }
-    </ul>
+    </header>
+    <article class="contentWrapper">
+      <p class="writeIntroPara">
+        This is a gathering of all my thoughts, "digital garden" style. If you
+        haven't heard the term before, check out the this
+        <a href="https://joelhooks.com/digital-garden">
+          fantastic post on digital gardens by Joel Hooks
+        </a>
+        to learn more about the philosophy behind the phase.
+      </p>
+      <hr class="blueVioletHR" />
+      <ul class="postUl stackPostList">
+        {
+          orderedPosts.map((post) => (
+            <li class="postListItem">
+              <a href={`/posts/${post.slug}/`} class="postListLink">
+                {post.data.title}
+              </a>
+              <span class="postListPublishedDate">
+                <span class="postListPublished">Published:</span>
+                {post.data.date.toDateString()}
+              </span>
+              <p class="postListExcerpt">{post.data.excerpt}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </article>
   </article>
-  <!-- </article> -->
 </BaseLayout>
