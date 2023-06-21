@@ -5,11 +5,9 @@ import BlogHeroAccent from "../assets/images/blog-hero-accent.svg";
 import "../styles/layout-styles/post-mdx-layout.css";
 ---
 
-<BaseLayout
-  h1Title={frontmatter.title}
-  pageBgImage={BlogHeroAccent.src}
-  pageBgImageClass={"blogHeroAccent"}
->
-  <p>Written by {frontmatter.author}</p>
-  <slot />
+<BaseLayout h1Title={frontmatter.title}>
+  <article class="bodyWrapper">
+    <img src={BlogHeroAccent.src} alt="" class="blogHeroAccent" />
+    <slot />
+  </article>
 </BaseLayout>
