@@ -467,8 +467,7 @@ pre {
 
   & code {
     color: #d6deeb;
-    background: #011627;
-    /* background: rgba(29, 59, 83, 0.99); */
+    background: var(--night-owl-midnight);
     display: block;
     padding: var(--s1);
     overflow-x: auto;
@@ -594,7 +593,7 @@ pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection,
 code[class*="language-"] ::-moz-selection {
   text-shadow: none;
-  background: #011627;
+  background: var(--night-owl-midnight);
   /* background: rgba(29, 59, 83, 0.99); */
 }
 
@@ -603,7 +602,7 @@ pre[class*="language-"] ::selection,
 code[class*="language-"]::selection,
 code[class*="language-"] ::selection {
   text-shadow: none;
-  background: #011627;
+  background: var(--night-owl-midnight);
   /* background: rgba(29, 59, 83, 0.99); */
 }
 
@@ -624,7 +623,7 @@ pre[class*="language-"] {
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   color: white;
-  background: #011627;
+  background: var(--night-owl-midnight);
   /* background: rgba(29, 59, 83, 0.99); */
 }
 
