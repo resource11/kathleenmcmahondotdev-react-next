@@ -8,7 +8,7 @@ import HeadingAccentImage from "../assets/images/hero-masked.svg";
 import RecentBgMasked from "../assets/images/sm-bot-white-diamond.svg";
 import { Image } from "astro:assets";
 import recipeImg from "../assets/images/home/accessibility-favored-react-components.jpg";
-import "../styles/page-styles/home.css";
+import "../styles/page-styles/Home.css";
 
 const contentList = await getEntry("dataYML", "content-list");
 const recentSpeaking = contentList.data.recentSpeaking;
@@ -54,8 +54,7 @@ import Link from "../components/Link/Link.astro";
           podcasts, streams
         </h2>
         <ul class="cardListClasses">
-          <li>
-            <!-- {
+          <!-- {
               recentSpeaking.map((speak) => (
                 <li class="cardListItem">
                   <Card
@@ -67,71 +66,74 @@ import Link from "../components/Link/Link.astro";
                 </li>
               ))
             } -->
-            {
-              recentSpeaking.map((speak) => (
-                <li class="cardListItem">
-                  <article>
-                    {speak.image && (
-                      <header>
-                        <Image src={speak.image} alt={speak.name} />
-                      </header>
-                    )}
-                    <div class={"cardContentWrapper"}>
-                      <footer class={"cardFooterWrapper"}>
-                        <Link
-                          href={speak.link}
-                          aria-label={speak.ctaAria ? speak.ctaAria : null}
-                          linkClasses="cardFooterLink"
-                          icon={"arrow-right"}
-                          iconAfter
-                          size="small"
-                          iconSpanClasses="cardFooterLinkIcon"
-                        >
-                          {speak.cta}
-                        </Link>
-                      </footer>
-                    </div>
-                  </article>
-                </li>
-              ))
-            }
-          </li>
-          <CTALink
-            size="small"
-            href="/speak/"
-            CTALinkClasses="ctaLink"
-            CTAIconSpanClasses="ctaLinkIcon"
-          >
-            Browse all media
-          </CTALink>
+          {
+            recentSpeaking.map((speak) => (
+              <li class="cardListItem">
+                <article>
+                  {speak.image && (
+                    <header>
+                      <img
+                        src={speak.image.src}
+                        alt={speak.name}
+                        style="height: 100%; width: 100%; object-fit: cover;"
+                      />
+                    </header>
+                  )}
+                  <div class={"cardContentWrapper"}>
+                    <footer class={"cardFooterWrapper"}>
+                      <Link
+                        href={speak.link}
+                        aria-label={speak.ctaAria ? speak.ctaAria : null}
+                        linkClasses="cardFooterLink"
+                        icon={"arrow-right"}
+                        iconAfter
+                        size="small"
+                        iconSpanClasses="cardFooterLinkIcon"
+                      >
+                        {speak.cta}
+                      </Link>
+                    </footer>
+                  </div>
+                </article>
+              </li>
+            ))
+          }
         </ul>
-        <hr class="purpleRedHR" />
-        <article class="featuredPosts">
-          <h2>Featured posts</h2>
-          <ul class="postListClasses">
-            {
-              featuredPosts.map((post) => (
-                <li class="postListItem">
-                  <Link href={`posts/${post.slug}`} linkClasses="postListLink">
-                    {post.data.title}
-                  </Link>
-                  <span class="postListPublishedDate">
-                    <span class="postListPublished">Published:</span>{" "}
-                    {post.data.date.toDateString()}
-                  </span>
-                </li>
-              ))
-            }
-          </ul>
-          <CTALink
-            size="small"
-            href="/write/"
-            CTALinkClasses="ctaLink"
-            CTAIconSpanClasses="ctaLinkIcon"
-          >
-            Browse all writing
-          </CTALink>
-        </article>
+        <CTALink
+          size="small"
+          href="/speak/"
+          CTALinkClasses="ctaLink"
+          CTAIconSpanClasses="ctaLinkIcon"
+        >
+          Browse all media
+        </CTALink>
+      </article>
+      <hr class="purpleRedHR" />
+      <article class="featuredPosts">
+        <h2>Featured posts</h2>
+        <ul class="postListClasses">
+          {
+            featuredPosts.map((post) => (
+              <li class="postListItem">
+                <Link href={`posts/${post.slug}`} linkClasses="postListLink">
+                  {post.data.title}
+                </Link>
+                <span class="postListPublishedDate">
+                  <span class="postListPublished">Published:</span>{" "}
+                  {post.data.date.toDateString()}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+        <CTALink
+          size="small"
+          href="/write/"
+          CTALinkClasses="ctaLink"
+          CTAIconSpanClasses="ctaLinkIcon"
+        >
+          Browse all writing
+        </CTALink>
       </article>
     </article>
   </article>

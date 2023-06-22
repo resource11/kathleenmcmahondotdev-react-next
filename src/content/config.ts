@@ -24,13 +24,13 @@ const blogCollection = defineCollection({
 
 const dataYMLCollection = defineCollection({
   type: 'data', // v2.5.0 and later
-  schema: z.object({
+  schema: ({ image }) => z.object({
     recentSpeaking: z.array(z.object({
       id: z.string(),
       name: z.string(),
       event: z.string(),
       link: z.string(),
-      image: z.string(),
+      image: image(),
       cta: z.string(),
       ctaAria: z.string(),
     })),
