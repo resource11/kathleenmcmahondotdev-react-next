@@ -17,6 +17,7 @@ const iconExtraClasses = iconAfter && icon ? `iconAfter icon ${iconClasses}` : `
 const iconSpanExtraClasses = iconSpanClasses ? `iconSpan ${iconSpanClasses}` : `iconSpan`;
 
 interface Props {
+  ariaLabel?: string;
   href: string;
   icon?: string | null;
   iconAfter?: boolean;

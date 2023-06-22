@@ -1,5 +1,5 @@
 export { Button } from "./Button/Button.jsx"
-export { Card } from "./Card/Card.jsx"
+export { Card } from "./Card/SolidCard.jsx"
 export { CodeBlock } from "./CodeBlock/CodeBlock.jsx"
 export { CTALink } from "./CTALink/CTALink.jsx"
 export { DisplayBox } from "./DisplayBox/DisplayBox.js"

@@ -1,20 +1,24 @@
+/** @jsxImportSource: react */
 import React from "react"
 import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useExtraClasses } from "../../utils/helpers"
-// import Img from "gatsby-image"
+// import { Image } from "astro:assets";
 import styles from "./Card.module.css"
 
-export const Card = ({
+export const ReactCard = ({
+  cardContentWrapperClasses,
+  cardFooterWrapperClasses,
   children,
   display,
   extraClasses,
-  footerContent,
   horizontal,
   image,
   imageAlt,
 }) => {
   const css = useExtraClasses(styles, extraClasses)
+  const cardCSSContentWrapper = classnames(css.cardContentWrapper,  cardContentWrapperClasses)
+  const cardCSSFooterWrapper = classnames(css.cardFooterWrapper,  cardFooterWrapperClasses)
   const cardCSS = classnames(css.root, css[display], {
     [css.horizontal]: horizontal,
   })
@@ -22,28 +26,24 @@ export const Card = ({
     <article className={cardCSS}>
       {image && (
         <header className={css.cardHeader}>
-          {/* <Img fluid={image} alt={imageAlt} loading="eager" /> */}
-          <img src={{image}.src} alt={imageAlt} loading="eager" />
+          <Image src={image} alt={imageAlt} />
         </header>
       )}
-      <div className={css.cardContentWrapper}>
-        {children}
-        {footerContent && (
-          <footer className={css.cardFooterWrapper}>{footerContent}</footer>
-        )}
+      <div className={cardCSSContentWrapper}>
+          <footer className={cardCSSFooterWrapper}>{children}</footer>
       </div>
     </article>
   )
 }
 
-export default Card
+export default ReactCard
 
-Card.defaultProps = {
+ReactCard.defaultProps = {
   display: "flex",
   imageAlt: "",
 }
 
-Card.propTypes = {
+ReactCard.propTypes = {
   /**
    * Card contents
    */
