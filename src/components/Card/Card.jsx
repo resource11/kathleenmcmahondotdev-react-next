@@ -3,10 +3,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useExtraClasses } from "../../utils/helpers"
-// import { Image } from "astro:assets";
+import { Image } from "astro:assets";
 import styles from "./Card.module.css"
 
-export const ReactCard = ({
+export const Card = ({
   cardContentWrapperClasses,
   cardFooterWrapperClasses,
   children,
@@ -16,34 +16,34 @@ export const ReactCard = ({
   image,
   imageAlt,
 }) => {
-  const css = useExtraClasses(styles, extraClasses)
-  const cardCSSContentWrapper = classnames(css.cardContentWrapper,  cardContentWrapperClasses)
-  const cardCSSFooterWrapper = classnames(css.cardFooterWrapper,  cardFooterWrapperClasses)
-  const cardCSS = classnames(css.root, css[display], {
-    [css.horizontal]: horizontal,
+  const css = useExtraClasses(styles, props.extraClasses)
+  const cardCSSContentWrapper = classnames(css.cardContentWrapper,  props.cardContentWrapperClasses)
+  const cardCSSFooterWrapper = classnames(css.cardFooterWrapper,  props.cardFooterWrapperClasses)
+  const cardCSS = classnames(css.cardRoot, css[props.display], {
+    [css.horizontal]: props.horizontal,
   })
   return (
     <article className={cardCSS}>
-      {image && (
+      {props.image && (
         <header className={css.cardHeader}>
-          <Image src={image} alt={imageAlt} />
+          <Image src={props.image} alt={props.imageAlt} />
         </header>
       )}
       <div className={cardCSSContentWrapper}>
-          <footer className={cardCSSFooterWrapper}>{children}</footer>
+        <footer className={cardCSSFooterWrapper}>{props.children}</footer>
       </div>
     </article>
   )
 }
 
-export default ReactCard
+export default Card
 
-ReactCard.defaultProps = {
+Card.defaultProps = {
   display: "flex",
   imageAlt: "",
 }
 
-ReactCard.propTypes = {
+Card.propTypes = {
   /**
    * Card contents
    */
