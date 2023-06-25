@@ -60,7 +60,13 @@
 }
 
 .cardHeader {
-  /* display: flex; */
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+.cardCropper {
+  overflow: hidden;
 }
 
 .cardImageFigure {
@@ -69,13 +75,17 @@
 }
 
 .cardImage {
+  position: absolute;
+  top: 0px;
+  left: 0px;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .cardContentWrapper {
+  position: relative;
 }
 
 .cardFooterWrapper {
@@ -85,4 +95,9 @@
   margin-top: auto;
   padding: var(--s-2) var(--s0);
   background: var(--color-light);
+}
+
+.cardFooterWrapper {
+  padding: 0;
+  justify-content: flex-end;
 }

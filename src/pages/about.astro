@@ -1,24 +1,33 @@
 ---
+import { getCollection, getEntry } from "astro:content";
+import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeadingAccentImage from "../assets/images/angled-orange-xs.svg";
+// import SEO from "../components/seo";
+import { ContactForm } from "../components/ContactForm/ContactForm";
+import { Card } from "../components/Card/Card";
+import Link from "../components/Link/Link.astro";
 const pageTitle = "About";
 import "../styles/page-styles/about.css";
+import "../components/Card/Card.css";
 
 const { socialLinks } = siteData;
 
-import React from "react";
-// import { graphql } from "gatsby";
 import siteData from "../utils/data/siteData";
-// import classnames from "classnames";
-// import { useExtraClasses } from "../utils/useExtraClasses";
-// import SEO from "../components/seo";
-// import Layout from "../components/layout";
-import { ContactForm } from "../components/ContactForm/ContactForm";
-// import { Card } from "../components/Card";
-import Link from "../components/Link/Link.astro";
-// import HeadingAccentImage from "../svgs/angled-orange-xs.svg"
-// import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-// import styles from "../styles/page-styles/About.module.css";
+
+const contentList = await getEntry("dataYML", "content-list");
+const portfolioList = contentList.data.portfolioList;
+console.log(JSON.stringify(portfolioList, null, 2));
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+  // const featuredPosts = blogEntries.filter((entry) => entry.data.isFeatured);
+  return blogEntries.map((data) => ({
+    params: { slug: data.slug },
+    props: { data },
+  }));
+}
+
 const currentPage = "/about/";
 
 const cardListClasses = `cardUl cardGrid stackCardList`;
@@ -89,6 +98,44 @@ const socialListItemClasses = `socialListItem liReset`;
         //     </li>
         //   ))}
         // </ul> -->
+      <ul class={cardListClasses}>
+        {
+          portfolioList.map((port) => (
+            <li class={cardListItemClasses}>
+              <article class="cardRoot">
+                {port.image && (
+                  <header class="cardHeader">
+                    <div class="cardCropper">
+                      <Image
+                        slot="image"
+                        src={port.image}
+                        alt={port.name}
+                        width={1600}
+                        height={900}
+                        class="cardImage"
+                      />
+                    </div>
+                  </header>
+                )}
+                <div class={"cardContentWrapper"}>
+                  <footer class={"cardFooterWrapper"}>
+                    <Link
+                      href={port.link}
+                      linkClasses="cardFooterLink"
+                      icon={"arrow-right"}
+                      iconAfter
+                      size="small"
+                      iconSpanClasses="cardFooterLinkIcon"
+                    >
+                      {port.cta}
+                    </Link>
+                  </footer>
+                </div>
+              </article>
+            </li>
+          ))
+        }
+      </ul>
       <hr class="redOrangeHR" />
       <h2>Social links</h2>
       <p>Here are some of the ways you can get in touch with me:</p>

@@ -38,7 +38,7 @@ const dataYMLCollection = defineCollection({
       id: z.string(),
       name: z.string(),
       link: z.string(),
-      image: z.string(),
+      image: image(),
       cta: z.string(),
     })),
   })
