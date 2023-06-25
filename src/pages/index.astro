@@ -1,23 +1,20 @@
 ---
 import { getCollection, getEntry } from "astro:content";
-
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import LineDot from "../components/LineDot/LineDot.astro";
-import HeadingAccentImage from "../assets/images/hero-masked.svg";
-
-import RecentBgMasked from "../assets/images/sm-bot-white-diamond.svg";
-import { Image } from "astro:assets";
 import CTALink from "../components/CTALink/CTALink.astro";
 import Link from "../components/Link/Link.astro";
 // import { SolidCard } from "../components/Card/SolidCard";
 import { Card } from "../components/Card/Card";
+import HeadingAccentImage from "../assets/images/hero-masked.svg";
+import RecentBgMasked from "../assets/images/sm-bot-white-diamond.svg";
 import "../styles/page-styles/Home.css";
 import "../components/Card/Card.css";
 
+const pageTitle = "Kathleen McMahon | Engineer - Designer - Speaker";
 const contentList = await getEntry("dataYML", "content-list");
 const recentSpeaking = contentList.data.recentSpeaking;
-console.log(JSON.stringify(recentSpeaking, null, 2));
-
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
   // const featuredPosts = blogEntries.filter((entry) => entry.data.isFeatured);
@@ -26,15 +23,24 @@ export async function getStaticPaths() {
     props: { data },
   }));
 }
-
 const featuredPosts = await getCollection("blog", ({ data }) => {
   return data.isFeatured === true;
 });
 
-const pageTitle = "Kathleen McMahon | Engineer - Designer - Speaker";
-
 const cardListClasses = `cardUl stackCardList grid`;
-const postListClasses = `postUl, stackPostList`;
+const postListClasses = `postUl stackPostList`;
+
+interface Props {
+  ariaLabel?: string;
+  href: string;
+  icon?: string | null;
+  iconAfter?: boolean;
+  iconBefore?: boolean;
+  iconClasses?: string;
+  iconSpanClasses?: string;
+  linkClasses?: string;
+  size?: string;
+}
 ---
 
 <Layout pageTitle={pageTitle}>

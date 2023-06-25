@@ -5,7 +5,7 @@ import classnames from "classnames"
 import { useExtraClasses } from "../../utils/helpers"
 import { Icon } from "../Icon/Icon.jsx"
 import styles from "./Input.module.css"
-import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons"
+import { faArrowUp, faCircleExclamation } from "@fortawesome/free-solid-svg-icons"
 
 export const InputSizes = {
   small: "small",
@@ -38,7 +38,7 @@ export const Input = ({ extraClasses, isHidden, label, ...props }) => {
           {meta.touched && meta.error ? (
             <div className={css.errorText}>
               <Icon
-                icon={faCircleExclamation}
+                icon={faArrowUp}
                 extraClasses={{ icon: css.errorIcon }}
               />
               {meta.error}
