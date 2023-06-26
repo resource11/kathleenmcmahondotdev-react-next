@@ -5,6 +5,9 @@ import react from "@astrojs/react";
 import solid from "@astrojs/solid-js";
 import mdx from "@astrojs/mdx";
 
+import netlify from "@astrojs/netlify/functions";
+// import netlify from "@astrojs/netlify/edge-functions"
+
 // https://astro.build/config
 export default defineConfig({
   markdown: {
@@ -28,4 +31,6 @@ export default defineConfig({
   image: {
     service: sharpImageService(),
   },
+  output: "server",
+  adapter: netlify(),
 });
