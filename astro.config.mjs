@@ -7,6 +7,7 @@ import mdx from "@astrojs/mdx";
 // import netlify from "@astrojs/netlify/edge-functions"
 
 export default defineConfig({
+  site: "https://kathleenmcmahon-react-next.netlify.app",
   markdown: {
     syntaxHighlight: "prism",
     gfm: true,
