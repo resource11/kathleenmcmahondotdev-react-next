@@ -44,17 +44,17 @@ interface Props {
 ---
 
 <Layout pageTitle={pageTitle}>
+  <img src={HeadingAccentImage.src} alt="" class="heroImageMasked" />
   <article class="bodyWrapper">
-    <img src={HeadingAccentImage.src} alt="" class="heroImageMasked" />
-    <header class="homeHeader">
-      <h1 class="homeH1">Kathleen McMahon</h1>
-      <p class="homeIntroPara">
-        Hello! I'm Kathleen, an engineer, designer, speaker, and occasional
-        writer. This is the space where I cultivate my interests.
-      </p>
-      <LineDot />
-    </header>
     <article class="contentWrapper">
+      <header class="homeHeader">
+        <h1 class="homeH1">Kathleen McMahon</h1>
+        <p class="homeIntroPara">
+          Hello! I'm Kathleen, an engineer, designer, speaker, and occasional
+          writer. This is the space where I cultivate my interests.
+        </p>
+        <LineDot />
+      </header>
       <img src={RecentBgMasked.src} alt="" class="recentTalksBgMasked" />
       <article class="css.recentTalks">
         <h2 class="recentTalksH2">
