@@ -3,7 +3,7 @@ import react from "@astrojs/react";
 import solid from "@astrojs/solid-js";
 import mdx from "@astrojs/mdx";
 
-import netlify from "@astrojs/netlify/functions";
+// import netlify from "@astrojs/netlify/functions";
 // import netlify from "@astrojs/netlify/edge-functions"
 
 export default defineConfig({
@@ -24,6 +24,6 @@ export default defineConfig({
   image: {
     service: sharpImageService(),
   },
-  output: "server",
-  adapter: netlify(),
+  // output: "server",
+  // adapter: netlify(),
 });
