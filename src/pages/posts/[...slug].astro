@@ -1,7 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import MarkdownPostLayout from "../../layouts/MarkdownPostLayout.astro";
-
+// import { Content, components } from "../content.mdx";
+// import AstroBlock from "../../components/CodeBlock/AstroBlock.astro";
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
   return blogEntries.map((entry) => ({
@@ -9,13 +10,13 @@ export async function getStaticPaths() {
     props: { entry },
   }));
 }
-
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content, components } = await entry.render();
 ---
 
 <MarkdownPostLayout frontmatter={entry.data}>
   <h1>{entry.data.title}</h1>
   <time>{entry.data.date.toDateString()}</time>
+  <!-- <Content components={{ ...components, pre: AstroBlock }} /> -->
   <Content />
 </MarkdownPostLayout>

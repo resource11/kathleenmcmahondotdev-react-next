@@ -1,0 +1,11 @@
+---
+import { CodeBlock } from "./CodeBlock.jsx";
+
+interface Props {
+    [x: string]: any;
+    codeString?: any;
+    language?: string;
+}
+---
+
+<CodeBlock client:load codeString={Astro.slots.render("default")} />

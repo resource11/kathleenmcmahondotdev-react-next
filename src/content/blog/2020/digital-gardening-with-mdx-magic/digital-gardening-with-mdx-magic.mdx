@@ -19,18 +19,10 @@ isHidden: false
 isFeatured: true
 ---
 
-import {
-  Button,
-  Card,
-  CTALink,
-  DisplayBox,
-  Icon,
-  Link,
-} from "../../../../components";
-
 import * as GrommetSystem from "grommet";
 import { Favorite, ShareOption } from "grommet-icons";
-
+import { Button } from "../../../../../src/components/Button/Button";
+import { DisplayBox } from "../../../../../src/components/DisplayBox/DisplayBox";
 import { Prism } from "@astrojs/prism";
 
 import { CodePen } from "mdx-embed/dist/components/codepen";
@@ -57,7 +49,7 @@ When I first heard the term digital gardening, it really struck a chord with me 
 ```jsx react-live
 <div>
   <Button>Click me</Button>
-  {/*<GrommetSystem.Button primary label="label" />*/}
+  <GrommetSystem.Button primary label="label" />
 </div>
 ```
 
@@ -90,7 +82,7 @@ Fancy custom codeblocks are so fancy, yo.
 ```jsx react-live
 <div>
   <Button size="large">Click me</Button>
-  {/* <GrommetSystem.Button primary label="label" />
+  <GrommetSystem.Button primary label="label" />
   <GrommetSystem.Box
     direction="row"
     border={{ color: "brand", size: "large" }}
@@ -112,7 +104,7 @@ Fancy custom codeblocks are so fancy, yo.
         hoverIndicator
       />
     </GrommetSystem.CardFooter>
-  </GrommetSystem.Card> */}
+  </GrommetSystem.Card>
 </div>
 ```
 

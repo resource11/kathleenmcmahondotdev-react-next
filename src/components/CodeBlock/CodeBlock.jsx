@@ -1,11 +1,10 @@
-/** @jsxImportSource: react */
 import React, { Fragment } from "react"
-import { useMDXComponents } from "@mdx/react"
+import { useMDXComponents } from "@mdx-js/react"
 // import { useMDXScope } from "gatsby-plugin-mdx/context"
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live"
 import Highlight, { defaultProps } from "prism-react-renderer"
 import theme from "prism-react-renderer/themes/nightOwl"
-import { DisplayBox } from "../DisplayBox"
+import { DisplayBox } from "../DisplayBox/DisplayBox"
 // import MDXProvider from "../MDXProvider"
 
 // inspired by Twitch Livestream with Jason Lengstorf
@@ -30,17 +29,16 @@ export const CodeBlock = ({ codeString, language, ...props }) => {
     return (
       <Fragment>
         <LiveProvider code={codeString} scope={components} theme={theme}>
-          <DisplayBox>
-            <LivePreview />
-          </DisplayBox>
-        </LiveProvider>
-        <Highlight
-          {...defaultProps}
-          code={codeString}
-          language={language}
-          theme={theme}
-          style={{ fontSize: '1.25rem' }}
-        >
+        <DisplayBox>
+          <LivePreview />
+        </DisplayBox>
+      </LiveProvider><Highlight
+        {...defaultProps}
+        code={codeString}
+        language={language}
+        theme={theme}
+        style={{ fontSize: '1.25rem' }}
+      >
           {({ className, style, tokens, getLineProps, getTokenProps }) => (
             <pre className={className} style={style}>
               {tokens.map((line, i) => (
