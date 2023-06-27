@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeadingAccentImage from "../assets/images/angled-red-purp-xs.svg";
-const pageTitle = "Speaking";
-const h1Title = "Speaking";
-import siteData from "../utils/data/siteData";
 import "../styles/page-styles/speak.css";
 
+import siteData from "../utils/data/siteData";
+const pageTitle = "Speaking";
+const h1Title = "Speaking";
 const { pastTalks, upcomingTalks } = siteData;
 
 const talks2018 = pastTalks.filter((talk) => talk.eventYear === "2018");
@@ -182,28 +182,6 @@ const pastTalkLinkClasses = `cardLinkRoot pastCardLinkRoot`;
           ))
         }
       </ul>
-      <!-- </article> -->
-      <!-- </article> -->
     </article>
-
-    <!-- <style>
-  img {
-    position: absolute;
-    top: 3.5rem;
-    left: 0;
-    width: 100%;
-    z-index: -1;
-    clip-path: polygon(0 0, 100% 0, 100% 72%, 74% 100%, 0 66%);
-
-    @media screen and (--small) {
-      top: 1.5rem;
-      clip-path: polygon(0 0, 100% 0, 100% 54%, 75% 81%, 0 46%);
-    }
-
-    @media screen and (--medium) {
-      clip-path: polygon(0 0, 100% 0, 100% 334px, 75% 505px, 0 283px);
-    }
-  }
-</style> -->
   </article>
 </BaseLayout>

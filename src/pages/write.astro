@@ -5,14 +5,7 @@ import HeadingAccentImage from "../assets/images/angled-purp-violet-xs.svg";
 import "../styles/page-styles/write.css";
 
 const pageTitle = "Write";
-
-const h1Title = `Cultivated
-    <br />
-    thoughts<small>{14} Posts</small>
-  `;
-
 const allPosts = await getCollection("blog");
-
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
   return blogEntries.map((data) => ({
@@ -20,7 +13,6 @@ export async function getStaticPaths() {
     props: { data },
   }));
 }
-
 const orderedPosts = allPosts.reverse();
 ---
 

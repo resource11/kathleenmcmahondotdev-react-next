@@ -5,8 +5,6 @@ import Layout from "../layouts/Layout.astro";
 import LineDot from "../components/LineDot/LineDot.astro";
 import CTALink from "../components/CTALink/CTALink.astro";
 import Link from "../components/Link/Link.astro";
-// import { SolidCard } from "../components/Card/SolidCard";
-import { Card } from "../components/Card/Card";
 import HeadingAccentImage from "../assets/images/hero-masked.svg";
 import RecentBgMasked from "../assets/images/sm-bot-white-diamond.svg";
 import "../styles/page-styles/home.css";
@@ -17,7 +15,6 @@ const contentList = await getEntry("dataYML", "content-list");
 const recentSpeaking = contentList.data.recentSpeaking;
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
-  // const featuredPosts = blogEntries.filter((entry) => entry.data.isFeatured);
   return blogEntries.map((data) => ({
     params: { slug: data.slug },
     props: { data },
@@ -61,38 +58,6 @@ interface Props {
           Recent talks, <br />
           podcasts, streams
         </h2>
-        <!-- <ul class="cardListClasses">
-          {
-            recentSpeaking.map((speak) => (
-              <li class="cardListItem">
-                <Card
-                  cardContentWrapperClasses="cardContentWrapper"
-                  cardFooterWrapperClasses="cardFooterWrapper"
-                >
-                  <Image
-                    slot="image"
-                    src={speak.image}
-                    alt={speak.name}
-                    width={1600}
-                    height={900}
-                    style="height: 100%; width: 100%; object-fit: cover;"
-                  />
-                  <Link
-                    href={speak.link}
-                    aria-label={speak.ctaAria ? speak.ctaAria : null}
-                    linkClasses="cardFooterLink"
-                    icon={"arrow-right"}
-                    iconAfter
-                    size="small"
-                    iconSpanClasses="cardFooterLinkIcon"
-                  >
-                    {speak.cta}
-                  </Link>
-                </Card>
-              </li>
-            ))
-          }
-        </ul> -->
         <ul class={cardListClasses}>
           {
             recentSpeaking.map((speak) => (
