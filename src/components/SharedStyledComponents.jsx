@@ -36,3 +36,4 @@ export const StyledImageWrapper = styled.div`
 
 export const StyledLink = styled(Link)`
   margin-left: 0.32rem;
+`

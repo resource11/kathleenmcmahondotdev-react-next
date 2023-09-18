@@ -19,9 +19,9 @@ export default defineConfig({
     react(),
     solid(),
   ],
-  experimental: {
-    assets: true,
-  },
+  // experimental: {
+  //   assets: true,
+  // },
   image: {
     service: sharpImageService(),
   },
