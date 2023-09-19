@@ -19,11 +19,12 @@ export default defineConfig({
     react(),
     solid(),
   ],
-  // experimental: {
-  //   assets: true,
-  // },
   image: {
     service: sharpImageService(),
+  },
+  scopedStyleStrategy: "where",
+  build: {
+    inlineStylesheets: "never",
   },
   // output: "server",
   // adapter: netlify(),
