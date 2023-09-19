@@ -115,7 +115,7 @@ const siteData = {
       eventYear: "2019",
       eventDate: "2019-09-20",
       eventLocation: "Dublin, Ireland",
-      eventURL: "https://www.jsday.org/",
+      eventURL: "https://www.jsday.ie/blog/speaker-spotlight/",
       talkName:
         "Accessibility-flavored React components make your design system delicious!",
       talkURL:
@@ -394,14 +394,24 @@ const siteData = {
         "https://noti.st/resource11/e9MxhM/design-system-carnival-one-accessible-component-many-pretty-masks",
       talkType: "Talk",
     },
-  ],
-  upcomingTalks: [
     {
       event: "React Next",
       eventYear: "2023",
       eventDate: "2023-06-27",
       eventLocation: "Tel Aviv, Israel",
       eventURL: "https://www.react-next.com/",
+      talkName: "Bye-bye, weeds! Digital Gardening with Astro, SolidJS, & MDX.",
+      talkURL: "",
+      talkType: "Talk",
+    },
+  ],
+  upcomingTalks: [
+    {
+      event: "JSDayIE",
+      eventYear: "2023",
+      eventDate: "2023-09-26",
+      eventLocation: "Dublin, Ireland",
+      eventURL: "https://www.jsday.ie/",
       talkName: "Bye-bye, weeds! Digital Gardening with Astro, SolidJS, & MDX.",
       talkURL: "",
       talkType: "Talk",
@@ -413,6 +423,17 @@ const siteData = {
       eventLocation: "Alicante, Spain",
       eventURL: "https://reactalicante.es/",
       talkName: "Bye-bye, weeds! Digital Gardening with Astro, SolidJS, & MDX.",
+      talkURL: "",
+      talkType: "Talk",
+    },
+    {
+      event: "React Summit",
+      eventYear: "2023",
+      eventDate: "2023-11-13",
+      eventLocation: "New York, NY",
+      eventURL: "https://reactsummit.us/",
+      talkName:
+        "Design System Carnival! One accessible component, many pretty masks.",
       talkURL: "",
       talkType: "Talk",
     },

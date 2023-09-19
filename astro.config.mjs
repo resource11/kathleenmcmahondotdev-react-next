@@ -1,7 +1,7 @@
 import { defineConfig, sharpImageService } from "astro/config";
+import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import solid from "@astrojs/solid-js";
-import mdx from "@astrojs/mdx";
 
 // import netlify from "@astrojs/netlify/functions";
 // import netlify from "@astrojs/netlify/edge-functions"
@@ -16,8 +16,12 @@ export default defineConfig({
     mdx({
       drafts: true,
     }),
-    react(),
-    solid(),
+    react({
+      include: ["**/react/*"],
+    }),
+    solid({
+      include: ["**/solid/*"],
+    }),
   ],
   image: {
     service: sharpImageService(),

@@ -11,7 +11,7 @@
     },
     // For Solid
     // /** @jsxImportSource solid-js */
-    // "jsx": "preserve",
+    "jsx": "preserve",
     "jsxImportSource": "react",
   }
 }

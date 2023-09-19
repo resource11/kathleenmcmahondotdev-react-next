@@ -2,7 +2,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import classnames from "classnames"
-import { useExtraClasses } from "../../utils/helpers"
+import { useExtraClasses } from "../../../utils/helpers"
 import { Image } from "astro:assets";
 import styles from "./CardList.module.css"
 

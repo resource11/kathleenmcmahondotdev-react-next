@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import classnames from "classnames"
-import { useExtraClasses } from "../../utils/useExtraClasses"
+import { useExtraClasses } from "../../../utils/useExtraClasses"
 import { Link, LinkVariants } from "../Link"
 import styles from "./CTALink.module.css"
 

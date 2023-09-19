@@ -1,5 +1,5 @@
 ---
-import { CodeBlock } from "./CodeBlock.jsx";
+import { CodeBlock } from "../react/CodeBlock/CodeBlock.jsx";
 
 interface Props {
     [x: string]: any;
@@ -9,3 +9,4 @@ interface Props {
 ---
 
 <CodeBlock client:load codeString={Astro.slots.render("default")} />
+../react/CodeBlock/CodeBlock.jsx

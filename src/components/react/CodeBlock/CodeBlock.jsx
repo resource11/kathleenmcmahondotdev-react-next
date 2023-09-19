@@ -4,7 +4,7 @@ import { useMDXComponents } from "@mdx-js/react"
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live"
 import Highlight, { defaultProps } from "prism-react-renderer"
 import theme from "prism-react-renderer/themes/nightOwl"
-import { DisplayBox } from "../DisplayBox/DisplayBox"
+import { DisplayBox } from "../../DisplayBox/DisplayBoxlayBox"
 // import MDXProvider from "../MDXProvider"
 
 // inspired by Twitch Livestream with Jason Lengstorf
