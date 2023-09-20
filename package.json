@@ -56,6 +56,7 @@
     "reading-time": "^1.5.0",
     "sharp": "^0.32.1",
     "solid-js": "^1.7.11",
+    "solid-js-form": "^0.1.8",
     "yup": "^1.2.0"
   },
   "devDependencies": {

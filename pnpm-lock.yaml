@@ -143,6 +143,9 @@ dependencies:
   solid-js:
     specifier: ^1.7.11
     version: 1.7.11
+  solid-js-form:
+    specifier: ^0.1.8
+    version: 0.1.8
   yup:
     specifier: ^1.2.0
     version: 1.2.0
@@ -12606,6 +12609,10 @@ packages:
     dev: false
     optional: true
 
+  /nanoclone@0.2.1:
+    resolution: {integrity: sha512-wynEP02LmIbLpcYw8uBKpcfF6dmg2vcpKqxeH5UcoKEYdExslsdUA4ugFauuaeYdTB76ez6gJW8XAZ6CgkXYxA==}
+    dev: false
+
   /nanoid@3.3.6:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -16407,6 +16414,13 @@ packages:
       websocket-driver: 0.7.4
     dev: false
 
+  /solid-js-form@0.1.8:
+    resolution: {integrity: sha512-kOKZ5et9t1T8P8GAi4FIyuoGO2Y14YnTyKT7kla3wbtcDeWb4dqvxSqmNHRx8r9ZxTN/hpl3WxmwtOBOPalSaA==}
+    dependencies:
+      solid-js: 1.7.11
+      yup: 0.32.11
+    dev: false
+
   /solid-js@1.7.11:
     resolution: {integrity: sha512-JkuvsHt8jqy7USsy9xJtT18aF9r2pFO+GB8JQ2XGTvtF49rGTObB46iebD25sE3qVNvIbwglXOXdALnJq9IHtQ==}
     dependencies:
@@ -18870,6 +18884,19 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       '@types/yoga-layout': 1.9.2
+    dev: false
+
+  /yup@0.32.11:
+    resolution: {integrity: sha512-Z2Fe1bn+eLstG8DRR6FTavGD+MeAwyfmouhHsIUgaADz8jvFKbO/fXc2trJKZg+5EBjh4gGm3iU/t3onKlXHIg==}
+    engines: {node: '>=10'}
+    dependencies:
+      '@babel/runtime': 7.21.5
+      '@types/lodash': 4.14.194
+      lodash: 4.17.21
+      lodash-es: 4.17.21
+      nanoclone: 0.2.1
+      property-expr: 2.0.5
+      toposort: 2.0.2
     dev: false
 
   /yup@1.2.0:

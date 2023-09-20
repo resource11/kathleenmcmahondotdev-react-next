@@ -1,5 +1,5 @@
-@import "../../styles/lib/variables.css";
-@import "../../styles/lib/mixins.css";
+@import "../../../styles/lib/variables.css";
+@import "../../../styles/lib/mixins.css";
 
 .cardRoot {
   position: relative;
