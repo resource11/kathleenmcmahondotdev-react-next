@@ -55,9 +55,9 @@ export const TextArea = ({
 
 export default TextArea
 
-TextArea.defaultProps = {
-  resizeVerticalOnly: false,
-}
+// TextArea.defaultProps = {
+//   resizeVerticalOnly: false,
+// }
 
 // TextArea.propTypes = {
 //   /**

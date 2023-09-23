@@ -53,12 +53,12 @@ export const Button = ({
 
 export default Button
 
-Button.defaultProps = {
-  ariaExpanded: null,
-  ariaLabel: null,
-  disabled: null,
-  iconOnlyBtn: false,
-}
+// Button.defaultProps = {
+//   ariaExpanded: null,
+//   ariaLabel: null,
+//   disabled: null,
+//   iconOnlyBtn: false,
+// }
 
 // Button.propTypes = {
 //   /**

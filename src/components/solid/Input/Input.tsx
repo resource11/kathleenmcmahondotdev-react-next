@@ -1,5 +1,5 @@
 /** @jsxImportSource: solid-js */
-import { Component } from "solid-js";
+import { type Component } from "solid-js";
 import { render } from "solid-js/web";
 import { useField } from "solid-js-form";
 // import PropTypes from "prop-types"
@@ -35,7 +35,7 @@ export const InputSizes = {
 //     );
 // };
 
-export const Input = ({ extraClasses, isHidden, label, ...props }) => {
+export const Input: HTMLInputElement = ({ extraClasses, isHidden, label, ...props }) => {
   const css = useExtraClasses(styles, extraClasses)
 
   const [field, form] = useField(props.name)
@@ -50,7 +50,7 @@ export const Input = ({ extraClasses, isHidden, label, ...props }) => {
   return (
     <div className={rootClasses}>
       {label && (
-        <label for={props.id || props.name} className={labelClasses}>
+        <label htmlFor={props.id || props.name} className={labelClasses}>
           <span className={css.labelText}>{props.label}</span>{field.required() ? " *" : ""}
           <input
             id={props.id || props.name}
@@ -78,9 +78,9 @@ export const Input = ({ extraClasses, isHidden, label, ...props }) => {
 
 export default Input
 
-Input.defaultProps = {
-  isHidden: null,
-}
+// Input.defaultProps = {
+//   isHidden: null,
+// }
 
 // Input.propTypes = {
 //   /**
