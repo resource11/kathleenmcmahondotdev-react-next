@@ -1,0 +1,46 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import { SEO } from "astro-seo";
+const { pageTitle } = Astro.props;
+---
+
+<SEO
+title="Engineer - Designer - Speaker"
+titleTemplate="Kathleen McMahon | %s"
+titleDefault="Kathleen McMahon | Digital Garden"
+description="A digital garden about engineering, design, and speaking."
+charset="UTF-8"
+openGraph={{
+  basic: {
+    title:
+      "A software engineer, product designer, and internationally-known conference speaker with a passion for making inclusive and accessible experiences.",
+    type: "website",
+    image:
+      "https://res.cloudinary.com/kathleenmcmahon/image/upload/w_auto,q_auto/v1590693720/kathleenmcmahon-dot-dev/social-sharing-card.png",
+  },
+}}
+twitter={{
+  creator: "@resource11",
+}}
+extend={{
+  link: [{ rel: "icon", href: "/favicon.png" }],
+  meta: [
+    {
+      name: "twitter:image",
+      content:
+        "https://res.cloudinary.com/kathleenmcmahon/image/upload/w_auto,q_auto/v1590693720/kathleenmcmahon-dot-dev/social-sharing-card.png",
+    },
+    {
+      name: "twitter:title",
+      content: "Kathleen McMahon | Engineer - Designer - Speaker",
+    },
+  ],
+}}
+/>
+<meta charset="utf-8" />
+<link rel="icon" href="/favicon.png" />
+<link rel="stylesheet" href="/prism-night-owl.css" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+<title>{pageTitle}</title>
+<ViewTransitions />

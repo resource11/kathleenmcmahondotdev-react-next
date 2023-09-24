@@ -1,5 +1,7 @@
 ---
-import { SEO } from "astro-seo";
+// import { ViewTransitions } from 'astro:transitions';
+// import { SEO } from "astro-seo";
+import CommonHead from "../components/astro/CommonHead.astro";
 import Header from "../components/Header/Header.astro";
 import Footer from "../components/Footer/Footer.astro";
 import Link from "../components/Link/Link.astro";
@@ -9,7 +11,8 @@ const { pageTitle } = Astro.props;
 
 <html lang="en">
   <head>
-    <SEO
+    <CommonHead />
+    <!-- <SEO
       title="Engineer - Designer - Speaker"
       titleTemplate="Kathleen McMahon | %s"
       titleDefault="Kathleen McMahon | Digital Garden"
@@ -48,6 +51,7 @@ const { pageTitle } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <ViewTransitions /> -->
   </head>
   <body>
     <div class="contentWrapper">
