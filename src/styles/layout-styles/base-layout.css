@@ -1,4 +1,4 @@
-@import "../base.css";
+@import "../lib/variables.css";
 
 .bodyWrapper {
   margin: 0 1.75rem 3rem;
