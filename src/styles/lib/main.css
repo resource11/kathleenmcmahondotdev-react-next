@@ -95,6 +95,8 @@ article > * + * {
   }
 }
 
+// override _astro [...slug].css funk
+main,
 .stack {
   display: flex;
   flex-direction: column;
