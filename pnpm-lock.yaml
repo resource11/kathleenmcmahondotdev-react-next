@@ -56,6 +56,9 @@ dependencies:
   astro:
     specifier: 3.1.0
     version: 3.1.0
+  astro-embed:
+    specifier: ^0.5.1
+    version: 0.5.1(astro@3.1.0)
   astro-iconify:
     specifier: ^1.2.0
     version: 1.2.0
@@ -181,6 +184,50 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       tslib: 2.0.3
+    dev: false
+
+  /@astro-community/astro-embed-integration@0.5.1(astro@3.1.0):
+    resolution: {integrity: sha512-K1mJHRs0GGAwn2VmOR9JhXFOoCgW2G4GjjdJDqPncfT+BxeoTa/6IP7EMdRlHetIxNliPETVbleRUTV04ztrTA==}
+    peerDependencies:
+      astro: ^2.0.0 || ^3.0.0-beta
+    dependencies:
+      '@astro-community/astro-embed-twitter': 0.5.1(astro@3.1.0)
+      '@astro-community/astro-embed-vimeo': 0.3.1(astro@3.1.0)
+      '@astro-community/astro-embed-youtube': 0.4.1(astro@3.1.0)
+      '@types/unist': 2.0.6
+      astro: 3.1.0
+      astro-auto-import: 0.3.1(astro@3.1.0)
+      unist-util-select: 4.0.3
+    dev: false
+
+  /@astro-community/astro-embed-twitter@0.5.1(astro@3.1.0):
+    resolution: {integrity: sha512-o0Mh80u2BIV8kLhyq3ZL+TN2jjiSBL+3svlfjzdrgIIGdhtZI9xf4wYqu+7xlEjKKil7NUbQTswZHd2UYltY+Q==}
+    peerDependencies:
+      astro: ^2.0.0 || ^3.0.0-beta
+    dependencies:
+      '@astro-community/astro-embed-utils': 0.1.0
+      astro: 3.1.0
+    dev: false
+
+  /@astro-community/astro-embed-utils@0.1.0:
+    resolution: {integrity: sha512-whbRs9JpUApKwdzfkakBPVQT73LFxgj/RrfUu0IXTDf5SqxniZaXG4WcdG5MKj0nQyc82O21f1RnY3ddOo/yng==}
+    dev: false
+
+  /@astro-community/astro-embed-vimeo@0.3.1(astro@3.1.0):
+    resolution: {integrity: sha512-gubZBvCmD7HVUhjsxcm6XoEhypmqN0B98/+51TbgYNdK8KMAkl+L7VCYU7sKfw3Gz9cmCQZzgJWzcifDYGzSTw==}
+    peerDependencies:
+      astro: ^2.0.0 || ^3.0.0-beta
+    dependencies:
+      astro: 3.1.0
+    dev: false
+
+  /@astro-community/astro-embed-youtube@0.4.1(astro@3.1.0):
+    resolution: {integrity: sha512-sS3zp3JpCkQl0yl5iCZSuCcankz0Ownjg0Ju5KdON4BJVZUh2gHySCCvqKpsNWwto2VESKi9v7KHi1/R386FZg==}
+    peerDependencies:
+      astro: ^2.0.0 || ^3.0.0-beta
+    dependencies:
+      astro: 3.1.0
+      lite-youtube-embed: 0.2.0
     dev: false
 
   /@astrojs/compiler@2.1.0:
@@ -3578,6 +3625,10 @@ packages:
       form-data: 3.0.1
     dev: false
 
+  /@types/node@18.18.0:
+    resolution: {integrity: sha512-3xA4X31gHT1F1l38ATDIL9GpRLdwVhnEFC8Uikv5ZLlXATwrCYyPq7ZWHxzxc3J/30SUiwiYT+bQe0/XvKlWbw==}
+    dev: false
+
   /@types/node@20.2.3:
     resolution: {integrity: sha512-pg9d0yC4rVNWQzX8U7xb4olIOFuuVL9za3bzMT2pu2SU0SNEi66i2qrvhE2qt0HvkhuCaWJu7pLNOt/Pj8BIrw==}
     dev: false
@@ -4341,6 +4392,29 @@ packages:
   /astring@1.8.5:
     resolution: {integrity: sha512-TuBbdn7jWVzf8dmFGTaRpW8qgANtWLi1qJLnkfGO5uVf6jf9f/F4B1H35tnOI+qVYZo3p3i8WZlbZOuPAE0wEA==}
     hasBin: true
+    dev: false
+
+  /astro-auto-import@0.3.1(astro@3.1.0):
+    resolution: {integrity: sha512-4kXZMlZFiq3dqT6fcfPbCjHTABQ279eKbIqZAb6qktBhGlmHwpHr1spOUFj/RQFilaWVgfjzOBmuZnoydZb5Vg==}
+    engines: {node: '>=16.0.0'}
+    peerDependencies:
+      astro: ^2.0.0 || ^3.0.0-beta
+    dependencies:
+      '@types/node': 18.18.0
+      acorn: 8.10.0
+      astro: 3.1.0
+    dev: false
+
+  /astro-embed@0.5.1(astro@3.1.0):
+    resolution: {integrity: sha512-ucrikhD3KwuTLNJUbZmAYddGakf9Tmw4TBr43YseGPfpZrKk1rMOD70d6ehj7Ai3kkTziab1vGXA56dAWf9bVg==}
+    peerDependencies:
+      astro: ^2.0.0 || ^3.0.0-beta
+    dependencies:
+      '@astro-community/astro-embed-integration': 0.5.1(astro@3.1.0)
+      '@astro-community/astro-embed-twitter': 0.5.1(astro@3.1.0)
+      '@astro-community/astro-embed-vimeo': 0.3.1(astro@3.1.0)
+      '@astro-community/astro-embed-youtube': 0.4.1(astro@3.1.0)
+      astro: 3.1.0
     dev: false
 
   /astro-iconify@1.2.0:
@@ -6297,6 +6371,10 @@ packages:
       domhandler: 5.0.3
       domutils: 3.1.0
       nth-check: 2.1.1
+    dev: false
+
+  /css-selector-parser@1.4.1:
+    resolution: {integrity: sha512-HYPSb7y/Z7BNDCOrakL4raGO2zltZkbeXyAd6Tg9obzix6QhzxCotdBl6VT0Dv4vZfJGVz3WL/xaEI9Ly3ul0g==}
     dev: false
 
   /css-selector-tokenizer@0.7.3:
@@ -11145,6 +11223,10 @@ packages:
 
   /lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
+    dev: false
+
+  /lite-youtube-embed@0.2.0:
+    resolution: {integrity: sha512-XXXAk5sbvtjjwbie3XG+6HppgTm1HTGL/Uk9z9NkJH53o7puZLur434heHzAjkS60hZB3vT4ls25zl5rMiX4EA==}
     dev: false
 
   /load-yaml-file@0.2.0:
@@ -17652,6 +17734,15 @@ packages:
     resolution: {integrity: sha512-J8NYPyBm4baYLdCbjmf1bhPu45Cr1MWTm77qd9istEkzWpnN6O9tMsEbB2JhNnBCqGENRqEWomQ+He6au0B27Q==}
     dependencies:
       unist-util-is: 4.1.0
+    dev: false
+
+  /unist-util-select@4.0.3:
+    resolution: {integrity: sha512-1074+K9VyR3NyUz3lgNtHKm7ln+jSZXtLJM4E22uVuoFn88a/Go2pX8dusrt/W+KWH1ncn8jcd8uCQuvXb/fXA==}
+    dependencies:
+      '@types/unist': 2.0.6
+      css-selector-parser: 1.4.1
+      nth-check: 2.1.1
+      zwitch: 2.0.4
     dev: false
 
   /unist-util-stringify-position@1.1.2:

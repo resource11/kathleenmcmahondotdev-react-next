@@ -28,7 +28,9 @@ import { Prism } from "@astrojs/prism";
 import { CodePen } from "mdx-embed/dist/components/codepen";
 import { Flickr } from "mdx-embed/dist/components/flickr";
 import { Instagram } from "mdx-embed/dist/components/instagram";
-import { YouTube } from "mdx-embed/dist/components/youtube";
+// import { YouTube } from "mdx-embed/dist/components/youtube";
+
+import { YouTube } from "astro-embed";
 
 ---
 
@@ -67,7 +69,7 @@ When I first heard the term digital gardening, it really struck a chord with me 
 
 ### YouTube embeds!
 
-<YouTube youTubeId="yGd8j0sXhQ4" />
+<YouTube id="https://youtu.be/yGd8j0sXhQ4" />
 
 ### Instagram embeds!
 
