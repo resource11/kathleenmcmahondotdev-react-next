@@ -111,7 +111,9 @@
   max-width: 30em;
 }
 
-.cardRoot {
+/* ViewTransitions find CSS name collisions when they don't unload CSS files like they should during route changes */
+
+/* .cardRoot {
   padding: 0.5rem 1rem;
   border-color: var(--color-light);
   box-shadow: none;
@@ -124,7 +126,7 @@
     box-shadow: none;
     border-right-width: 0.375em;
   }
-}
+} */
 
 .stackList > * {
   margin-top: 0;
