@@ -426,8 +426,6 @@ const siteData = {
         "https://noti.st/resource11/cegRnq/bye-bye-weeds-digital-gardening-with-astro-mdx",
       talkType: "Talk",
     },
-  ],
-  upcomingTalks: [
     {
       event: "Clarity",
       eventYear: "2023",
@@ -447,6 +445,19 @@ const siteData = {
       eventURL: "https://reactsummit.us/",
       talkName:
         "Design System Carnival! One accessible component, many pretty masks.",
+      talkURL: "",
+      talkType: "Talk",
+    },
+  ],
+  upcomingTalks: [
+    {
+      event: "Island Architecture: The Monthly Dev #35",
+      eventYear: "2023",
+      eventDate: "2023-11-28",
+      eventLocation: "Online",
+      eventURL:
+        "https://www.meetup.com/the-monthly-dev-world-class-talks-by-expert-developers/events/297351688/",
+      talkName: "Bye-bye, weeds! Digital Gardening with Astro & MDX.",
       talkURL: "",
       talkType: "Talk",
     },
