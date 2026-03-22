@@ -16,7 +16,7 @@
 // test from testing React Components example
 import React from "react"
 import { render } from "@testing-library/react"
-import Heading from "../heading.jsx"
+import Heading from "../_deprecated/heading.jsx"
 
 test("Displays the correct title", () => {
   const { getByTestId } = render(<Heading />)

@@ -1,0 +1,32 @@
+---
+import siteData from '../../../utils/data/siteData';
+import KMLogo from '../../../assets/images/KMLogo.svg';
+import './Header.css';
+const { primaryNav } = siteData;
+---
+
+<header class='header' id='#top'>
+	<div class='headerLinks'>
+		<a href='#main' class='skipLink'>
+			Skip to main <span role='presentation'>content</span>
+		</a>
+		<a href='/' class='logo'>
+			<img src={KMLogo.src} alt='KathleenMcMahon.dev' class='logoImg' />
+			<span class='visuallyHidden'>KathleenMcMahon.me</span>
+		</a>
+	</div>
+
+	<nav class='primaryNav'>
+		<ul class='primaryNavUl'>
+			{
+				primaryNav.map((nav) => (
+					<li class='primaryNavLi'>
+						<a href={nav.link} class='primaryNavLiLink'>
+							{nav.name}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</nav>
+</header>

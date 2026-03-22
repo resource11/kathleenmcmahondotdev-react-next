@@ -1,0 +1,37 @@
+---
+import siteData from "../../../utils/data/siteData";
+import Link from "../Link/Link.astro";
+import "./Footer.css";
+
+const { footerNav } = siteData;
+---
+
+<footer class="footer" role="contentinfo">
+  <ul class="footerNavUl">
+    {
+      footerNav.map((nav) => (
+        <li class="footerNavLi">
+          <Link
+            href={nav.link}
+            aria-label={nav.ariaLabel ? nav.ariaLabel : null}
+            linkClasses="link"
+            icon={nav.icon ? nav.icon : null}
+            iconBefore
+            iconClasses="footerIcon"
+          >
+            {nav.name}
+          </Link>
+        </li>
+      ))
+    }
+    <li class="footerNavLi">
+      Built with
+      <a href="https://astro.build/" class="link"> Astro</a>
+    </li>
+    <li class="footerNavLi">
+      Hosted by
+      <a href="https://netlify.com" class="link"> Netlify</a>
+    </li>
+  </ul>
+  <small>copyright 2020 - present Kathleen McMahon</small>
+</footer>
