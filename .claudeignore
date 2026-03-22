@@ -1,0 +1,46 @@
+# --- Sensitive Data & Secrets ---
+
+# Exclude environment files and credentials
+
+.env\*
+_.pem
+_.key
+**/secrets/
+**/credentials/
+.aws/
+.ssh/
+
+# --- Build Artifacts & Dependencies ---
+
+# Prevent Claude from "swallowing" large binary or generated files
+
+node_modules/
+dist/
+build/
+out/
+.next/
+_.sqlite
+_.exe
+\*.bin
+
+# --- Performance & Noise ---
+
+# Exclude logs, caches, and large media
+
+_.log
+logs/
+.cache/
+.npm/
+.serverless/
+coverage/
+\*\*/assets/_.png
+**/assets/\*.jpg
+**/assets/\*.mp4
+
+# --- Version Control & OS Files ---
+
+.git/
+.svn/
+.hg/
+.DS_Store
+Thumbs.db
