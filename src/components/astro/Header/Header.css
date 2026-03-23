@@ -27,6 +27,7 @@
 		color: var(--text-light, #ffffff);
 		background: var(--grad-rad-red-purple);
 		box-shadow: 0 0 0 var(--s-5) var(--magenta-red-100);
+		text-decoration-line: none;
 	}
 
 	&:focus {
@@ -36,6 +37,7 @@
 			top: 0;
 			color: var(--text-light, #ffffff);
 			background: var(--grad-rad-red-purple);
+			text-decoration-line: none;
 		}
 	}
 
@@ -140,7 +142,7 @@
 			background: var(--grad-lin-red-orange-muted);
 		}
 
-		& [aria-current='page'] {
+		&[aria-current='page'] {
 			@add-mixin font-weight-bold;
 			padding: 0.438rem 0.5rem;
 			font-size: 1.063rem;

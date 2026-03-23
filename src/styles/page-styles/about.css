@@ -44,11 +44,14 @@
 	line-height: 1.15;
 	color: var(--text-reverse);
 	font-size: calc(2.3 * 5vw);
+	transform: scale(1.01);
+	text-shadow: var(--shadow-elevation-low);
 
 	@media screen and (--small) {
 		margin-top: 3.25rem;
 		margin-top: 15.5%;
 		font-size: calc(1.8 * 5vw);
+		text-shadow: var(--shadow-elevation-medium);
 	}
 
 	@media screen and (--medium) {

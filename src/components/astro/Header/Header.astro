@@ -1,7 +1,7 @@
 ---
 import siteData from '../../../utils/data/siteData';
 import KMLogo from '../../../assets/images/KMLogo.svg';
-import './Header.css';
+import Link from '../Link/Link.astro';
 const { primaryNav } = siteData;
 ---
 
@@ -21,9 +21,9 @@ const { primaryNav } = siteData;
 			{
 				primaryNav.map((nav) => (
 					<li class='primaryNavLi'>
-						<a href={nav.link} class='primaryNavLiLink'>
+						<Link href={nav.link} linkClasses='primaryNavLiLink'>
 							{nav.name}
-						</a>
+						</Link>
 					</li>
 				))
 			}
