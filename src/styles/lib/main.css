@@ -95,7 +95,7 @@ article > * + * {
 	}
 }
 
-// override _astro [...slug].css funk
+/* override _astro [...slug].css funk */
 main,
 .stack {
 	display: flex;
