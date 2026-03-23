@@ -13,5 +13,6 @@
     // /** @jsxImportSource solid-js */
     "jsx": "preserve",
     "jsxImportSource": "react",
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
   }
 }

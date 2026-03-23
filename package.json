@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "vitest"
   },
   "dependencies": {
     "@astrojs/mdx": "^1.1.0",
@@ -34,11 +35,10 @@
     "classnames": "^2.3.2",
     "cssnano": "^6.0.1",
     "formik": "^2.4.5",
-    "gatsby": "^2.32.3",
-    "gatsby-plugin-mdx": "^1.2.22",
     "grommet": "^2.32.2",
     "grommet-icons": "^4.10.0",
     "install": "^0.13.0",
+    "jsdom": "^22.0.0",
     "mdast-util-to-string": "^3.2.0",
     "mdx-embed": "^1.1.2",
     "mdx-utils": "^0.2.0",
@@ -56,11 +56,16 @@
     "react-live": "^2.2.3",
     "reading-time": "^1.5.0",
     "sharp": "^0.32.1",
-    "solid-js": "^1.7.11",
     "solid-js-form": "^0.1.8",
     "yup": "^1.2.0"
   },
   "devDependencies": {
-    "typescript": "^5.2.2"
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "solid-js": "^1.9.11",
+    "typescript": "^5.2.2",
+    "vite": "^6.4.1",
+    "vitest": "^4.1.0"
   }
 }

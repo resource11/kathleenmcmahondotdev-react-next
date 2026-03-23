@@ -28,4 +28,13 @@ export default defineConfig({
 	build: {
 		inlineStylesheets: 'never',
 	},
+	vite: {
+		test: {
+			globals: true,
+			environment: 'jsdom', // Use jsdom for browser environment simulation
+			setupFiles: ['./src/test/setup.ts'], // Path to the test setup file
+			// Add a reference to Vitest types for TypeScript if needed
+			/// <reference types="vitest" />
+		},
+	},
 });
