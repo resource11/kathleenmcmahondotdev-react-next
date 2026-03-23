@@ -1,5 +1,6 @@
 // 1. Import utilities from `astro:content`
 import { z, defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 // 2. Define a `type` and `schema` for each collection
 const blogCollection = defineCollection({
@@ -23,14 +24,14 @@ const blogCollection = defineCollection({
 });
 
 const dataYMLCollection = defineCollection({
-  type: 'data', // v2.5.0 and later
-  schema: ({ image }) => z.object({
+  loader: glob({ pattern: '*.{yml,yaml}', base: './src/content/dataYML' }),
+  schema: z.object({
     recentSpeaking: z.array(z.object({
       id: z.string(),
       name: z.string(),
       event: z.string(),
       link: z.string(),
-      image: image(),
+      image: z.string(),
       cta: z.string(),
       ctaAria: z.string(),
     })),
@@ -38,7 +39,7 @@ const dataYMLCollection = defineCollection({
       id: z.string(),
       name: z.string(),
       link: z.string(),
-      image: image(),
+      image: z.string(),
       cta: z.string(),
     })),
   })

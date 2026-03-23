@@ -31,6 +31,9 @@ export default defineConfig({
 	build: {
 		inlineStylesheets: 'never',
 	},
+	legacy: {
+		collectionsBackwardsCompat: true,
+	},
 	vite: {
 		test: {
 			globals: true,
