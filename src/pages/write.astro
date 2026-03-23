@@ -9,7 +9,7 @@ const allPosts = await getCollection("blog");
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
   return blogEntries.map((data) => ({
-    params: { slug: data.slug },
+    params: { slug: data.id },
     props: { data },
   }));
 }
@@ -40,7 +40,7 @@ const orderedPosts = allPosts.reverse();
         {
           orderedPosts.map((post) => (
             <li class="postListItem">
-              <a href={`/posts/${post.slug}/`} class="postListLink">
+              <a href={`/posts/${post.id}/`} class="postListLink">
                 {post.data.title}
               </a>
               <span class="postListPublishedDate">

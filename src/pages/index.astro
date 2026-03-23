@@ -16,7 +16,7 @@ const recentSpeaking = contentList.data.recentSpeaking;
 export async function getStaticPaths() {
 	const blogEntries = await getCollection('blog');
 	return blogEntries.map((data) => ({
-		params: { slug: data.slug },
+		params: { slug: data.id },
 		props: { data },
 	}));
 }
@@ -66,7 +66,7 @@ interface Props {
 									{speak.image && (
 										<header class='cardHeader'>
 											<div class='cardCropper'>
-												<img
+												<Image
 													slot='image'
 													src={speak.image}
 													alt={speak.name}
@@ -111,7 +111,7 @@ interface Props {
 					{
 						featuredPosts.map((post) => (
 							<li class='postListItem'>
-								<Link href={`posts/${post.slug}`} linkClasses='postListLink'>
+								<Link href={`posts/${post.id}`} linkClasses='postListLink'>
 									{post.data.title}
 								</Link>
 								<span class='postListPublishedDate'>

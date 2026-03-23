@@ -19,7 +19,7 @@ const portfolioList = contentList.data.portfolioList;
 export async function getStaticPaths() {
 	const blogEntries = await getCollection('blog');
 	return blogEntries.map((data) => ({
-		params: { slug: data.slug },
+		params: { slug: data.id },
 		props: { data },
 	}));
 }
@@ -71,7 +71,7 @@ const socialListItemClasses = `socialListItem liReset`;
 								{port.image && (
 									<header class='cardHeader'>
 										<div class='cardCropper'>
-											<img
+											<Image
 												slot='image'
 												src={port.image}
 												alt={port.name}

@@ -31,10 +31,7 @@ export default defineConfig({
 	build: {
 		inlineStylesheets: 'never',
 	},
-	legacy: {
-		collectionsBackwardsCompat: true,
-	},
-	vite: {
+vite: {
 		test: {
 			globals: true,
 			environment: 'jsdom', // Use jsdom for browser environment simulation

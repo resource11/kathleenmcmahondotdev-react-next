@@ -5,7 +5,7 @@ import { glob } from 'astro/loaders';
 
 // 2. Define a `type` and `schema` for each collection
 const blogCollection = defineCollection({
-  type: 'content', // v2.5.0 and later
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
   schema: z.object({
     date: z.date(),
     title: z.string(),
@@ -26,13 +26,13 @@ const blogCollection = defineCollection({
 
 const dataYMLCollection = defineCollection({
   loader: glob({ pattern: '*.{yml,yaml}', base: './src/content/dataYML' }),
-  schema: z.object({
+  schema: ({ image: img }) => z.object({
     recentSpeaking: z.array(z.object({
       id: z.string(),
       name: z.string(),
       event: z.string(),
       link: z.string(),
-      image: z.string(),
+      image: img(),
       cta: z.string(),
       ctaAria: z.string(),
     })),
@@ -40,7 +40,7 @@ const dataYMLCollection = defineCollection({
       id: z.string(),
       name: z.string(),
       link: z.string(),
-      image: z.string(),
+      image: img(),
       cta: z.string(),
     })),
   })
