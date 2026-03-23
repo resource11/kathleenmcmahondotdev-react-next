@@ -3,6 +3,7 @@ import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import solid from '@astrojs/solid-js';
 import embeds from 'astro-embed/integration';
+import icon from 'astro-icon';
 
 export default defineConfig({
 	site: 'https://kathleenmcmahon-react-next.netlify.app',
@@ -12,6 +13,7 @@ export default defineConfig({
 	},
 	integrations: [
 		embeds(),
+		icon(),
 		mdx({
 			drafts: true,
 		}),
@@ -25,6 +27,7 @@ export default defineConfig({
 	image: {
 		service: sharpImageService(),
 	},
+	// scopedStyleStrategy: 'where',
 	build: {
 		inlineStylesheets: 'never',
 	},
