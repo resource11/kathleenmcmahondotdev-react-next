@@ -74,10 +74,11 @@ const siteData = {
 			libraryAlias: 'fab',
 		},
 	],
-	pastTalks: [
+	// @deprecated. Talks have moved to
+	// `src/content/talks/*.mdx`
+	talks: [
 		{
 			event: 'Inclusive Design 24',
-			eventYear: '2018',
 			eventDate: '2018-10-11',
 			eventLocation: 'Virtual',
 			eventURL: 'https://inclusivedesign24.org/2018/',
@@ -89,7 +90,6 @@ const siteData = {
 		},
 		{
 			event: 'Boston CSS Meetup',
-			eventYear: '2019',
 			eventDate: '2019-02-26',
 			eventLocation: 'Boston, MA',
 			eventURL: 'https://www.meetup.com/Boston-CSS/events/258911303/',
@@ -100,7 +100,6 @@ const siteData = {
 		},
 		{
 			event: 'React Day New York',
-			eventYear: '2019',
 			eventDate: '2019-09-13',
 			eventLocation: 'Brooklyn, NY',
 			eventURL: 'https://reactnewyork.com/',
@@ -112,7 +111,6 @@ const siteData = {
 		},
 		{
 			event: 'JSDayIE',
-			eventYear: '2019',
 			eventDate: '2019-09-20',
 			eventLocation: 'Dublin, Ireland',
 			eventURL: 'https://www.jsday.org/',
@@ -124,7 +122,6 @@ const siteData = {
 		},
 		{
 			event: 'reactjsday',
-			eventYear: '2019',
 			eventDate: '2019-10-04',
 			eventLocation: 'Verona, Italy',
 			eventURL: 'https://2019.reactjsday.it/',
@@ -136,7 +133,6 @@ const siteData = {
 		},
 		{
 			event: 'React Edinburgh Meetup',
-			eventYear: '2019',
 			eventDate: '2019-10-10',
 			eventLocation: 'Edinburgh, Scotland',
 			eventURL: 'https://www.meetup.com/react-edinburgh/events/264426084/',
@@ -148,7 +144,6 @@ const siteData = {
 		},
 		{
 			event: 'React JS Milano Meetup',
-			eventYear: '2019',
 			eventDate: '2019-10-23',
 			eventLocation: 'Milan, Italy',
 			eventURL: 'https://www.meetup.com/React-JS-Milano/events/265534114/',
@@ -160,7 +155,6 @@ const siteData = {
 		},
 		{
 			event: 'Codemotion Milan',
-			eventYear: '2019',
 			eventDate: '2019-10-24',
 			eventLocation: 'Milan, Italy',
 			eventURL: 'https://events.codemotion.com/conferences/milan/2019/',
@@ -172,7 +166,6 @@ const siteData = {
 		},
 		{
 			event: 'North of Boston JavaScript Meetup',
-			eventYear: '2019',
 			eventDate: '2019-11-07',
 			eventLocation: 'Newburyport, MA',
 			eventURL:
@@ -185,7 +178,6 @@ const siteData = {
 		},
 		{
 			event: 'Design Systems London',
-			eventYear: '2019',
 			eventDate: '2019-11-15',
 			eventLocation: 'London, UK',
 			eventURL: 'https://www.designsystemslondon.com/',
@@ -197,7 +189,6 @@ const siteData = {
 		},
 		{
 			event: 'Gatsby Days LA',
-			eventYear: '2020',
 			eventDate: '2020-02-03',
 			eventLocation: 'Los Angeles, CA',
 			eventURL: 'https://www.gatsbyjs.com/gatsby-days/gatsby-days-los-angeles/',
@@ -209,7 +200,6 @@ const siteData = {
 		},
 		{
 			event: 'MDXConf',
-			eventYear: '2020',
 			eventDate: '2020-08-24',
 			eventLocation: 'Online',
 			eventURL: 'https://mdxjs.com/conf',
@@ -220,7 +210,6 @@ const siteData = {
 		},
 		{
 			event: 'Frontend Live',
-			eventYear: '2020',
 			eventDate: '2020-09-26',
 			eventLocation: 'Online',
 			eventURL: 'https://frontendconf.ru/moscow/2020',
@@ -232,7 +221,6 @@ const siteData = {
 		},
 		{
 			event: 'EnterJS',
-			eventYear: '2020',
 			eventDate: '2020-09-29',
 			eventLocation: 'Online',
 			eventURL: 'https://enterjs.de/',
@@ -244,7 +232,6 @@ const siteData = {
 		},
 		{
 			event: 'React Summit',
-			eventYear: '2020',
 			eventDate: '2020-10-15',
 			eventLocation: 'Online',
 			eventURL: 'https://reactsummit.com/',
@@ -255,7 +242,6 @@ const siteData = {
 		},
 		{
 			event: 'Codemotion Online',
-			eventYear: '2020',
 			eventDate: '2020-10-21',
 			eventLocation: 'Online',
 			eventURL:
@@ -268,7 +254,6 @@ const siteData = {
 		},
 		{
 			event: 'Accessibility Chicago',
-			eventYear: '2020',
 			eventDate: '2020-10-28',
 			eventLocation: 'Online',
 			eventURL: 'https://www.meetup.com/a11ychi/',
@@ -280,7 +265,6 @@ const siteData = {
 		},
 		{
 			event: 'Egghead Talks',
-			eventYear: '2020',
 			eventDate: '2020-11-18',
 			eventLocation: 'Online',
 			eventURL: 'https://egghead.io/talks',
@@ -292,7 +276,6 @@ const siteData = {
 		},
 		{
 			event: 'TECH(K)NOW Day',
-			eventYear: '2021',
 			eventDate: '2021-03-08',
 			eventLocation: 'Online',
 			eventURL: 'http://techknowday.com/',
@@ -302,7 +285,6 @@ const siteData = {
 		},
 		{
 			event: 'axe-con',
-			eventYear: '2021',
 			eventDate: '2021-03-10',
 			eventLocation: 'Online',
 			eventURL: 'https://www.deque.com/axe-con/',
@@ -314,7 +296,6 @@ const siteData = {
 		},
 		{
 			event: 'Trajectory',
-			eventYear: '2021',
 			eventDate: '2021-11-09',
 			eventLocation: 'Online',
 			eventURL: 'https://launchdarkly.com/trajectory-2021/',
@@ -326,7 +307,6 @@ const siteData = {
 		},
 		{
 			event: 'reactjsday',
-			eventYear: '2021',
 			eventDate: '2021-11-30',
 			eventLocation: 'Online',
 			eventURL: 'https://2021.reactjsday.it/',
@@ -338,7 +318,6 @@ const siteData = {
 		},
 		{
 			event: 'React Miami',
-			eventYear: '2022',
 			eventDate: '2022-04-18',
 			eventLocation: 'Miami, FL',
 			eventURL: 'https://www.reactmiami.com/',
@@ -350,7 +329,6 @@ const siteData = {
 		},
 		{
 			event: 'React Brussels',
-			eventYear: '2022',
 			eventDate: '2022-10-14',
 			eventLocation: 'Brussels, Belgium',
 			eventURL: 'https://www.react.brussels/',
@@ -362,7 +340,6 @@ const siteData = {
 		},
 		{
 			event: 'reactjsday',
-			eventYear: '2022',
 			eventDate: '2022-10-21',
 			eventLocation: 'Verona, Italy',
 			eventURL: 'https://2022.reactjsday.it/',
@@ -374,7 +351,6 @@ const siteData = {
 		},
 		{
 			event: 'Web Unleashed',
-			eventYear: '2022',
 			eventDate: '2022-10-25',
 			eventLocation: 'Online',
 			eventURL: 'https://fitc.ca/event/webu22/',
@@ -384,7 +360,6 @@ const siteData = {
 		},
 		{
 			event: 'React Miami',
-			eventYear: '2023',
 			eventDate: '2023-04-20',
 			eventLocation: 'Miami, FL',
 			eventURL: 'https://www.reactmiami.com/',
@@ -396,7 +371,6 @@ const siteData = {
 		},
 		{
 			event: 'React Next',
-			eventYear: '2023',
 			eventDate: '2023-06-27',
 			eventLocation: 'Tel Aviv, Israel',
 			eventURL: 'https://www.react-next.com/',
@@ -406,7 +380,6 @@ const siteData = {
 		},
 		{
 			event: 'JSDayIE',
-			eventYear: '2023',
 			eventDate: '2023-09-26',
 			eventLocation: 'Dublin, Ireland',
 			eventURL: 'https://www.jsday.ie/',
@@ -417,7 +390,6 @@ const siteData = {
 		},
 		{
 			event: 'React Alicante',
-			eventYear: '2023',
 			eventDate: '2023-09-28',
 			eventLocation: 'Alicante, Spain',
 			eventURL: 'https://reactalicante.es/',
@@ -428,29 +400,28 @@ const siteData = {
 		},
 		{
 			event: 'Clarity',
-			eventYear: '2023',
-			eventDate: '2023-11-1',
+			eventDate: '2023-11-01',
 			eventLocation: 'San Francisco, CA',
 			eventURL: 'https://www.clarityconf.com/',
 			talkName:
 				'Design System Carnival! One accessible component, many pretty masks.',
-			talkURL: '',
+			talkURL:
+				'https://noti.st/resource11/8c2biU/design-system-carnival-one-accessible-component-many-pretty-masks',
 			talkType: 'Talk',
 		},
 		{
 			event: 'React Summit',
-			eventYear: '2023',
 			eventDate: '2023-11-13',
 			eventLocation: 'New York, NY',
 			eventURL: 'https://reactsummit.us/',
 			talkName:
 				'Design System Carnival! One accessible component, many pretty masks.',
-			talkURL: '',
+			talkURL:
+				'https://noti.st/resource11/8c2biU/design-system-carnival-one-accessible-component-many-pretty-masks',
 			talkType: 'Talk',
 		},
 		{
 			event: 'Island Architecture: The Monthly Dev #35',
-			eventYear: '2023',
 			eventDate: '2023-11-28',
 			eventLocation: 'Online',
 			eventURL:
@@ -461,7 +432,6 @@ const siteData = {
 		},
 		{
 			event: 'CityJS London',
-			eventYear: '2024',
 			eventDate: '2024-04-05',
 			eventLocation: 'London, UK',
 			eventURL: 'https://london.cityjsconf.org/',
@@ -472,7 +442,6 @@ const siteData = {
 		},
 		{
 			event: 'ConfrontJS',
-			eventYear: '2024',
 			eventDate: '2024-04-12',
 			eventLocation: 'Warsaw, Poland',
 			eventURL: 'https://confrontjs.pl/',
@@ -483,7 +452,6 @@ const siteData = {
 		},
 		{
 			event: 'React Alicante',
-			eventYear: '2024',
 			eventDate: '2024-09-19',
 			eventLocation: 'Alicante, Spain',
 			eventURL: 'https://reactalicante.es/',
@@ -494,7 +462,6 @@ const siteData = {
 		},
 		{
 			event: 'React Alicante',
-			eventYear: '2024',
 			eventDate: '2024-09-21',
 			eventLocation: 'Alicante, Spain',
 			eventURL: 'https://reactalicante.es/',
@@ -505,8 +472,7 @@ const siteData = {
 		},
 		{
 			event: 'React Alicante',
-			eventYear: '2025',
-			eventDate: '2024-10-02',
+			eventDate: '2025-10-02',
 			eventLocation: 'Alicante, Spain',
 			eventURL: 'https://reactalicante.es/',
 			talkName: 'Practical Accessibility in React: The Sand Dollar Approach',
@@ -515,8 +481,7 @@ const siteData = {
 		},
 		{
 			event: 'React Alicante',
-			eventYear: '2025',
-			eventDate: '2024-10-04',
+			eventDate: '2025-10-04',
 			eventLocation: 'Alicante, Spain',
 			eventURL: 'https://reactalicante.es/',
 			talkName: 'The Beachcomber’s Guide to Type-Safe Design Systems.',
@@ -524,10 +489,9 @@ const siteData = {
 			talkType: 'Talk',
 		},
 		{
-			event: 'DevFest Santiago de Compostela',
-			eventYear: '2025',
+			event: 'GDG DevFest Santiago de Compostela',
 			eventDate: '2025-10-08',
-			eventLocation: 'DevFest Santiago de Compostela, Spain',
+			eventLocation: 'GDG DevFest Santiago de Compostela, Spain',
 			eventURL: 'https://devfest.gdg-sdc.org/',
 			talkName: 'Practical Accessibility in React: The Sand Dollar Approach',
 			talkURL: '',
@@ -535,7 +499,6 @@ const siteData = {
 		},
 		{
 			event: 'DevFest Santiago de Compostela',
-			eventYear: '2025',
 			eventDate: '2025-10-08',
 			eventLocation: 'DevFest Santiago de Compostela, Spain',
 			eventURL: 'https://devfest.gdg-sdc.org/',
@@ -545,7 +508,6 @@ const siteData = {
 		},
 		{
 			event: 'Codemotion Milan',
-			eventYear: '2025',
 			eventDate: '2025-10-14',
 			eventLocation: 'Milan, Italy',
 			eventURL: 'https://events.codemotion.com/conferences/milan/2025/',
@@ -555,7 +517,6 @@ const siteData = {
 		},
 		{
 			event: 'MagnoliaConf',
-			eventYear: '2025',
 			eventDate: '2025-10-22',
 			eventLocation: 'Jackson, MS',
 			eventURL: 'https://2025.magnoliaconf.com/',
@@ -563,23 +524,9 @@ const siteData = {
 			talkURL: '',
 			talkType: 'Talk',
 		},
-	],
-	upcomingTalks: [
-		{
-			event: 'Island Architecture: The Monthly Dev #35',
-			eventYear: '2023',
-			eventDate: '2023-11-28',
-			eventLocation: 'Online',
-			eventURL:
-				'https://www.meetup.com/the-monthly-dev-world-class-talks-by-expert-developers/events/297351688/',
-			talkName: 'Bye-bye, weeds! Digital Gardening with Astro & MDX.',
-			talkURL: '',
-			talkType: 'Talk',
-		},
 		{
 			event: 'jsday — Bologna',
-			eventYear: '2026',
-			eventDate: '2026-04-20',
+			eventDate: '2026-04-09',
 			eventLocation: 'Bologna, Italy',
 			eventURL: 'https://www.jsday.it/',
 			talkName: 'The Beachcomber’s Guide to Type-Safe Design Systems.',
@@ -588,7 +535,6 @@ const siteData = {
 		},
 		{
 			event: 'Codemotion Madrid',
-			eventYear: '2026',
 			eventDate: '2026-04-20',
 			eventLocation: 'Madrid, Spain',
 			eventURL: 'https://conferences.codemotion.com/madrid/',
@@ -597,10 +543,11 @@ const siteData = {
 			talkType: 'Talk',
 		},
 	],
+	// @deprecated Postponed talks should move to
+	// `src/content/talks/*.mdx`.
 	postponedTalks: [
 		{
 			event: 'Self Conference',
-			eventYear: '2021',
 			eventDate: '',
 			eventLocation: 'Detroit, MI',
 			eventURL: 'https://selfconference.org/',
@@ -611,7 +558,6 @@ const siteData = {
 		},
 		{
 			event: 'Web Accessibility Conference',
-			eventYear: '2021',
 			eventDate: '',
 			eventLocation: 'New Orleans, LA',
 			eventURL: 'https://webaccessibilityconf.com/',
