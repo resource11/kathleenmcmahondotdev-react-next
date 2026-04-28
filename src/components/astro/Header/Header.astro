@@ -1,27 +1,43 @@
 ---
-import siteData from '../../../utils/data/siteData';
-import KMLogo from '../../../assets/images/KMLogo.svg';
-import Link from '../Link/Link.astro';
+import siteData from '@/utils/data/siteData';
+import KMLogo from '@/assets/images/KMLogo.svg';
+import Link from '@/components/astro/Link/Link.astro';
 const { primaryNav } = siteData;
 ---
 
-<header class='header' id='#top'>
-	<div class='headerLinks'>
-		<a href='#main' class='skipLink'>
-			Skip to main <span role='presentation'>content</span>
+<header
+	class="header"
+	id="#top"
+>
+	<div class="headerLinks">
+		<a
+			href="#main"
+			class="skipLink"
+		>
+			Skip to main <span role="presentation">content</span>
 		</a>
-		<a href='/' class='logo'>
-			<img src={KMLogo.src} alt='KathleenMcMahon.dev' class='logoImg' />
-			<span class='visuallyHidden'>KathleenMcMahon.me</span>
+		<a
+			href="/"
+			class="logo"
+		>
+			<img
+				src={KMLogo.src}
+				alt="KathleenMcMahon.dev"
+				class="logoImg"
+			/>
+			<span class="visuallyHidden">KathleenMcMahon.me</span>
 		</a>
 	</div>
 
-	<nav class='primaryNav'>
-		<ul class='primaryNavUl'>
+	<nav class="primaryNav">
+		<ul class="primaryNavUl">
 			{
 				primaryNav.map((nav) => (
-					<li class='primaryNavLi'>
-						<Link href={nav.link} linkClasses='primaryNavLiLink'>
+					<li class="primaryNavLi">
+						<Link
+							href={nav.link}
+							linkClasses="primaryNavLiLink"
+						>
 							{nav.name}
 						</Link>
 					</li>

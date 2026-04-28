@@ -15,3 +15,7 @@ export function uid(prefix) {
 	}
 	return `${prefix && `${prefix}-`}${r}`;
 }
+
+export default {
+	uid,
+};

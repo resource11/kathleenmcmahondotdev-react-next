@@ -1,38 +1,46 @@
 /** @jsxImportSource: solid-js */
 // import PropTypes from "prop-types"
-import classnames from "classnames"
-import { useExtraClasses } from "../../../utils/helpers"
-import { Image } from "astro:assets";
-import styles from "./Card.module.css"
+import classnames from 'classnames';
+import { useExtraClasses } from '@/utils/helpers';
+import { Image } from 'astro:assets';
+import styles from './Card.module.css';
 
 export const SolidCard = (props) => {
-  const css = useExtraClasses(styles, props.extraClasses)
-  const cardCSSContentWrapper = classnames(css.cardContentWrapper,  props.cardContentWrapperClasses)
-  const cardCSSFooterWrapper = classnames(css.cardFooterWrapper,  props.cardFooterWrapperClasses)
-  const cardCSS = classnames(css.cardRoot, css[props.display], {
-    [css.horizontal]: props.horizontal,
-  })
-  return (
-    <article class={cardCSS}>
-      {props.image && (
-        <header class={css.cardHeader}>
-          <Image src={props.image} alt={props.imageAlt} />
-        </header>
-      )}
-      <div class={cardCSSContentWrapper}>
-          <footer class={cardCSSFooterWrapper}>{props.children}</footer>
-      </div>
-    </article>
-  )
-}
+	const css = useExtraClasses(styles, props.extraClasses);
+	const cardCSSContentWrapper = classnames(
+		css.cardContentWrapper,
+		props.cardContentWrapperClasses,
+	);
+	const cardCSSFooterWrapper = classnames(
+		css.cardFooterWrapper,
+		props.cardFooterWrapperClasses,
+	);
+	const cardCSS = classnames(css.cardRoot, css[props.display], {
+		[css.horizontal]: props.horizontal,
+	});
+	return (
+		<article class={cardCSS}>
+			{props.image && (
+				<header class={css.cardHeader}>
+					<Image
+						src={props.image}
+						alt={props.imageAlt}
+					/>
+				</header>
+			)}
+			<div class={cardCSSContentWrapper}>
+				<footer class={cardCSSFooterWrapper}>{props.children}</footer>
+			</div>
+		</article>
+	);
+};
 
-export default SolidCard
+export default SolidCard;
 
 // Card.defaultProps = {
 //   display: "flex",
 //   imageAlt: "",
 // }
-
 
 // Card.propTypes = {
 //   /**

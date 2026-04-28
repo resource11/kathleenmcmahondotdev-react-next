@@ -1,30 +1,30 @@
 /** @jsxImportSource: solid-js */
 // import PropTypes from "prop-types"
-import "../../../utils/fontawesome"
-import { useExtraClasses } from "../../../utils/useExtraClasses"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import styles from "./Icon.module.css"
+import '@/utils/fontawesome';
+import { useExtraClasses } from '@/utils/useExtraClasses';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styles from './Icon.module.css';
 
 export const Icon = ({ icon, extraClasses, size, title }) => {
-  const css = useExtraClasses(styles, extraClasses)
-  return (
-    <span className={css.iconSpan}>
-      <FontAwesomeIcon
-        className={css.icon}
-        icon={icon}
-        size={size}
-        title={title}
-      />
-    </span>
-  )
-}
+	const css = useExtraClasses(styles, extraClasses);
+	return (
+		<span className={css.iconSpan}>
+			<FontAwesomeIcon
+				className={css.icon}
+				icon={icon}
+				size={size}
+				title={title}
+			/>
+		</span>
+	);
+};
 
-export default Icon
+export default Icon;
 
 Icon.defaultProps = {
-  size: "xs",
-  title: null,
-}
+	size: 'xs',
+	title: null,
+};
 
 // Icon.propTypes = {
 //   /**

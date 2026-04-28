@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeadingAccentImage from '../assets/images/angled-red-purp-xs.svg';
 import '../styles/page-styles/speak.css';
-import { groupTalksByYear } from '../utils/groupTalksByYear';
+import { groupTalksByYear } from '@/utils/groupTalksByYear';
 const pageTitle = 'Speaking';
 const h1Title = 'Speaking';
 
@@ -24,51 +24,60 @@ const pastTalkLinkClasses = `cardLinkRoot pastCardLinkRoot`;
 <BaseLayout
 	pageTitle={pageTitle}
 	h1Title={h1Title}
-	pageH1Class='speakH1'
+	pageH1Class="speakH1"
 	pageBgImage={HeadingAccentImage.src}
-	pageBgImageClass='headingAccentImage'>
+	pageBgImageClass="headingAccentImage"
+>
 	<!-- <SEO title={`Kathleen McMahon | Speaking`} /> -->
-	<article class='bodyWrapper'>
-		<img src={HeadingAccentImage.src} alt='' class='headingAccentImage' />
+	<article class="bodyWrapper">
+		<img
+			src={HeadingAccentImage.src}
+			alt=""
+			class="headingAccentImage"
+		/>
 		<header>
-			<h1 class='speakH1'>Speaking</h1>
+			<h1 class="speakH1">Speaking</h1>
 		</header>
-		<p class='speakIntroPara'>
+		<p class="speakIntroPara">
 			I speak about things, using metaphors, and gifs. Lots, and lots of gifs.
 		</p>
-		<hr class='purpleRedHR' />
+		<hr class="purpleRedHR" />
 		{
 			upcomingYears.length > 0 && (
 				<>
 					<h2>Upcoming talks</h2>
 					{upcomingYears.map((year) => (
 						<>
-							<h3 class='speakingH3'>{year}</h3>
-							<ul class={talkListClasses} role='list'>
+							<h3 class="speakingH3">{year}</h3>
+							<ul
+								class={talkListClasses}
+								role="list"
+							>
 								{upcoming[year].map((talk) =>
 									talk.talkAnnounced ? (
 										<li class={upcomingTalkListClasses}>
 											<a
 												class={`${upcomingTalkLinkClasses} small`}
-												href={talk.eventURL}>
+												href={talk.eventURL}
+											>
 												{talk.event}
 											</a>
-											<p class='upcomingCardSublinkRoot'>{talk.talkName}</p>
-											<p class='cardDateLocation'>
+											<p class="upcomingCardSublinkRoot">{talk.talkName}</p>
+											<p class="cardDateLocation">
 												{talk.eventDate} | {talk.eventLocation} |{' '}
 												{talk.talkType}
 											</p>
 										</li>
 									) : (
 										<li class={upcomingTalkListClasses}>
-											<p class='cardDateLocation'>To be announced</p>
+											<p class="cardDateLocation">To be announced</p>
 										</li>
 									),
 								)}
 							</ul>
 						</>
 					))}
-					<hr class='purpleRedHR' />
+					<hr class="purpleRedHR" />
 				</>
 			)
 		}
@@ -76,21 +85,30 @@ const pastTalkLinkClasses = `cardLinkRoot pastCardLinkRoot`;
 		{
 			pastYears.map((year) => (
 				<>
-					<h3 class='speakingH3'>{year}</h3>
-					<ul class={talkListClasses} role='list'>
+					<h3 class="speakingH3">{year}</h3>
+					<ul
+						class={talkListClasses}
+						role="list"
+					>
 						{past[year].map((talk) => (
 							<li class={pastTalkListClasses}>
-								<a class={`${pastTalkLinkClasses} small`} href={talk.eventURL}>
+								<a
+									class={`${pastTalkLinkClasses} small`}
+									href={talk.eventURL}
+								>
 									{talk.event}
 								</a>
 								{talk.talkURL ? (
-									<a class='pastCardSublinkRoot small' href={talk.talkURL}>
+									<a
+										class="pastCardSublinkRoot small"
+										href={talk.talkURL}
+									>
 										{talk.talkName}
 									</a>
 								) : (
-									<p class='pastCardSublinkRoot small'>{talk.talkName}</p>
+									<p class="pastCardSublinkRoot small">{talk.talkName}</p>
 								)}
-								<p class='cardDateLocation'>
+								<p class="cardDateLocation">
 									{talk.eventDate} | {talk.eventLocation} | {talk.talkType}
 								</p>
 							</li>

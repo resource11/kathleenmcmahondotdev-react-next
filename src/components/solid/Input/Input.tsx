@@ -4,7 +4,7 @@ import { render } from 'solid-js/web';
 import { useField } from 'solid-js-form';
 // import PropTypes from "prop-types"
 import classnames from 'classnames';
-import { useExtraClasses } from '../../../utils/helpers.js';
+import { useExtraClasses } from '@/utils/helpers.js';
 import { Icon } from '../Icon/Icon.jsx';
 import styles from './Input.module.css';
 import {
@@ -58,7 +58,10 @@ export const Input: HTMLInputElement = ({
 	return (
 		<div className={rootClasses}>
 			{label && (
-				<label htmlFor={props.id || props.name} className={labelClasses}>
+				<label
+					htmlFor={props.id || props.name}
+					className={labelClasses}
+				>
 					<span className={css.labelText}>{props.label}</span>
 					{field.required() ? ' *' : ''}
 					<input
@@ -72,7 +75,10 @@ export const Input: HTMLInputElement = ({
 					/>
 					{field.error() ? (
 						<div className={css.errorText}>
-							<Icon icon={faArrowUp} extraClasses={{ icon: css.errorIcon }} />
+							<Icon
+								icon={faArrowUp}
+								extraClasses={{ icon: css.errorIcon }}
+							/>
 							{field.error()}
 						</div>
 					) : null}

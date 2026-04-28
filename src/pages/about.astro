@@ -6,10 +6,10 @@ import HeadingAccentImage from '../assets/images/angled-orange-xs.svg';
 import { ContactForm } from '../components/react/ContactForm/ContactForm';
 
 import '../styles/page-styles/about.css';
-import Link from '../components/astro/Link/Link.astro';
+import Link from '@/components/astro/Link/Link.astro';
 import '../components/react/Card/Card.css';
 
-import siteData from '../utils/data/siteData';
+import siteData from '@/utils/data/siteData';
 const pageTitle = 'About';
 const { socialLinks } = siteData;
 
@@ -31,33 +31,38 @@ const socialListItemClasses = `socialListItem liReset`;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<article class='bodyWrapper'>
-		<img src={HeadingAccentImage.src} alt='' class='headingAccentImage' />
+	<article class="bodyWrapper">
+		<img
+			src={HeadingAccentImage.src}
+			alt=""
+			class="headingAccentImage"
+		/>
 		<header>
-			<h1 class='aboutH1'>What I do</h1>
+			<h1 class="aboutH1">What I do</h1>
 		</header>
-		<article class='contentWrapper'>
-			<p class='aboutIntroPara'>
+		<article class="contentWrapper">
+			<p class="aboutIntroPara">
 				So... you want to know more about me? OK. Well, I'm a software engineer
 				with a design background. In other words, I really enjoy the
 				<a
-					href='https://bradfrost.com/blog/post/frontend-design-react-and-a-bridge-over-the-great-divide/'>
+					href="https://bradfrost.com/blog/post/frontend-design-react-and-a-bridge-over-the-great-divide/"
+				>
 					front of the frontend
 				</a>, digging into new technologies, and talking about accessibility,
 				React component libraries, design systems, and inclusive documentation.
 			</p>
-			<p class='aboutPara'>
-				I’m also a <a href='https://www.w3.org/community/design-tokens'>
+			<p class="aboutPara">
+				I’m also a <a href="https://www.w3.org/community/design-tokens">
 					Design Tokens W3C Community Group
 				</a>Specification Editor.
 			</p>
-			<p class='aboutPara'>
+			<p class="aboutPara">
 				When I’m not coding, designing, or speaking about things, I can be found
 				racing bikes in costume &#8212; as the best
-				<a href='https://facebook.com/cxsisters'>Lanterne Rouge cyclocrosser</a>
+				<a href="https://facebook.com/cxsisters">Lanterne Rouge cyclocrosser</a>
 				you’ll ever meet.
 			</p>
-			<hr class='redOrangeHR' />
+			<hr class="redOrangeHR" />
 			<h2>My portfolios</h2>
 			<p>
 				Here are some of the portfolio sites I've done in the past for my
@@ -67,17 +72,17 @@ const socialListItemClasses = `socialListItem liReset`;
 				{
 					portfolioList.map((port) => (
 						<li class={cardListItemClasses}>
-							<article class='cardRoot'>
+							<article class="cardRoot">
 								{port.image && (
-									<header class='cardHeader'>
-										<div class='cardCropper'>
+									<header class="cardHeader">
+										<div class="cardCropper">
 											<Image
-												slot='image'
+												slot="image"
 												src={port.image}
 												alt={port.name}
 												width={1600}
 												height={900}
-												class='cardImage'
+												class="cardImage"
 											/>
 										</div>
 									</header>
@@ -86,11 +91,12 @@ const socialListItemClasses = `socialListItem liReset`;
 									<footer class={'cardFooterWrapper'}>
 										<Link
 											href={port.link}
-											linkClasses='cardFooterLink'
+											linkClasses="cardFooterLink"
 											icon={'arrow-right'}
 											iconAfter
-											size='small'
-											iconSpanClasses='cardFooterLinkIcon'>
+											size="small"
+											iconSpanClasses="cardFooterLinkIcon"
+										>
 											{port.cta}
 										</Link>
 									</footer>
@@ -100,7 +106,7 @@ const socialListItemClasses = `socialListItem liReset`;
 					))
 				}
 			</ul>
-			<hr class='redOrangeHR' />
+			<hr class="redOrangeHR" />
 			<h2>Social links</h2>
 			<p>Here are some of the ways you can get in touch with me:</p>
 			<ul class={socialListClasses}>
@@ -111,17 +117,18 @@ const socialListItemClasses = `socialListItem liReset`;
 								href={social.link}
 								icon={social.icon}
 								iconBefore
-								iconClasses='socialListLinkIcon'
-								linkClasses='socialListLink'
-								size='large'>
+								iconClasses="socialListLinkIcon"
+								linkClasses="socialListLink"
+								size="large"
+							>
 								<span>{social.name}</span>
 							</Link>
 						</li>
 					))
 				}
 			</ul>
-			<hr class='redOrangeHR' />
-			<h2 id='contact-me'>Contact Me</h2>
+			<hr class="redOrangeHR" />
+			<h2 id="contact-me">Contact Me</h2>
 			<p>You may also reach me by email</p>
 			<ContactForm />
 		</article>

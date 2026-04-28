@@ -1,19 +1,20 @@
 ---
-import { getCollection, render } from "astro:content";
-import MarkdownPostLayout from "../../layouts/MarkdownPostLayout.astro";
+import { getCollection, render } from 'astro:content';
+import MarkdownPostLayout from '@/layouts/MarkdownPostLayout.astro';
+import MDXComponents from '@/components/react/MDXComponents.jsx';
 export async function getStaticPaths() {
-  const blogEntries = await getCollection("blog");
-  return blogEntries.map((entry) => ({
-    params: { slug: entry.id },
-    props: { entry },
-  }));
+	const blogEntries = await getCollection('blog');
+	return blogEntries.map((entry) => ({
+		params: { slug: entry.id },
+		props: { entry },
+	}));
 }
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
 <MarkdownPostLayout frontmatter={entry.data}>
-  <h1>{entry.data.title}</h1>
-  <time>{entry.data.date.toDateString()}</time>
-  <Content />
+	<h1>{entry.data.title}</h1>
+	<time>{entry.data.date.toDateString()}</time>
+	<Content components={MDXComponents} />
 </MarkdownPostLayout>

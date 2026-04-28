@@ -1,10 +1,10 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
-import Layout from '../layouts/Layout.astro';
-import LineDot from '../components/astro/LineDot/LineDot.astro';
-import CTALink from '../components/astro/CTALink/CTALink.astro';
-import Link from '../components/astro/Link/Link.astro';
+import Layout from '@/layouts/Layout.astro';
+import LineDot from '@/components/astro/LineDot/LineDot.astro';
+import CTALink from '@/components/astro/CTALink/CTALink.astro';
+import Link from '@/components/astro/Link/Link.astro';
 import HeadingAccentImage from '../assets/images/hero-masked.svg';
 import RecentBgMasked from '../assets/images/sm-bot-white-diamond.svg';
 import '../styles/page-styles/home.css';
@@ -41,38 +41,46 @@ interface Props {
 ---
 
 <Layout pageTitle={pageTitle}>
-	<img src={HeadingAccentImage.src} alt='' class='heroImageMasked' />
-	<article class='bodyWrapper'>
-		<article class='contentWrapper'>
-			<header class='homeHeader'>
-				<h1 class='homeH1'>Kathleen McMahon</h1>
-				<p class='homeIntroPara'>
+	<img
+		src={HeadingAccentImage.src}
+		alt=""
+		class="heroImageMasked"
+	/>
+	<article class="bodyWrapper">
+		<article class="contentWrapper">
+			<header class="homeHeader">
+				<h1 class="homeH1">Kathleen McMahon</h1>
+				<p class="homeIntroPara">
 					Hello! I'm Kathleen, an engineer, designer, speaker, and occasional
 					writer. This is the space where I cultivate my interests.
 				</p>
 				<LineDot />
 			</header>
-			<img src={RecentBgMasked.src} alt='' class='recentTalksBgMasked' />
-			<article class='css.recentTalks'>
-				<h2 class='recentTalksH2'>
+			<img
+				src={RecentBgMasked.src}
+				alt=""
+				class="recentTalksBgMasked"
+			/>
+			<article class="css.recentTalks">
+				<h2 class="recentTalksH2">
 					Recent talks, <br />
 					podcasts, streams
 				</h2>
 				<ul class={cardListClasses}>
 					{
 						recentSpeaking.map((speak) => (
-							<li class='cardListItem'>
-								<article class='cardRoot'>
+							<li class="cardListItem">
+								<article class="cardRoot">
 									{speak.image && (
-										<header class='cardHeader'>
-											<div class='cardCropper'>
+										<header class="cardHeader">
+											<div class="cardCropper">
 												<Image
-													slot='image'
+													slot="image"
 													src={speak.image}
 													alt={speak.name}
 													width={1605}
 													height={901}
-													class='cardImage'
+													class="cardImage"
 												/>
 											</div>
 										</header>
@@ -82,11 +90,12 @@ interface Props {
 											<Link
 												href={speak.link}
 												aria-label={speak.ctaAria ? speak.ctaAria : null}
-												linkClasses='cardFooterLink'
+												linkClasses="cardFooterLink"
 												icon={'arrow-right'}
 												iconAfter
-												size='small'
-												iconSpanClasses='cardFooterLinkIcon'>
+												size="small"
+												iconSpanClasses="cardFooterLinkIcon"
+											>
 												{speak.cta}
 											</Link>
 										</footer>
@@ -97,25 +106,29 @@ interface Props {
 					}
 				</ul>
 				<CTALink
-					size='small'
-					href='/speak/'
-					CTALinkClasses='ctaLink'
-					CTAIconSpanClasses='ctaLinkIcon'>
+					size="small"
+					href="/speak/"
+					CTALinkClasses="ctaLink"
+					CTAIconSpanClasses="ctaLinkIcon"
+				>
 					Browse all media
 				</CTALink>
 			</article>
-			<hr class='purpleRedHR' />
-			<article class='featuredPosts'>
+			<hr class="purpleRedHR" />
+			<article class="featuredPosts">
 				<h2>Featured posts</h2>
 				<ul class={postListClasses}>
 					{
 						featuredPosts.map((post) => (
-							<li class='postListItem'>
-								<Link href={`posts/${post.id}`} linkClasses='postListLink'>
+							<li class="postListItem">
+								<Link
+									href={`posts/${post.id}`}
+									linkClasses="postListLink"
+								>
 									{post.data.title}
 								</Link>
-								<span class='postListPublishedDate'>
-									<span class='postListPublished'>Published:</span>{' '}
+								<span class="postListPublishedDate">
+									<span class="postListPublished">Published:</span>{' '}
 									{post.data.date.toDateString()}
 								</span>
 							</li>
@@ -123,10 +136,11 @@ interface Props {
 					}
 				</ul>
 				<CTALink
-					size='small'
-					href='/write/'
-					CTALinkClasses='ctaLink'
-					CTAIconSpanClasses='ctaLinkIcon'>
+					size="small"
+					href="/write/"
+					CTALinkClasses="ctaLink"
+					CTAIconSpanClasses="ctaLinkIcon"
+				>
 					Browse all writing
 				</CTALink>
 			</article>

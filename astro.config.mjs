@@ -4,6 +4,7 @@ import react from '@astrojs/react';
 import solid from '@astrojs/solid-js';
 import embeds from 'astro-embed/integration';
 import icon from 'astro-icon';
+import { remarkReactLive } from './src/plugins/remark-react-live.mjs';
 
 export default defineConfig({
 	site: 'https://kathleenmcmahon-react-next.netlify.app',
@@ -16,12 +17,13 @@ export default defineConfig({
 		icon(),
 		mdx({
 			drafts: true,
+			// remarkPlugins: [remarkReactLive],
 		}),
 		react({
-			include: ['**/react/*'],
+			include: ['**/react/**'],
 		}),
 		solid({
-			include: ['**/solid/*'],
+			include: ['**/solid/***'],
 		}),
 	],
 	image: {
@@ -31,7 +33,7 @@ export default defineConfig({
 	build: {
 		inlineStylesheets: 'never',
 	},
-vite: {
+	vite: {
 		test: {
 			globals: true,
 			environment: 'jsdom', // Use jsdom for browser environment simulation

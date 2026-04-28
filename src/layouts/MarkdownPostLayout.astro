@@ -1,13 +1,21 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
+import { Image } from 'astro:assets';
+import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
-import BlogHeroAccent from "../assets/images/blog-hero-accent.svg";
-import "../styles/layout-styles/post-mdx-layout.css";
+import BlogHeroAccent from '@/assets/images/blog-hero-accent.svg';
+import MDXClientWrapper from '@/components/MDXClientWrapper.jsx';
+import '../styles/layout-styles/post-mdx-layout.css';
 ---
 
 <BaseLayout h1Title={frontmatter.title}>
-  <article class="bodyWrapper">
-    <img src={BlogHeroAccent.src} alt="" class="blogHeroAccent" />
-    <slot />
-  </article>
+	<article class="bodyWrapper">
+		<Image
+			src={BlogHeroAccent}
+			alt=""
+			class="blogHeroAccent"
+		/>
+		<MDXClientWrapper client:load>
+			<slot />
+		</MDXClientWrapper>
+	</article>
 </BaseLayout>

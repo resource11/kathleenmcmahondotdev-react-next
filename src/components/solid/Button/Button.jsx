@@ -2,7 +2,7 @@
 /** @jsxImportSource: solid-js */
 // import PropTypes from "prop-types"
 import classnames from "classnames"
-import { useExtraClasses } from "../../../utils/useExtraClasses"
+import { useExtraClasses } from "@/utils/useExtraClasses"
 import Icon from "../Icon/Icon.jsx"
 import styles from "./Button.module.css"
 

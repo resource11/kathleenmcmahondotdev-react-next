@@ -1,18 +1,17 @@
 {
-  "extends": "astro/tsconfigs/base",
-  "compilerOptions": {
-    "strictNullChecks": true,
-    "allowJs": true,
-    "baseUrl": ".",
-    "paths": {
-      "~/*": [
-        "src/*"
-      ]
-    },
-    // For Solid
-    // /** @jsxImportSource solid-js */
-    "jsx": "preserve",
-    "jsxImportSource": "react",
-    "types": ["astro/client", "vitest/globals", "@testing-library/jest-dom"]
-  }
+	"extends": "astro/tsconfigs/base",
+	"compilerOptions": {
+		"strictNullChecks": true,
+		"allowJs": true,
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"],
+			"@/utils": ["src/utils/*"]
+		},
+		// For Solid
+		// /** @jsxImportSource solid-js */
+		"jsx": "preserve",
+		"jsxImportSource": "react",
+		"types": ["astro/client", "vitest/globals", "@testing-library/jest-dom"]
+	}
 }

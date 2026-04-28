@@ -1,5 +1,5 @@
 ---
-import Link from '../Link/Link.astro';
+import Link from '@/components/astro/Link/Link.astro';
 const { ariaLabel, CTAIconSpanClasses, size, href, CTALinkClasses } =
 	Astro.props;
 
@@ -26,11 +26,12 @@ interface Props {
 <Link
 	aria-label={ariaLabel ? ariaLabel : null}
 	href={href}
-	icon='arrow-right'
+	icon="arrow-right"
 	iconAfter
-	iconClasses='socialListLinkIcon'
+	iconClasses="socialListLinkIcon"
 	iconSpanClasses={iconSpanExtraClasses}
 	linkClasses={linkExtraClasses}
-	size={size}>
+	size={size}
+>
 	<slot />
 </Link>
