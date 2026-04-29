@@ -1,0 +1,31 @@
+---
+export const prerender = false;
+
+import { getEntry, render } from 'astro:content';
+import PrivateLayout from '../../layouts/PrivateLayout.astro';
+import Breadcrumb from '../../components/astro/Breadcrumb/Breadcrumb.astro';
+import CaseStudyNav from '../../components/astro/CaseStudyNav/CaseStudyNav.astro';
+
+const { slug } = Astro.params;
+if (!slug) return Astro.redirect('/about');
+
+const entry = await getEntry('privatePortfolio', slug);
+if (!entry) return new Response(null, { status: 404 });
+
+const { Content } = await render(entry);
+---
+
+<PrivateLayout pageTitle={entry.data.title}>
+	<Breadcrumb
+		items={[
+			{ label: 'About', href: '/about' },
+			{ label: entry.data.title },
+		]}
+	/>
+	<article class='case-study'>
+		<h1>{entry.data.title}</h1>
+		{entry.data.client && <p class='case-study-client'>{entry.data.client}</p>}
+		<Content />
+	</article>
+	<CaseStudyNav currentSlug={slug} />
+</PrivateLayout>

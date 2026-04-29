@@ -65,8 +65,22 @@ const talksCollection = defineCollection({
 	}),
 });
 
+const privatePortfolioCollection = defineCollection({
+	loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/privatePortfolio' }),
+	schema: ({ image: img }) =>
+		z.object({
+			title: z.string(),
+			summary: z.string(),
+			coverImage: img().optional(),
+			client: z.string().optional(),
+			order: z.number(),
+			publishDate: z.date().optional(),
+		}),
+});
+
 export const collections = {
 	blog: blogCollection,
 	dataYML: dataYMLCollection,
 	talks: talksCollection,
+	privatePortfolio: privatePortfolioCollection,
 };
