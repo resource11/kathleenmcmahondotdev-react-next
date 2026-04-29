@@ -1,0 +1,29 @@
+@import '../../../styles/lib/variables.css';
+@import '../../../styles/lib/mixins.css';
+
+.root {
+	margin-top: var(--s1);
+	max-width: 50ch;
+}
+
+.stackForm > * {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.stackForm > * + * {
+	margin-top: var(--s-3);
+}
+
+.heading {
+	font-size: 1rem;
+	font-weight: 600;
+	margin: 0;
+}
+
+.serverError {
+	padding: 0.5rem 0.75rem;
+	background: rgba(220, 38, 38, 0.1);
+	border-left: 3px solid rgb(220, 38, 38);
+	font-size: 0.875rem;
+}
