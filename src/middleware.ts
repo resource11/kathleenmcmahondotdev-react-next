@@ -5,10 +5,6 @@ const COOKIE_NAME = 'portfolio_auth';
 const SESSION_MAX_AGE = 900;
 
 export const onRequest = defineMiddleware(async (context, next) => {
-	if (context.isPrerendered) {
-		return next();
-	}
-
 	const { url, cookies, redirect } = context;
 	const { pathname } = url;
 
