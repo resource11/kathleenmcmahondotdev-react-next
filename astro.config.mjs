@@ -1,5 +1,6 @@
 import { defineConfig, sharpImageService } from 'astro/config';
 import mdx from '@astrojs/mdx';
+import netlify from '@astrojs/netlify';
 import react from '@astrojs/react';
 import solid from '@astrojs/solid-js';
 import embeds from 'astro-embed/integration';
@@ -7,6 +8,7 @@ import icon from 'astro-icon';
 
 export default defineConfig({
 	site: 'https://kathleenmcmahon-react-next.netlify.app',
+	adapter: netlify({ edgeMiddleware: true }),
 	markdown: {
 		syntaxHighlight: 'prism',
 		gfm: true,
