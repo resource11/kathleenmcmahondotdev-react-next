@@ -1,6 +1,4 @@
-import React from "react"
 import PropTypes from "prop-types"
-import { useField } from "formik"
 import classnames from "classnames"
 import { useExtraClasses } from "../../../utils/helpers"
 import { Icon } from "../Icon/Icon"
@@ -11,12 +9,10 @@ export const TextArea = ({
   extraClasses,
   label,
   resizeVerticalOnly,
+  error,
   ...props
 }) => {
   const css = useExtraClasses(styles, extraClasses)
-  // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
-  // which we can spread on <input> and alse replace ErrorMessage entirely.
-  const [field, meta] = useField(props)
 
   const labelClasses = classnames(css.textareaLabel, css.stackField)
 
@@ -32,16 +28,16 @@ export const TextArea = ({
           <textarea
             id={props.id || props.name}
             className={textareaClasses}
-            {...field}
+            aria-invalid={error ? "true" : null}
             {...props}
           />
-          {meta.touched && meta.error ? (
+          {error ? (
             <div className={css.errorText}>
               <Icon
                 icon={faExclamationCircle}
                 extraClasses={{ icon: css.errorIcon }}
               />
-              {meta.error}
+              {error}
             </div>
           ) : null}
         </label>
@@ -57,8 +53,6 @@ TextArea.defaultProps = {
 }
 
 TextArea.propTypes = {
-  /**
-   * Determines if this textarea is can only be resized vertically
-   */
   resizeVerticalOnly: PropTypes.bool,
+  error: PropTypes.string,
 }

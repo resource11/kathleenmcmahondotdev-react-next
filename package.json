@@ -34,7 +34,6 @@
     "autoprefixer": "10.4.14",
     "classnames": "2.3.2",
     "cssnano": "6.0.1",
-    "formik": "2.4.5",
     "grommet": "2.32.2",
     "grommet-icons": "4.10.0",
     "install": "0.13.0",
@@ -56,8 +55,7 @@
     "react-live": "2.2.3",
     "reading-time": "1.5.0",
     "sharp": "0.33.5",
-    "solid-js-form": "0.1.8",
-    "yup": "1.2.0"
+    "solid-js-form": "0.1.8"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "6.9.1",

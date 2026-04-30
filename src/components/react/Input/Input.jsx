@@ -1,6 +1,4 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { useField } from 'formik';
 import classnames from 'classnames';
 import { useExtraClasses } from '../../../utils/helpers.js';
 import { Icon } from '../Icon/Icon.jsx';
@@ -12,11 +10,8 @@ export const InputSizes = {
 	large: 'large',
 };
 
-export const Input = ({ extraClasses, isHidden, label, ...props }) => {
+export const Input = ({ extraClasses, isHidden, label, error, ...props }) => {
 	const css = useExtraClasses(styles, extraClasses);
-	// useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
-	// which we can spread on <input> and alse replace ErrorMessage entirely.
-	const [field, meta] = useField(props);
 
 	const rootClasses = classnames(css.root, {
 		[css.hidden]: isHidden,
@@ -35,16 +30,16 @@ export const Input = ({ extraClasses, isHidden, label, ...props }) => {
 					<input
 						id={props.id || props.name}
 						className={css.input}
-						{...field}
+						aria-invalid={error ? 'true' : null}
 						{...props}
 					/>
-					{meta.touched && meta.error ? (
+					{error ? (
 						<div className={css.errorText}>
 							<Icon
 								icon={faExclamationCircle}
 								extraClasses={{ icon: css.errorIcon }}
 							/>
-							{meta.error}
+							{error}
 						</div>
 					) : null}
 				</label>
@@ -60,8 +55,6 @@ Input.defaultProps = {
 };
 
 Input.propTypes = {
-	/**
-	 * Determines if this input is hidden from screen readers. Pair this with inputs of type hidden
-	 */
 	isHidden: PropTypes.bool,
+	error: PropTypes.string,
 };
