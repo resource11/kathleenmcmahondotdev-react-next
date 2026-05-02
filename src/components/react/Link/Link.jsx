@@ -1,6 +1,6 @@
 
 
-import classnames from "classnames"
+import clsx from "clsx"
 import { useExtraClasses } from "../../utils/useExtraClasses"
 // import { Icon } from "../Icon/Icon"
 import styles from "./Link.module.css"
@@ -27,8 +27,8 @@ export const Link = ({
   href,
 }) => {
   const css = useExtraClasses(styles, extraClasses)
-  const linkClasses = classnames(css.root, css[size], { [css.hasIcon]: icon })
-  const iconClasses = classnames(css.icon, { [css.iconAfter]: iconAfter })
+  const linkClasses = clsx(css.root, css[size], { [css.hasIcon]: icon })
+  const iconClasses = clsx(css.icon, { [css.iconAfter]: iconAfter })
   const linkIcon = icon && (
     <Icon
       icon={icon}

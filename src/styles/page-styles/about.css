@@ -97,7 +97,9 @@
 .cardUl,
 .socialUl {
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
+	flex-flow: row wrap;
+	justify-content: flex-start;
 	align-items: center;
 
 	@media screen and (--small) {
@@ -130,7 +132,7 @@
 	}
 }
 
-@supports (width: min(250px, 100%)) {
+@supports (display: grid) {
 	.cardGrid {
 		display: grid;
 		grid-gap: 1.5rem;
@@ -159,6 +161,10 @@
 .cardFooterLink {
 	width: 100%;
 	max-width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	font-size: var(--s0);
 	height: 2.5rem;
 	margin: 0;
 	padding: 0.5rem;
@@ -179,6 +185,11 @@
 ------ SOCIAL LIST ------
 */
 
+.stackSocialList {
+	column-gap: calc(var(--s0) / 2);
+	margin-top: var(--s0);
+}
+
 .stackSocialList > * {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -188,21 +199,9 @@
 	margin-top: var(--s-1);
 }
 
-@supports (display: grid) {
-	.socialGrid {
-		display: grid;
-		grid-gap: 0.5rem;
-		grid-template-columns: repeat(auto-fit, minmax(6rem, 9rem));
-
-		@media screen and (--small) {
-			grid-gap: var(--s0);
-		}
-	}
-
-	.stackSocialList > * + * {
-		margin-top: 0;
-		margin-left: 0;
-	}
+.stackSocialList > * + * {
+	margin-top: 0;
+	margin-left: 0;
 }
 
 .socialListItem {
@@ -217,8 +216,6 @@
 .socialListLink {
 	display: flex;
 	align-items: center;
-	width: 100%;
-	max-width: 100%;
 	margin: 0;
 	padding: 0.25rem 0.5rem;
 	font-size: 1.25rem;
@@ -230,4 +227,24 @@
 
 .socialListLinkIcon {
 	display: flex;
+}
+
+/*TODO: remove this when cards are re-linked */
+
+.portCard {
+	position: relative;
+	min-height: 4rem;
+	background: var(--color-light);
+	border: 0.063em solid var(--grey-200);
+	box-shadow: 0 0 var(--s-2) rgba(0, 0, 0, 0.15);
+	background-clip: padding-box; /* !importanté */
+	border: solid 0.063em transparent; /* !importanté */
+	transition:
+		250ms box-shadow ease-out,
+		250ms transform ease-out,
+		250ms -webkit-transform ease-out;
+	&:hover {
+		border: 0.063em solid var(--grey-200);
+		box-shadow: 0 0 var(--s-2) rgba(0, 0, 0, 0.15);
+	}
 }

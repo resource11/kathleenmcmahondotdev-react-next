@@ -19,7 +19,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
 		const secret = import.meta.env.AUTH_SECRET;
 
 		const gateUrl = (() => {
-			const target = new URL('/about', url);
+			const target = new URL('/', url);
 			target.searchParams.set('gate', 'portfolio');
 			target.searchParams.set('return', pathname + url.search);
 			return target.pathname + target.search;

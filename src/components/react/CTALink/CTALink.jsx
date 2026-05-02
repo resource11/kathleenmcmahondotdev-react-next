@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import classnames from "classnames"
+import clsx from "clsx"
 import { useExtraClasses } from "../../utils/useExtraClasses"
 import { Link, LinkVariants } from "../Link"
 import styles from "./CTALink.module.css"
@@ -20,7 +20,7 @@ export const CTALink = ({
   variant,
 }) => {
   const css = useExtraClasses(styles, extraClasses)
-  const linkClasses = classnames(css.root, css[size])
+  const linkClasses = clsx(css.root, css[size])
 
   return (
     <Link

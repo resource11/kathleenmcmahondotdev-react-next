@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import clsx from 'clsx';
 import { useExtraClasses } from '../../../utils/helpers.js';
 import { Icon } from '../Icon/Icon.jsx';
 import styles from './Input.module.css';
@@ -10,14 +10,22 @@ export const InputSizes = {
 	large: 'large',
 };
 
-export const Input = ({ extraClasses, isHidden, label, error, ...props }) => {
+export const Input = ({
+	extraClasses,
+	inputStyles,
+	isHidden,
+	label,
+	size,
+	error,
+	...props
+}) => {
 	const css = useExtraClasses(styles, extraClasses);
 
-	const rootClasses = classnames(css.root, {
+	const rootClasses = clsx(css.root, css[size], extraClasses, {
 		[css.hidden]: isHidden,
 	});
 
-	const labelClasses = classnames(css.inputLabel, css.stackField);
+	const labelClasses = clsx(css.inputLabel, css.stackField, extraClasses);
 
 	return (
 		<div className={rootClasses}>
@@ -31,6 +39,7 @@ export const Input = ({ extraClasses, isHidden, label, error, ...props }) => {
 						id={props.id || props.name}
 						className={css.input}
 						aria-invalid={error ? 'true' : null}
+						style={inputStyles}
 						{...props}
 					/>
 					{error ? (
@@ -57,4 +66,8 @@ Input.defaultProps = {
 Input.propTypes = {
 	isHidden: PropTypes.bool,
 	error: PropTypes.string,
+	/**
+	 * Input size
+	 */
+	size: PropTypes.oneOf(Object.keys(InputSizes)),
 };

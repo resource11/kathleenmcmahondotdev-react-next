@@ -2,9 +2,9 @@
 @import '../../../styles/lib/mixins.css';
 
 .root {
-	display: block;
 	position: relative;
 	min-height: 5.875rem;
+	min-width: 11.25rem;
 }
 
 input {
@@ -22,7 +22,7 @@ input:-moz-placeholder,
 input::-moz-placeholder,
 input::placeholder-shown,
 input::placeholder {
-	color: var(--grey-300);
+	color: var(--grey-500);
 	padding: 1rem 0;
 }
 
@@ -43,7 +43,6 @@ input[type='time']:not(:focus) {
 
 .inputLabel {
 	position: relative;
-	display: block;
 	color: var(--text);
 	font-size: var(--s0);
 	line-height: 1;
@@ -71,6 +70,10 @@ input[type='time']:not(:focus) {
 		transition: all 0.2s ease-out;
 	}
 
+	& .input[aria-invalid='true'] {
+		border-color: var(--error);
+	}
+
 	& .input:focus {
 		border: 0.125em solid var(--purple-red-200); /* 2px */
 		padding: 0 0.938rem;
@@ -89,7 +92,7 @@ input[type='time']:not(:focus) {
 	}
 
 	& .labelText {
-		padding: 1.25rem 1.063rem;
+		padding: 0;
 	}
 }
 
@@ -105,7 +108,7 @@ input[type='time']:not(:focus) {
 	}
 
 	& .labelText {
-		padding: 0.625rem 0.563rem;
+		padding: 0;
 		font-size: 0.75rem;
 	}
 }
@@ -126,7 +129,7 @@ input[type='time']:not(:focus) {
 .errorText {
 	display: inline-flex;
 	align-items: center;
-	margin-top: var(--s-3);
+	margin-top: 0.25rem;
 	font-size: 0.875rem;
 	color: var(--error);
 }
@@ -134,8 +137,8 @@ input[type='time']:not(:focus) {
 .errorIcon {
 	display: inline-block;
 	margin-right: 0.25rem;
-	height: 1.5em;
-	width: 1.5rem;
+	height: 0.75rem;
+	width: 0.75rem;
 }
 
 .stackField > * {
@@ -144,5 +147,5 @@ input[type='time']:not(:focus) {
 }
 
 .stackField > * + * {
-	margin-top: var(--s-4);
+	margin-top: 0.25rem;
 }

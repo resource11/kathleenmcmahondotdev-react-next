@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import clsx from "clsx";
 const { ariaLabel, icon, iconAfter, iconBefore, iconClasses,iconSpanClasses, size, href, linkClasses } = Astro.props;
 import "./Link.css";
 import "../../react/Icon/Icon.css";
@@ -11,7 +12,7 @@ const LinkSizes = {
 
 const linkSizeClass = size !== LinkSizes.small ? "large" : "small";
 const linkExtraClasses = `linkRoot ${linkSizeClass} ${linkClasses}`;
-const iconExtraClasses = iconAfter && icon ? `iconAfter icon ${iconClasses}` : `icon ${iconClasses}`;
+const iconExtraClasses = clsx("icon", { iconBefore, iconAfter }, iconClasses);
 
 const iconSpanExtraClasses = iconSpanClasses ? `iconSpan ${iconSpanClasses}` : `iconSpan`;
 

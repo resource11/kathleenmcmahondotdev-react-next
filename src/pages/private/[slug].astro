@@ -7,7 +7,7 @@ import Breadcrumb from '../../components/astro/Breadcrumb/Breadcrumb.astro';
 import CaseStudyNav from '../../components/astro/CaseStudyNav/CaseStudyNav.astro';
 
 const { slug } = Astro.params;
-if (!slug) return Astro.redirect('/about');
+if (!slug) return Astro.redirect('/');
 
 const entry = await getEntry('privatePortfolio', slug);
 if (!entry) return new Response(null, { status: 404 });
@@ -18,7 +18,7 @@ const { Content } = await render(entry);
 <PrivateLayout pageTitle={entry.data.title}>
 	<Breadcrumb
 		items={[
-			{ label: 'About', href: '/about' },
+			{ label: 'Home', href: '/' },
 			{ label: entry.data.title },
 		]}
 	/>

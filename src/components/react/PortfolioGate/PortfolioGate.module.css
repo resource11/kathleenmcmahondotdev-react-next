@@ -2,17 +2,45 @@
 @import '../../../styles/lib/mixins.css';
 
 .root {
+	display: block;
+	position: relative;
 	margin-top: var(--s1);
 	max-width: 50ch;
 }
 
-.stackForm > * {
-	margin-top: 0;
-	margin-bottom: 0;
+.stackForm {
+	display: flex;
+	flex-grow: 1;
+}
+
+.inputWrapper {
+	flex-grow: 1;
+
+	& > label > input {
+		min-width: 11.25rem;
+		border-radius: 0.25rem 0 0 0.25rem;
+	}
 }
 
 .stackForm > * + * {
 	margin-top: var(--s-3);
+}
+
+.passwordInput {
+	min-width: 11.25rem;
+	border-radius: 0.25rem 0 0 0.25rem;
+	border-color: green;
+}
+
+/* .stackForm > label {
+	min-width: 11.25rem;
+	flex-grow: 1;
+} */
+
+.submitGate {
+	margin-top: var(--s0);
+	border-radius: 0 0.25rem 0.25rem 0;
+	border-color: var(--purple-muted-100);
 }
 
 .heading {
