@@ -32,7 +32,7 @@
     "astro-icon": "1.1.5",
     "astro-seo": "1.1.0",
     "autoprefixer": "10.4.14",
-    "classnames": "2.3.2",
+    "clsx": "2.1.1",
     "cssnano": "6.0.1",
     "grommet": "2.32.2",
     "grommet-icons": "4.10.0",
