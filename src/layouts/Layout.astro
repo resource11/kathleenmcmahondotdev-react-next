@@ -6,12 +6,13 @@ import Link from '../components/astro/Link/Link.astro';
 import '../styles/layout-styles/layout.css';
 import '../components/astro/Header/Header.css';
 import '../components/astro/Footer/Footer.css';
-const { pageTitle } = Astro.props;
+const { pageTitle, noindex = false } = Astro.props;
 ---
 
 <html lang='en'>
 	<head>
 		<CommonHead />
+		{noindex && <meta name='robots' content='noindex, nofollow' />}
 		<meta charset='utf-8' />
 		<link rel='icon' href='/favicon.png' />
 		<link rel='stylesheet' href='/prism-night-owl.css' />

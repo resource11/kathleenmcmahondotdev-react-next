@@ -4,6 +4,8 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeadingAccentImage from '../assets/images/angled-orange-xs.svg';
 import { ContactForm } from '../components/react/ContactForm/ContactForm';
+import { PortfolioGate } from '../components/react/PortfolioGate/PortfolioGate';
+import PrivatePortfolioThumbnails from '../components/astro/PrivatePortfolioThumbnails/PrivatePortfolioThumbnails.astro';
 
 import '../styles/page-styles/about.css';
 import Link from '../components/astro/Link/Link.astro';
@@ -100,6 +102,13 @@ const socialListItemClasses = `socialListItem liReset`;
 					))
 				}
 			</ul>
+			<hr class='redOrangeHR' />
+			<PrivatePortfolioThumbnails />
+			<p class='aboutPara'>
+				Logging in opens a private case study. Navigating back to public
+				pages ends your session.
+			</p>
+			<PortfolioGate client:only='react' />
 			<hr class='redOrangeHR' />
 			<h2>Social links</h2>
 			<p>Here are some of the ways you can get in touch with me:</p>
