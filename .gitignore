@@ -24,3 +24,4 @@ pnpm-debug.log*
 # Claude-related files
 .claude/*
 .specstory/*
+misc-info/

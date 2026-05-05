@@ -23,7 +23,7 @@ textarea:-moz-placeholder,
 textarea::-moz-placeholder,
 textarea::placeholder-shown,
 textarea::placeholder {
-	color: var(--grey-300);
+	color: var(--grey-500);
 	padding: 1rem 0;
 }
 

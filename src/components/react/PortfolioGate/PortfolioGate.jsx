@@ -87,7 +87,6 @@ export const PortfolioGate = () => {
 					inputStyles={{
 						minWidth: '11.25rem',
 						borderRadius: '0.25rem 0 0 0.25rem',
-						borderColor: 'green',
 					}}
 					label="Projects password"
 					name="password"

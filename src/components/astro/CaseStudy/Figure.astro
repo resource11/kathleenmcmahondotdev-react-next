@@ -1,0 +1,37 @@
+---
+import { Cloudinary } from "@cloudinary/url-gen";
+import { scale } from "@cloudinary/url-gen/actions/resize";
+import "./Figure.css";
+
+interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+  widths?: number[];
+}
+
+const { src, alt, caption, widths = [400, 800, 1200] } = Astro.props;
+
+const cld = new Cloudinary({ cloud: { cloudName: "kathleenmcmahon" } });
+
+const srcset = widths
+  .map((w) => {
+    const url = cld.image(src).setDeliveryType("fetch").resize(scale().width(w)).toURL();
+    return `${url} ${w}w`;
+  })
+  .join(", ");
+
+const defaultSrc = cld.image(src).setDeliveryType("fetch").resize(scale().width(widths[widths.length - 1])).toURL();
+---
+
+<figure class="case-study-figure">
+  <img
+    src={defaultSrc}
+    srcset={srcset}
+    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 1200px"
+    alt={alt}
+    loading="lazy"
+    decoding="async"
+  />
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

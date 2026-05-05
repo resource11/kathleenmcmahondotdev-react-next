@@ -1,0 +1,16 @@
+.case-study-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.case-study-tech-stack li {
+  font-size: 0.8125rem;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid currentColor;
+  border-radius: 2rem;
+  white-space: nowrap;
+}

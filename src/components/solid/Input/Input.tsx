@@ -3,7 +3,7 @@ import { type Component } from 'solid-js';
 import { render } from 'solid-js/web';
 import { useField } from 'solid-js-form';
 // import PropTypes from "prop-types"
-import classnames from 'classnames';
+import clsx from 'clsx';
 import { useExtraClasses } from '../../../utils/helpers.js';
 import { Icon } from '../Icon/Icon.jsx';
 import styles from './Input.module.css';
@@ -49,11 +49,11 @@ export const Input: HTMLInputElement = ({
 	const [field, form] = useField(props.name);
 	const formHandler = form.formHandler;
 
-	const rootClasses = classnames(css.root, {
+	const rootClasses = clsx(css.root, {
 		[css.hidden]: isHidden,
 	});
 
-	const labelClasses = classnames(css.inputLabel, css.stackField);
+	const labelClasses = clsx(css.inputLabel, css.stackField);
 
 	return (
 		<div className={rootClasses}>

@@ -1,58 +1,57 @@
-
 /** @jsxImportSource: solid-js */
 // import PropTypes from "prop-types"
-import classnames from "classnames"
-import { useExtraClasses } from "../../../utils/useExtraClasses"
-import Icon from "../Icon/Icon.jsx"
-import styles from "./Button.module.css"
+import clsx from 'clsx';
+import { useExtraClasses } from '../../../utils/useExtraClasses';
+import Icon from '../Icon/Icon.jsx';
+import styles from './Button.module.css';
 
 export const ButtonSizes = {
-  small: "small",
-  large: "large",
-}
+	small: 'small',
+	large: 'large',
+};
 
 export const Button = ({
-  ariaExpanded,
-  ariaLabel,
-  buttonRef,
-  children,
-  disabled,
-  extraClasses,
-  icon,
-  iconOnlyBtn,
-  onClick,
-  size,
-  type,
+	ariaExpanded,
+	ariaLabel,
+	buttonRef,
+	children,
+	disabled,
+	extraClasses,
+	icon,
+	iconOnlyBtn,
+	onClick,
+	size,
+	type,
 }) => {
-  const css = useExtraClasses(styles, extraClasses)
+	const css = useExtraClasses(styles, extraClasses);
 
-  const buttonClasses = classnames(css.root, css[size])
+	const buttonClasses = clsx(css.root, css[size]);
 
-  return (
-    <button
-      aria-expanded={ariaExpanded}
-      aria-label={ariaLabel}
-      className={buttonClasses}
-      disabled={disabled}
-      onClick={onClick}
-      ref={buttonRef}
-      type={type}
-    >
-      <span className={css.btnContentWrap}>
-        {children}
-        {icon && (
-          <Icon
-            icon={icon}
-            extraClasses={!iconOnlyBtn ? { icon: css.icon } : null}
-            size={size !== ButtonSizes.small ? "lg" : "sm"}
-          />
-        )}
-      </span>
-    </button>
-  )
-}
+	return (
+		<button
+			aria-expanded={ariaExpanded}
+			aria-label={ariaLabel}
+			className={buttonClasses}
+			disabled={disabled}
+			onClick={onClick}
+			ref={buttonRef}
+			type={type}
+		>
+			<span className={css.btnContentWrap}>
+				{children}
+				{icon && (
+					<Icon
+						icon={icon}
+						extraClasses={!iconOnlyBtn ? { icon: css.icon } : null}
+						size={size !== ButtonSizes.small ? 'lg' : 'sm'}
+					/>
+				)}
+			</span>
+		</button>
+	);
+};
 
-export default Button
+export default Button;
 
 // Button.defaultProps = {
 //   ariaExpanded: null,

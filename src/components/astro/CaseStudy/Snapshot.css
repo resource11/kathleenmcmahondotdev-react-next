@@ -1,0 +1,19 @@
+.case-study-snapshot {
+  list-style: none;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-left: 3px solid currentColor;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.case-study-snapshot li {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  padding: 0;
+}
+
+.case-study-snapshot li::before {
+  content: "→ ";
+}

@@ -120,17 +120,18 @@ interface Props {
 				</CTALink>
 			</article>
 			<hr class="purpleRedHR" />
-			{
-				items.length > 0 && (
-					<section class="privatePortfolioThumbnails">
-						<h2 id="projects-heading">Featured projects</h2>
-						<p
-							id="portfolio-gate-heading"
-							class="projectsSubheading"
-						>
-							Need to view my private projects?{' '}
-							<a href="./about#contact-me">Contact me</a> for access.
-						</p>
+
+			<section class="privatePortfolioThumbnails">
+				<h2 id="projects-heading">Selected projects</h2>
+				<p
+					id="portfolio-gate-heading"
+					class="projectsSubheading"
+				>
+					Need to view my private projects?{' '}
+					<a href="./about#contact-me">Contact me</a> for access.
+				</p>
+				{
+					items.length > 0 && (
 						<ul class={cardListClasses}>
 							{items.map((item) => (
 								<li class="cardListItem">
@@ -173,9 +174,9 @@ interface Props {
 								</li>
 							))}
 						</ul>
-					</section>
-				)
-			}
+					)
+				}
+			</section>
 			<PortfolioGate client:only="react" />
 			<hr class="purpleRedHR" />
 			<article>

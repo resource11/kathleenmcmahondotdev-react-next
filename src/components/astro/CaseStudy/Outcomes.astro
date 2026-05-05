@@ -1,0 +1,21 @@
+---
+import "./Outcomes.css";
+
+interface Props {
+  items: string[];
+  inferred?: boolean;
+}
+
+const { items, inferred = false } = Astro.props;
+---
+
+<div class="case-study-outcomes">
+  {inferred && (
+    <p class="case-study-outcomes__inferred-label">
+      Outcomes are directionally supported; quantitative data not directly measured.
+    </p>
+  )}
+  <ul>
+    {items.map((item) => <li>{item}</li>)}
+  </ul>
+</div>

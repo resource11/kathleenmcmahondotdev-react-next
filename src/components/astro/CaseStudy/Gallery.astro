@@ -1,0 +1,23 @@
+---
+import Figure from "./Figure.astro";
+import "./Gallery.css";
+
+interface GalleryItem {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+interface Props {
+  items: GalleryItem[];
+  columns?: number;
+}
+
+const { items, columns = 2 } = Astro.props;
+---
+
+<div class="case-study-gallery" style={`--columns: ${columns}`}>
+  {items.map((item) => (
+    <Figure src={item.src} alt={item.alt} caption={item.caption} />
+  ))}
+</div>

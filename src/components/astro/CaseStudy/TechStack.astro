@@ -1,0 +1,13 @@
+---
+import "./TechStack.css";
+
+interface Props {
+  items: string[];
+}
+
+const { items } = Astro.props;
+---
+
+<ul class="case-study-tech-stack">
+  {items.map((item) => <li>{item}</li>)}
+</ul>

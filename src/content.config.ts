@@ -75,11 +75,16 @@ const privatePortfolioCollection = defineCollection({
 			title: z.string(),
 			summary: z.string(),
 			coverImage: img().optional(),
-			client: z.string().optional(),
+			company: z.string().optional(),
 			cta: z.string().optional(),
 			ctaAria: z.string().optional(),
 			order: z.number(),
 			publishDate: z.date().optional(),
+			role: z.string().optional(),
+			period: z.string().optional(),
+			status: z.enum(['shipped', 'ongoing', 'archived']).optional(),
+			tech: z.array(z.string()).optional(),
+			featured: z.boolean().optional(),
 		}),
 });
 

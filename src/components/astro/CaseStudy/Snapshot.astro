@@ -1,0 +1,13 @@
+---
+import "./Snapshot.css";
+
+interface Props {
+  items: string[];
+}
+
+const { items } = Astro.props;
+---
+
+<ul class="case-study-snapshot">
+  {items.map((item) => <li>{item}</li>)}
+</ul>

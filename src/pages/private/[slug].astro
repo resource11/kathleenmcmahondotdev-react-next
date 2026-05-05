@@ -17,14 +17,15 @@ const { Content } = await render(entry);
 
 <PrivateLayout pageTitle={entry.data.title}>
 	<Breadcrumb
-		items={[
-			{ label: 'Home', href: '/' },
-			{ label: entry.data.title },
-		]}
+		items={[{ label: 'Home', href: '/' }, { label: entry.data.title }]}
 	/>
-	<article class='case-study'>
+	<article class="case-study">
 		<h1>{entry.data.title}</h1>
-		{entry.data.client && <p class='case-study-client'>{entry.data.client}</p>}
+		{
+			entry.data.company && (
+				<p class="case-study-company">{entry.data.company}</p>
+			)
+		}
 		<Content />
 	</article>
 	<CaseStudyNav currentSlug={slug} />

@@ -1,0 +1,22 @@
+.case-study-outcomes {
+  margin: 2rem 0;
+}
+
+.case-study-outcomes__inferred-label {
+  font-size: 0.8125rem;
+  opacity: 0.6;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.case-study-outcomes ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.case-study-outcomes li::before {
+  content: "✓ ";
+}

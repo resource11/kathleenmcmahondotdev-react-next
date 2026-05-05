@@ -1,0 +1,12 @@
+.case-study-gallery {
+  display: grid;
+  grid-template-columns: repeat(var(--columns, 2), 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+@media (max-width: 640px) {
+  .case-study-gallery {
+    grid-template-columns: 1fr;
+  }
+}

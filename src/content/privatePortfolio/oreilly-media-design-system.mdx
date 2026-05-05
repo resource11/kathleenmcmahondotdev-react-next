@@ -1,0 +1,173 @@
+---
+title: O'Reilly Media Design System
+summary: Scaling a design system through accessibility stewardship, documentation-as-product, and continuous integration alignment
+coverImage: ../../assets/images/home/accessibility-favored-react-components.jpg
+role: Frontend Engineer → Tech Lead & Senior Software Engineer
+period: Feb 2018 – Mar 2020
+company: O'Reilly Media
+status: archived
+tech: ['React', 'CSS Custom Properties', 'Gatsby', 'MDX', 'JSDoc', 'Storybook', 'Node.js']
+featured: true
+order: 1
+---
+
+import Snapshot from '../../components/astro/CaseStudy/Snapshot.astro';
+import Figure from '../../components/astro/CaseStudy/Figure.astro';
+import Gallery from '../../components/astro/CaseStudy/Gallery.astro';
+import TechStack from '../../components/astro/CaseStudy/TechStack.astro';
+import Outcomes from '../../components/astro/CaseStudy/Outcomes.astro';
+
+# ORM Design System (post h1)
+
+Accessible foundations and shared tooling for O'Reilly Media's learning platform — across 12 product teams and 20+ applications.
+
+**Role:** Frontend Engineer → Tech Lead & Senior Software Engineer &nbsp;·&nbsp; **Company:** O'Reilly Media &nbsp;·&nbsp; **Period:** Feb 2018 – Mar 2020
+
+<TechStack items={['React', 'CSS Custom Properties', 'Gatsby', 'MDX', 'JSDoc', 'Storybook', 'Node.js']} />
+
+---
+
+<Snapshot items={[
+  'Accessible React component library built with Storybook and Component-Driven Development',
+  'Design token CSS architecture for consistent theming across 12 teams and 20+ apps',
+  'Gatsby-based documentation site integrating MDX, JSDoc, and accessibility guidelines',
+  'Contribution model with office hours and pairing sessions to reduce friction for consuming teams',
+  'Accessibility workshops for designers, engineers, and content stakeholders across the org',
+]} />
+
+---
+
+## Context
+
+O'Reilly Media's internal product teams were building across a fragmented surface: a learning platform serving millions of users, maintained by over a dozen teams, with no shared component primitives, no theming system, and documentation scattered across disparate sources. The ORM Design System was the effort to change that.
+
+<Figure
+  src="placeholder/orm-context-overview"
+  alt="Overview of O'Reilly Media's learning platform interface showing multiple product surfaces"
+  caption="O'Reilly's learning platform — multiple surfaces, no shared foundation."
+/>
+
+---
+
+## My Role
+
+I joined as a Frontend Engineer in February 2018 and moved into a Tech Lead role in April 2019. My role was hands-on across the full system lifecycle: component architecture, accessibility implementation, documentation infrastructure, and the contribution model that helped other teams adopt the system.
+
+Collaborators included Paul Bouchon, Martin Bravo, Rune Madsen, Pasha Craydon, and Phil Skaroulis.
+
+---
+
+## Challenge
+
+The design system had to solve three problems simultaneously:
+
+- **No shared accessible primitives** — product teams were building their own components, inconsistently, with varying accessibility standards
+- **No theming system** — surface-level visual changes required manual updates across every app
+- **Fragmented documentation** — teams couldn't self-serve reliably; the docs experience didn't reflect what had actually shipped
+
+The challenge was design-engineering, not product design: the system itself was the product, and it had to work for the teams building with it.
+
+---
+
+## Approach
+
+### Accessible React component library
+
+Built reusable, accessible React components using Storybook and Component-Driven Development. Accessibility was a design constraint from the start — ARIA roles, keyboard interactions, and color contrast were part of the component spec, not an audit step after the fact.
+
+<Figure
+  src="placeholder/orm-storybook-component-gallery"
+  alt="Storybook component index showing the ORM design system component gallery"
+  caption="Storybook component gallery — the component library in development."
+/>
+
+### Design token CSS architecture
+
+Designed a CSS custom properties architecture to enable consistent theming across 12 teams and 20+ applications. Token-driven theming meant product teams could apply brand updates without touching component internals.
+
+<Figure
+  src="placeholder/orm-token-architecture"
+  alt="Design token CSS architecture diagram showing token structure and theming layers"
+  caption="Token structure enabling theming across the platform."
+/>
+
+### Gatsby documentation site
+
+Replaced the prior docs experience with a Gatsby-based site integrating MDX files, JSDoc-generated API documentation, NPM package references, and explicit accessibility and design guidelines. The docs were authored and maintained alongside the components, not as an afterthought.
+
+The Gatsby docs POC was work I built; it was merged by Pauline Lai. This work is a candidate for a standalone deep dive.
+
+<Figure
+  src="placeholder/orm-gatsby-docs-site"
+  alt="ORM design system Gatsby documentation site showing component detail page with accessibility guidelines"
+  caption="Gatsby docs site — component documentation with accessibility guidelines."
+/>
+
+### Contribution model
+
+Defined contribution guidelines, maintained CI/CD processes, and ran office hours and pairing sessions to reduce adoption friction for consuming teams. The model made it possible for product engineers to contribute components back to the system without requiring design system team involvement for every PR.
+
+<Figure
+  src="placeholder/orm-contribution-guidelines"
+  alt="ORM design system contribution guidelines documentation page"
+  caption="Contribution guidelines — making the system something teams could give back to."
+/>
+
+### Accessibility workshops
+
+Led workshops on inclusive design and accessibility for designers, engineers, and content stakeholders across O'Reilly. These weren't one-time events — they were part of raising the baseline for everyone building on the platform.
+
+---
+
+## Selected Work
+
+<Gallery items={[
+  {
+    src: 'placeholder/orm-heading-component',
+    alt: 'Heading component documentation showing semantic and presentation separation pattern',
+    caption: 'Heading component — semantic/presentation split, authored for the system.',
+  },
+  {
+    src: 'placeholder/orm-accessibility-commitment',
+    alt: 'Accessibility commitment page in the ORM design system documentation',
+    caption: 'Accessibility commitment page in the docs site.',
+  },
+  {
+    src: 'placeholder/orm-contrast-fixed-surfaces',
+    alt: 'Before and after showing contrast-fixed sidebar and code block surfaces',
+    caption: 'Contrast corrections across high-traffic documentation surfaces.',
+  },
+  {
+    src: 'placeholder/orm-component-status',
+    alt: 'Component status signals in the documentation showing release state indicators',
+    caption: 'Component status signals — keeping docs in sync with shipped releases.',
+  },
+]} />
+
+---
+
+## Outcomes
+
+<Outcomes
+  inferred={true}
+  items={[
+    'Accessible component baseline established across the core library and documentation surfaces',
+    'Theming unblocked for product teams — token architecture enabled brand changes without per-app manual updates',
+    'Documentation experience more reliably reflected shipped releases, reducing implementation guesswork',
+    'Contribution friction lowered — product engineers could contribute back without requiring design system team involvement at every step',
+    'Org-wide accessibility awareness raised through workshops across design, engineering, and content disciplines',
+  ]}
+/>
+
+---
+
+## Reflections
+
+This engagement predates the widespread adoption of design token tooling and modern a11y testing infrastructure. Given the same scope today, I'd introduce automated accessibility regression testing earlier and lean harder into token-first architecture from day one rather than retrofitting it. The contribution model also needed more explicit governance — office hours scaled the intent but didn't fully replace the need for clearer ownership signals.
+
+---
+
+## Related
+
+- **Heading component deep dive** — the semantic/presentation separation pattern (coming)
+- **Gatsby docs POC case study** — greenfield Gatsby + Now v2 deployment (coming)
