@@ -30,7 +30,7 @@ const siteData = {
 		},
 		{
 			name: 'RSS feed',
-			link: 'https://www.kathleenmcmahon.dev/rss.xml',
+			link: '/rss.xml',
 			icon: 'rss-square',
 			libraryAlias: 'fas',
 			ariaLabel: 'Follow my RSS feed',
