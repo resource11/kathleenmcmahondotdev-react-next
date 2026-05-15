@@ -1,16 +1,17 @@
 # DRAFT — EA Help Site Design System (Paloma) Case Study
+
 # Review and correct before MDX build. Flag: [INFERRED] marks outcomes not sourced from resume/LinkedIn.
 
 ---
 
 ## 1. Metadata sidebar
 
-| | |
-|---|---|
-| **Role** | Senior Design Technologist, Design Systems |
-| **Company** | Electronic Arts (EA) |
-| **Timeline** | November 2024 – Present |
-| **Industry** | Gaming · EdTech |
+|                  |                                                                                                                                          |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Role**         | Senior Design Technologist, Design Systems                                                                                               |
+| **Company**      | Electronic Arts (EA)                                                                                                                     |
+| **Timeline**     | November 2024 – Present                                                                                                                  |
+| **Industry**     | Gaming · EdTech                                                                                                                          |
 | **Tools & Tech** | React · TypeScript · Tailwind CSS · Figma · Storybook · Chromatic · Style Dictionary · DTCG · MCP · GitHub Copilot · 14-package monorepo |
 
 `[IMAGE PLACEHOLDER]`
@@ -27,7 +28,7 @@ Paloma was created as part of an 18-month, org-wide initiative to overhaul help.
 
 ## 3. Challenge — [EVOCATIVE HEADING TBD]
 
-Paloma was being built inside a live product delivery — not after it. The system launched with a single theme and expanded to support distinct brand experiences for Battlefield, FC, The Sims 4, and other EA titles as the 18-month redesign progressed. As teams adopted the system, the backlog grew to include multi-theme support, a brand update, and ongoing bugs — none of which could introduce breaking changes into planned sprint cycles.
+Paloma was being built alongside a live product delivery. As teams adopted the system, inconsistencies between the component and Figma libraries surfaced. The backlog grew to include multi-theme support, a brand update, and ongoing bugs — none of which could introduce breaking changes into planned sprint cycles. The system launched with a single theme and expanded to support distinct brand experiences for Battlefield, FC, The Sims 4, and other EA titles as the 18-month redesign progressed.
 
 `[IMAGE PLACEHOLDER]`
 
@@ -78,10 +79,17 @@ The Storybook 10 upgrade with MCP integration, Chromatic in CI/CD, and the machi
 ---
 
 # NOTES FOR KATHLEEN
+
 # - Evocative headings (sections 3–6) are marked TBD — these need your input or approval
+
 # - Section 3 (Challenge) flagged as draft — revisit
+
 # - Section 4 (Approach) flagged as draft — revisit
+
 # - [INFERRED] items flagged above need your confirmation or correction
+
 # - [PEER TESTIMONIAL PLACEHOLDER] — do you have a quote from a teammate or stakeholder?
+
 # - All image placeholders need sourcing
+
 # - DTCG migration: noted as part of AI roadmap you defined, not yet completed
